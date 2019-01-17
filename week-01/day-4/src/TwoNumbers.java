@@ -20,7 +20,7 @@ public class TwoNumbers {
         int divided = number1 / number2;
         System.out.println(divided);
         // Print the integer part of 22 divided by 13
-        double divided2 = (double) number2 / number1;
+        int divided2 = number1 / number2;
         System.out.println(divided2);
         // Print the remainder of 22 divided by 13
         int remainder = number1 % number2;
