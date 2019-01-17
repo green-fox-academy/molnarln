@@ -15,7 +15,7 @@ public class CodingHours {
         double codingHours = avgCodTimPerDay * semester * weekLength;
         double workHours = 52;
         System.out.println(codingHours);
-        
+
         double codingHourPercent =  ( ( avgCodTimPerDay * weekLength * semester )/ (workHours * semester) ) * 100;
         System.out.println(codingHourPercent);
 
