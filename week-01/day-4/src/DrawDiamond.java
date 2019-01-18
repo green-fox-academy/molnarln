@@ -20,32 +20,35 @@ public class DrawDiamond {
         System.out.println("Add the number of rows!");
         int num = scanner.nextInt();
 
-        for (int i = 0; i < num; i++) {
+        for (int i = 0; i <= num; i++) {
 
             for (int j = 0; j < num - i; j++) {
                 System.out.print(" ");
 
             }
-            for (int k = 0; k < i; k++) {
-                System.out.print("* ");
+            for (int k = 0; k < (2*i)-1; k++) {
+                System.out.print("*");
             }
             System.out.println();
-        }
-        for (int x = 0; x < num +1 ; x++) {
 
-            for (int y = 0; y < x; y++) {
+        }
+
+
+        for (int x = 0; x <= num; x++) {
+
+            for (int j = 0; j < x+1; j++) {
                 System.out.print(" ");
 
             }
-            for (int z = 0; z < num-x; z++) {
-                System.out.print("* ");
+            for (int k = 0; k < (2*num)-(2*x)-3; k++) {
+                System.out.print("*");
             }
             System.out.println();
 
         }
     }
 
-    }
+}
 
 
 
