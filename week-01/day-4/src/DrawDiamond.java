@@ -22,22 +22,22 @@ public class DrawDiamond {
 
         for (int i = 0; i < num; i++) {
 
-            for (int j = 0; j <= num - i; j++) {
+            for (int j = 0; j < num - i; j++) {
                 System.out.print(" ");
 
             }
-            for (int k = 0; k <= i; k++) {
+            for (int k = 0; k < i; k++) {
                 System.out.print("* ");
             }
             System.out.println();
         }
         for (int x = 0; x < num +1 ; x++) {
 
-            for (int y = 0; y <= x; y++) {
+            for (int y = 0; y < x; y++) {
                 System.out.print(" ");
 
             }
-            for (int z = 0; z <= num-x; z++) {
+            for (int z = 0; z < num-x; z++) {
                 System.out.print("* ");
             }
             System.out.println();
