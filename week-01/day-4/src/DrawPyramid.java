@@ -17,15 +17,16 @@ public class DrawPyramid {
         System.out.println("Add the number of rows!");
         int num = scanner.nextInt();
 
-        for (int i = 0; i != num; i++) {
-            for (int k=0; k <= num-i; k++ ){
+        for (int i = 0; i <= num; i++) {
+
+            for (int j = 0; j < num - i; j++) {
                 System.out.print(" ");
 
             }
-            for (int j = -1; j != i*2; j++) {
-                System.out.print("*");
+            for (int k = 0; k < i; k++) {
+                System.out.print("* ");
             }
-            System.out.println("");
+            System.out.println();
 
         }
 
