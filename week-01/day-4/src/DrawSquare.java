@@ -17,27 +17,18 @@ public class DrawSquare {
         Scanner scanner= new Scanner(System.in);
         System.out.println("Write a number!");
 
-        int num = scanner.nextInt();
+        int num = scanner.nextInt()-1;
 
-        for (int i = 0; i <= num; i++){
-            System.out.print("%");
-        }
-        System.out.println();
-
-        for (int j = 0; j < num-2; j++){
-            System.out.print("%");
-
-            for (int k=0; k <= num-2; k++) {
-                System.out.print(" ");
+        for (int i= 0; i <= num; i++){
+            for (int j = 0; j <= num; j++){
+                if(i==0 || j==0 || i==num || j==num){
+                    System.out.print("%");
+                }else {
+                    System.out.print(" ");
+                }
             }
-            System.out.println("%");
+            System.out.println();
         }
-        for (int i = 0; i <= num; i++) {
-            System.out.print("%");
-        }
-
-
-
 
     }
 }
