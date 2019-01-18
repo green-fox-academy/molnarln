@@ -20,7 +20,8 @@ public class GuessTheNumber {
             }else   if (attempt> num){
                 System.out.println("The stroed number is lower");
 
-            }attempt = scanner.nextInt();
+            }
+            attempt = scanner.nextInt();
 
         }
         System.out.println("You found the number: " +num);

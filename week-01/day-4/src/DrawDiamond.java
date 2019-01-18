@@ -1,4 +1,4 @@
-/*import java.util.Scanner;
+import java.util.Scanner;
 
 public class DrawDiamond {
     public static void main(String[] args) {
@@ -21,32 +21,31 @@ public class DrawDiamond {
         int num = scanner.nextInt();
 
         for (int i = 0; i < num; i++) {
-            for (int k=0; k <= num-i; k++ ){
+
+            for (int j = 0; j <= num - i; j++) {
                 System.out.print(" ");
 
             }
-            for (int j = -1; j != i*2; j++) {
-                System.out.print("*");
+            for (int k = 0; k <= i; k++) {
+                System.out.print("* ");
             }
-            System.out.println("");
-
+            System.out.println();
         }
+        for (int x = 0; x < num +1 ; x++) {
 
-
-        for ( int x = num; x ; x++) {
-            for (int y = 1; y < num +1 ; y++) {
+            for (int y = 0; y <= x; y++) {
                 System.out.print(" ");
-            }
-
-            for (int z = -1; z != x*2; z++) {
-                System.out.print("*");
-            }
-            System.out.println("");
-
 
             }
+            for (int z = 0; z <= num-x; z++) {
+                System.out.print("* ");
+            }
+            System.out.println();
 
         }
     }
 
-*/
+    }
+
+
+
