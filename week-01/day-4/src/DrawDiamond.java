@@ -20,7 +20,7 @@ public class DrawDiamond {
         System.out.println("Add the number of rows!");
         int num = scanner.nextInt();
 
-        for (int i = 0; i <= num; i++) {
+        for (int i = 1; i <= num; i++) {
 
             for (int j = 0; j < num - i; j++) {
                 System.out.print(" ");
