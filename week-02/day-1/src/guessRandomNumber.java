@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class guessRandomNumber {
     static int randomNumber;
-    static Scanner scanner = new Scanner(System.in);
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println(getRandomNum());
 
