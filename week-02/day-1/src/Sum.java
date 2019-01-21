@@ -6,17 +6,17 @@ public class Sum {
         // - Write a function called `sum` that sum all the numbers
         //   until the given parameter and returns with an integer
 
-        int parameter;
-        parameter = 3;
-        System.out.println(sum(parameter));
+            int parameter;
+            parameter = 4;
+            System.out.println(sum(parameter));
 
-    }
-    public static int sum(int input){
-        int output = 0;
-        for (int i = 0; i <= input; i++) {
-            output = input + i;
         }
-        return output;
+        public static int sum(int input){
+            int output = 0;
+            for (int i = 0; i <= input; i++) {
+                output = output + i;
+            }
+            return output;
 
     }
 
