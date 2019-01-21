@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Unique {
@@ -12,37 +13,21 @@ public class Unique {
 
 
         System.out.println(Arrays.toString(unique(notUnique)));
-
-
     }
+
     public static int[] unique(int[] numArray){
-            int[] temp = new int[numArray.length];
+            int[] temp;
             temp = numArray;
-            int[] temp2 = new int[numArray.length];
 
-        for (int itemU:unique()
-             ) {
-            for (int itemT: temp
-                 ) {
-                if (itemT == itemU){
-                    
 
+        for (int i = 0; i < numArray.length; i++) {
+            for (int j = 0; j < i; j++) {
+                if ( numArray[i] == temp[j]) {
+                    System.out.print(numArray[i] + " " );
                 }
+
             }
         }
-/*
-        for (int i = 0; i < numArray.length; i++) {
-            for (int j = 0; j < temp.length; j++) {
-                if ( numArray[i] != temp[j]) {
-                    temp[j] = numArray[i];
-
-                }
-            }
-        }*/
-
-
-
-
-        return temp;
+        return numArray;
     }
 }
