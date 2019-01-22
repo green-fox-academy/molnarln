@@ -18,7 +18,7 @@ public class homeAsListPractice {
 
         listedArray.set(0, "changed");
 
-        System.out.println(Arrays.toString(stringArray) + " - this is stringarray. After list (wrapped list) is modified, the origin string array is being modified.");
+        System.out.println(Arrays.toString(stringArray) + " - this is stringarray. After list (wrapped list) is modified, the origin string array is being modified also.");
 
         ArrayList<String> stringArrayList = new ArrayList<>(listedArray);
 
