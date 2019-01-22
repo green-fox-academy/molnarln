@@ -10,7 +10,6 @@ public class SolarSystem{
 
         System.out.println(planetList.toString());
 
-
         System.out.println(putSaturn(planetList));
         // Expected output: "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"
     }
