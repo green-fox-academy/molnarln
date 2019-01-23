@@ -24,15 +24,25 @@ public class RainbowBoxFunctionV2 {
         rainbowColor.add(new Color(255, 255, 0));
         rainbowColor.add(new Color(255, 127, 0));
         rainbowColor.add(new Color(	255, 0 , 0));
+//If the ArrayList is passed toward the function, use the color set above.
 
-        rainbowSquaring(x, rainbowColor, graphics);
+        Color[] rainbowArrayColor = new Color[7];
+        rainbowArrayColor[0] = new Color(148, 0, 211);
+        rainbowArrayColor[1] = new Color(75, 0, 130);
+        rainbowArrayColor[2] = new Color(0, 0, 255);
+        rainbowArrayColor[3] = new Color(0, 255, 0);
+        rainbowArrayColor[4] = new Color(255, 255, 0);
+        rainbowArrayColor[5] = new Color(255, 127, 0);
+        rainbowArrayColor[6] = new Color(	255, 0 , 0);
 
+//If the ArrayList is passed toward the function, use the color set above.
+        rainbowSquaring(x, rainbowArrayColor, graphics);
 
     }
-    public static void rainbowSquaring(int x, ArrayList<Color> rainbowColor, Graphics graphics){
+    public static void rainbowSquaring(int x, Color[] rainbowArrayColor, Graphics graphics){
 
         for (int i = 0; i < 7; i++) {
-        graphics.setColor(rainbowColor.get(i));
+        graphics.setColor(rainbowArrayColor[i]);
         graphics.fillRect(i*x, i*x, 320-i*x*2,320-i*x*2 );
 
         }

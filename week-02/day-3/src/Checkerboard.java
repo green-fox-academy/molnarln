@@ -18,7 +18,7 @@ public class Checkerboard {
 
                 }
                 else {
-                    graphics.setColor(Color.yellow);
+                    graphics.setColor(Color.BLACK);
                     graphics.fillRect(j+j*40, i + i*40, 40,40);
                 }
             }
