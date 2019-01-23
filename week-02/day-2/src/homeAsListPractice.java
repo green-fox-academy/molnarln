@@ -24,6 +24,5 @@ public class homeAsListPractice {
 
         System.out.println(stringArrayList.toString() + " - this is a string arraylist");
 
-
     }
 }
