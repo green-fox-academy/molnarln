@@ -6,21 +6,21 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class MultipleLinePlay {
     public static void mainDraw(Graphics graphics) {
-        int multiplyer = 4;
+        int multiplier = 2;
         int [] x = {20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320};
         int [] y = {20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320};
 
-        for (int i = 0; i < multiplyer ; i++) {
-            for (int k = 0; k < multiplyer; k++) {
+        for (int i = 0; i < multiplier ; i++) {
+            for (int k = 0; k < multiplier; k++) {
 
             graphics.setColor(Color.MAGENTA);
             for (int j = 0; j < x.length; j++) {
-                graphics.drawLine((x[j]/multiplyer)+i*320/multiplyer, 0+k*320/multiplyer, (320/multiplyer)+i*320/multiplyer, x[j]/multiplyer+k*320/multiplyer);
+                graphics.drawLine((x[j]/multiplier)+i*320/multiplier, 0+k*320/multiplier, (320/multiplier)+i*320/multiplier, x[j]/multiplier+k*320/multiplier);
 
             }
             graphics.setColor(Color.cyan);
             for (int j = 0; j < y.length; j++) {
-                graphics.drawLine(y[j]/multiplyer+i*320/multiplyer, 320/multiplyer+k*320/multiplyer, 0+i*320/multiplyer, y[j]/multiplyer+k*320/multiplyer);
+                graphics.drawLine(y[j]/multiplier+i*320/multiplier, 320/multiplier+k*320/multiplier, 0+i*320/multiplier, y[j]/multiplier+k*320/multiplier);
 
             }
             }

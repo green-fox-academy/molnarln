@@ -6,21 +6,19 @@ import java.util.List;
 public class homeAsListPractice {
     public static void main(String[] args) {
 
-        ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(11,22,33,44,55,66));
-        System.out.println(list.toString()+ " - this is an arraylist of integers");
+        ArrayList<String> myArrayList = new ArrayList<String>(Arrays.asList("one", "two", "three", "four", "five"));
+        System.out.println(myArrayList.toString()+ " - this is an ArrayList of strings");
 
-        Integer[] newArray = list.toArray(new Integer[list.size()]);
-
-        System.out.println(Arrays.toString(newArray) + " - this is an array of integers made from the arraylist of integers by toArray");
-
-        String[] stringArray ={"one", "two", "three", "four", "five"};
+        String[] stringArray =myArrayList.toArray(new String[myArrayList.size()]);
+        System.out.println(Arrays.toString(stringArray) + "this is an array created form ArrayList");
         List listedArray = Arrays.asList(stringArray);
+        System.out.println(listedArray.toString()+"this is the unchanged list");
 
         listedArray.set(0, "changed");
 
         System.out.println(Arrays.toString(stringArray) + " - this is stringarray. After list (wrapped list) is modified, the origin string array is being modified also.");
-
         ArrayList<String> stringArrayList = new ArrayList<>(listedArray);
+
 
         System.out.println(stringArrayList.toString() + " - this is a string arraylist");
 
