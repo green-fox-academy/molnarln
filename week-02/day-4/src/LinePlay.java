@@ -4,15 +4,22 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class homeShadeTable {
+public class LinePlay {
     public static void mainDraw(Graphics graphics) {
-        // Fill the canvas with a checkerboard pattern.
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9 ; j++) {
-                graphics.setColor(new Color(j*30));
-                graphics.fillRect(j*20*2, i*20*2, 30, 30);
+
+        int [] x = {20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320};
+        int [] y = {20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320};
+        graphics.setColor(Color.MAGENTA);
+        for (int i = 0; i < x.length; i++) {
+            graphics.drawLine(x[i], 0, 320, x[i]);
+
             }
+        graphics.setColor(Color.cyan);
+        for (int i = 0; i < y.length; i++) {
+            graphics.drawLine(y[i], 320, 0, y[i]);
+
         }
+
     }
 
     // Don't touch the code below
