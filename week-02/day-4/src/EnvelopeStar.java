@@ -13,17 +13,17 @@ public class EnvelopeStar {
         graphics.setColor(Color.magenta);
         for (int i = 0; i < (x.length)/2; i++) {
             graphics.drawLine(160, y[i], 160 + x[i], 160);
-
-        }
-
-        graphics.setColor(Color.magenta);
-        for (int i = 0; i < (x.length)/2; i++) {
             graphics.drawLine(160, y[i], 160 - x[i], 160);
+            graphics.drawLine( x[i], 160, 160, 160+x[i]);
+
+        }
+
+        graphics.setColor(Color.magenta);
+        for (int i = 0; i < (x.length)/2; i++) {
 
         }
         graphics.setColor(Color.magenta);
         for (int i = 0; i < (x.length)/2; i++) {
-            graphics.drawLine( x[i], 160, 160, 160+x[i]);
 
         }
         graphics.setColor(Color.magenta);

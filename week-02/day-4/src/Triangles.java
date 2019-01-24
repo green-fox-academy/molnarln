@@ -1,17 +1,30 @@
+/*
 import javax.swing.*;
 
 import java.awt.*;
+import java.util.Scanner;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Triangles {
     public static void mainDraw(Graphics graphics) {
 
-        int [] x = {160, 150, 170, 140, 160, 180};
-        int [] y = {0, 10, 10, 20, 20, 20};
-        graphics.drawPolygon(x, y, 6);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Add the number of rows!");
+        int num = scanner.nextInt();
+
+        for (int i = 0; i <= num; i++) {
+
+            for (int k = 0; k < (2*i)-1; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+            graphics.drawPolygon();
 
 
+
+
+        }
     }
 
     // Don't touch the code below
@@ -36,4 +49,4 @@ public class Triangles {
             mainDraw(graphics);
         }
     }
-}
+}*/

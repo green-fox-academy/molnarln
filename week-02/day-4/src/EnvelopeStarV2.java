@@ -10,7 +10,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class EnvelopeStarV2 {
     public static void mainDraw(Graphics graphics) {
 
-        int resolution= 32;
+        int resolution= 20;
         int [] a = new int[resolution];
         for (int i = 0; i < resolution; i++) {
             a[i] = (320 / resolution)*i;
