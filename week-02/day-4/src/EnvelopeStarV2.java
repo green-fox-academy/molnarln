@@ -10,7 +10,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class EnvelopeStarV2 {
     public static void mainDraw(Graphics graphics) {
 
-        int resolution= 20;
+        int resolution= 32;
         int [] a = new int[resolution];
         for (int i = 0; i < resolution; i++) {
             a[i] = (320 / resolution)*i;
@@ -29,12 +29,12 @@ public class EnvelopeStarV2 {
 
         }
         graphics.setColor(Color.magenta);
-        for (int i = 0; i < (a.length)/2; i++) {
+        for (int i = 1; i < (a.length)/2; i++) {
             graphics.drawLine( a[i], 160, 160, 160+a[i]);
 
         }
         graphics.setColor(Color.magenta);
-        for (int i = 0; i <= (a.length)/2; i++) {
+        for (int i = 1; i <= (a.length)/2; i++) {
             graphics.drawLine( 160, 160+a[i],320 - a[i], 160);
 
         }
