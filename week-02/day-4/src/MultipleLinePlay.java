@@ -6,7 +6,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class MultipleLinePlay {
     public static void mainDraw(Graphics graphics) {
-        int multiplyer = 2;
+        int multiplyer = 4;
         int [] x = {20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320};
         int [] y = {20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320};
 
