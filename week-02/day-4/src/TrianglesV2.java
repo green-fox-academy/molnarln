@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Triangles {
+public class TrianglesV2 {
     public static void mainDraw(Graphics graphics) {
 
         /*Scanner scanner = new Scanner(System.in);
@@ -20,27 +20,31 @@ public class Triangles {
             double[] y = {0, height, height};
             graphics.drawPolygon(x, y, 3);*/
 
-        int height = 30;
-        int base = 30;
-        int resolution = 30;
-        int startPointX = WIDTH/2;
-
-        for (int i = 0; i <= resolution; i++) {
-            graphics.drawLine(startPointX - i * base / 2, i * height, startPointX + i * base / 2, i * height);
-        }
-        for (int i = 0; i < resolution; i++) {
-            graphics.drawLine(startPointX + i * base / 2, i * height, startPointX-(resolution*base)/2+i*base, resolution*height);
+        int resolution = 10;
+        for (int i = 0; i < 20; i++) {
+            graphics.drawLine(160-i*resolution, i*resolution, 160+i*resolution, i*resolution);
         }
 
-        for (int i = 0; i < resolution; i++) {
-            graphics.drawLine(startPointX - i * base / 2, i*height , startPointX+(resolution*base)/2-i*base, resolution*height);
+        for (int i = 0; i < 20; i++) {
+            graphics.drawLine(i*resolution, 160, 160+i*resolution, i*resolution);
         }
+
+        for (int i = 0; i < 20; i++) {
+            graphics.drawLine(160-i*resolution, i*resolution , 320-i*resolution, 160);
+        }
+
+
+        /*for (int i = 0; i < 10; i++) {
+            graphics.drawLine(160-i*resolution, i*resolution, 160+i*resolution, i*resolution);
+        }*/
+
+
 
     }
 
     // Don't touch the code below
-    static int WIDTH = 1200;
-    static int HEIGHT = 1200;
+    static int WIDTH = 320;
+    static int HEIGHT = 320;
 
     public static void main(String[] args) {
         JFrame jFrame = new JFrame("Drawing");
