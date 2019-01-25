@@ -11,8 +11,8 @@ public class PurpleSteps3d {
         graphics.setColor(Color.MAGENTA);
         int sum=0;
         for (int i = 0; i <5 ; i++) {
-            graphics.fillRect(sum, sum, i*20, i*20);
-            sum+=i*20;
+            graphics.fillRect(sum, sum, i*30, i*30);
+            sum+=i*30;
 
         }
 
