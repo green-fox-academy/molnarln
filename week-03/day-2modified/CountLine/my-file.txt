@@ -1,0 +1,7 @@
+elso
+masodik
+harmadik
+negyedik
+dfas
+fa
+dfs
