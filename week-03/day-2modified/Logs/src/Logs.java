@@ -66,7 +66,7 @@ public class Logs {
                 }
             }
             //System.out.println(getPosts.toString()); //Prints only the getPosts.
-            System.out.println("The GET / POST request ratio is: " + (double)(gets.size()/posts.size()));
+            System.out.println("The GET \\ POST request ratio is: " + (double)(gets.size()/posts.size()));
             System.out.println(gets.toString());
 
 
