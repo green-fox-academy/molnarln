@@ -1,4 +1,4 @@
-package postIt;
+package postit;
 
 
 public class PostIt {

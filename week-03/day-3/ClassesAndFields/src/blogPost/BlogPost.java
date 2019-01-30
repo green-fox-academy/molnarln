@@ -1,6 +1,4 @@
-package blogPost;
-
-import java.util.Date;
+package blogpost;
 
 public class BlogPost {
     String authorName;
