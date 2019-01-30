@@ -54,6 +54,8 @@ public class DiceSet {
                 diceSet.reroll(i);
             }
         }
+        System.out.print("\n");
+        System.out.println("The solution is: ");
         System.out.println(diceSet.getCurrent());
 
 
