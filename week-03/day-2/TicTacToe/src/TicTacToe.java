@@ -33,20 +33,23 @@ public class TicTacToe {
             linesOfFile.addAll(Files.readAllLines(filePath));
 
             for (int i = 0; i < linesOfFile.size(); i++) {
-                if (linesOfFile.get(i).equals("OOO")) {
-                    output = "O";
-                } else if (linesOfFile.get(i).equals("XXX")) {
-                    output = "X";
-                } else if (linesOfFile.get(i).charAt(i) == linesOfFile.get(i + 1).charAt(i) && linesOfFile.get(i + 1).charAt(i) == linesOfFile.get(i + 2).charAt(i) && linesOfFile.get(i).charAt(i) == 'O') {
-                    output = "O";
-                } else if (linesOfFile.get(i).charAt(i) == linesOfFile.get(i + 1).charAt(i) && linesOfFile.get(i + 1).charAt(i) == linesOfFile.get(i + 2).charAt(i) && linesOfFile.get(i).charAt(i) == 'X') {
-                    output = "X";
-                } else if (linesOfFile.get(0).charAt(0) == linesOfFile.get(1).charAt(1) && linesOfFile.get(1).charAt(1) == linesOfFile.get(2).charAt(2) && linesOfFile.get(0).charAt(0) == 'O') {
-                    output = "O";
-                } else if (linesOfFile.get(0).charAt(0) == linesOfFile.get(1).charAt(1) && linesOfFile.get(1).charAt(1) == linesOfFile.get(2).charAt(2) && linesOfFile.get(0).charAt(0) == 'X') {
-                    output = "X";
-                } else {
-                    output = "draw";
+                for (int j = 0; j < linesOfFile.size(); j++) {
+
+                    if (linesOfFile.get(i).equals("OOO")) {
+                        output = "O";
+                    } else if (linesOfFile.get(i).equals("XXX")) {
+                        output = "X";
+                    } else if (linesOfFile.get(i).charAt(j) == linesOfFile.get(i + 1).charAt(j) && linesOfFile.get(i + 1).charAt(j) == linesOfFile.get(i + 2).charAt(j) && linesOfFile.get(i).charAt(j) == 'O') {
+                        output = "O";
+                    } else if (linesOfFile.get(i).charAt(j) == linesOfFile.get(i + 1).charAt(j) && linesOfFile.get(i + 1).charAt(j) == linesOfFile.get(i + 2).charAt(j) && linesOfFile.get(i).charAt(j) == 'X') {
+                        output = "X";
+                    } else if (linesOfFile.get(0).charAt(0) == linesOfFile.get(1).charAt(1) && linesOfFile.get(1).charAt(1) == linesOfFile.get(2).charAt(2) && linesOfFile.get(0).charAt(0) == 'O') {
+                        output = "O";
+                    } else if (linesOfFile.get(0).charAt(0) == linesOfFile.get(1).charAt(1) && linesOfFile.get(1).charAt(1) == linesOfFile.get(2).charAt(2) && linesOfFile.get(0).charAt(0) == 'X') {
+                        output = "X";
+                    } else {
+                        output = "draw";
+                    }
                 }
             }
 
