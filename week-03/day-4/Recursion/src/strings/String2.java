@@ -16,7 +16,7 @@ public class String2 {
 
         if (text.length()<1) {
             return text;
-        }else if (text.charAt(0)== charToDelete){
+        }else if (text.charAt(0) == charToDelete){
             return deleteX(text.substring(1), charToDelete);
         }
 
