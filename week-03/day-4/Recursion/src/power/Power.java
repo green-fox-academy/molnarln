@@ -5,7 +5,7 @@ public class Power {
     // the value of base to the n power, so powerN(3, 2) is 9 (3 squared).
     public static void main(String[] args) {
         int base = 3;
-        int power = 2;
+        int power = 3;
         System.out.println(toPower(base, power));
     }
 
