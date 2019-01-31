@@ -19,7 +19,7 @@ public class String2 {
         }else if (text.charAt(0)== charToDelete){
             return deleteX(text.substring(1), charToDelete);
         }
-        
+
         first = text.charAt(0);
         return first + deleteX(text.substring(1), charToDelete);
 
