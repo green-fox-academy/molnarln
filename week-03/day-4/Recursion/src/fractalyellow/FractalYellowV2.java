@@ -10,7 +10,11 @@ public class FractalYellowV2 {
         int startX = 0;
         int startY = 0;
         int size = 729;
+        graphics.setColor(Color.yellow);
+        graphics.fillRect(0,0, WIDTH, HEIGHT);
+        graphics.setColor(Color.BLACK);
         drawYellowFractalV2(graphics, startX, startY, size);
+
     }
     public static void drawYellowFractalV2(Graphics graphics, int startX, int startY, int size){
         if (size > 0) {

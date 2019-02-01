@@ -20,9 +20,6 @@ public class StarryNight {
             graphics.fillRect((int)(Math.random()*10*i),(int)(Math.random()*10*i), 2,2  );
         }
 
-
-
-
     }
 
     // Don't touch the code below
