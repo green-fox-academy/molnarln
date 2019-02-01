@@ -1,10 +1,8 @@
-package triangles;
-import javax.swing.*;
+package circles;
+
 import java.awt.*;
 
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
-
-public class Triangles {
+public class Circles {
     Graphics graphics;
     int startX;
     int startY;
@@ -12,7 +10,7 @@ public class Triangles {
     int width;
 
 
-    public Triangles(int startX, int startY, int height, int width){
+    public Circles(int startX, int startY, int height, int width){
 
         this.startX = startX;
         this.startY = startY;
@@ -20,7 +18,7 @@ public class Triangles {
         this.width = width;
     }
 
-    public void trianglesMain(Graphics graphics) {
+    public void circleParameters(Graphics graphics) {
 /*        int startX = 450;
         int startY = 0;
         int height = 400;
@@ -29,16 +27,16 @@ public class Triangles {
         graphics.drawLine(startX - width, startY, startX, startY + height * 2);
         graphics.drawLine(startX + width, startY, startX, startY + height * 2);
 
-        drawTriangles(graphics, startX, startY, height, width);
+        drawCircles(graphics, startX, startY, height, width);
     }
-    public static void drawTriangles(Graphics graphics, int startX, int startY, int height, int width){
+    public static void drawCircles(Graphics graphics, int startX, int startY, int height, int width){
         if (height > 5  ) {
 
             Color c = new Color((int)(255*Math.random()), (int)(255*Math.random()),(int)(255*Math.random()));
 
-            drawTriangles(graphics, startX - width / 2, startY, height / 2, width / 2);
-            drawTriangles(graphics, startX + width / 2 , startY, height / 2, width / 2);
-            drawTriangles(graphics, startX, startY + height, height/2, width / 2);
+            drawCircles(graphics, startX - width / 2, startY, height / 2, width / 2);
+            drawCircles(graphics, startX + width / 2 , startY, height / 2, width / 2);
+            drawCircles(graphics, startX, startY + height, height/2, width / 2);
 
             graphics.setColor(c);
             graphics.drawLine(startX, startY, startX + width / 2, startY + height);
