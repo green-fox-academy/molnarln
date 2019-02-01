@@ -11,14 +11,10 @@ public class String3 {
 
 
     public static String insertStar(String text) {
-
         int n = text.length();
-
         if (n < 1) {
             return text;
         }
-
         return text.charAt(0) + "*" + insertStar(text.substring(1));
-
     }
 }
