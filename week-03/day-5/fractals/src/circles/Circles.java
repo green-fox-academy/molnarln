@@ -6,42 +6,37 @@ public class Circles {
     Graphics graphics;
     int startX;
     int startY;
-    int height;
-    int width;
+    int radius;
 
 
-    public Circles(int startX, int startY, int height, int width){
+    public Circles(int startX, int startY, int radius){
 
         this.startX = startX;
         this.startY = startY;
-        this.height = height;
-        this.width = width;
+        this.radius = radius;
+
     }
 
     public void circleParameters(Graphics graphics) {
-/*        int startX = 450;
-        int startY = 0;
-        int height = 400;
-        int width = 500;*/
-        graphics.drawLine(startX-width, startY, startX + width, startY);
-        graphics.drawLine(startX - width, startY, startX, startY + height * 2);
-        graphics.drawLine(startX + width, startY, startX, startY + height * 2);
-
-        drawCircles(graphics, startX, startY, height, width);
+        drawCircles(graphics, startX, startY, radius);
     }
-    public static void drawCircles(Graphics graphics, int startX, int startY, int height, int width){
-        if (height > 5  ) {
+
+    public static void drawCircles(Graphics graphics, int startX, int startY, int radius){
+        if (radius > 5  ) {
 
             Color c = new Color((int)(255*Math.random()), (int)(255*Math.random()),(int)(255*Math.random()));
 
-            drawCircles(graphics, startX - width / 2, startY, height / 2, width / 2);
-            drawCircles(graphics, startX + width / 2 , startY, height / 2, width / 2);
-            drawCircles(graphics, startX, startY + height, height/2, width / 2);
+/*            drawCircles(graphics, startX - radius / 2, startY, radius / 2);
+            drawCircles(graphics, startX + radius / 2 , startY, radius / 2);
+            drawCircles(graphics, startX, startY + radius, radius/2);*/
 
-            graphics.setColor(c);
-            graphics.drawLine(startX, startY, startX + width / 2, startY + height);
-            graphics.drawLine(startX, startY, startX - width / 2, startY + height);
-            graphics.drawLine(startX - width / 2, startY + height, startX + width / 2, startY + height);
+            /*graphics.setColor(c);*/
+            graphics.drawOval(startX, startY, radius, radius);
+            graphics.drawOval(startX-radius / 2, startY + radius, radius, radius);
+            graphics.drawOval(startX+radius / 2, startY + radius, radius, radius);
+
+
+
         }
     }
 }
