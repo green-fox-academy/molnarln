@@ -60,6 +60,7 @@ public class Farm {
                 temp.remove(leastHunger);
             }
         }
+
         animals = temp;
     }
 

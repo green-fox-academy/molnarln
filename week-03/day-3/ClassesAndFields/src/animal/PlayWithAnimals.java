@@ -54,5 +54,16 @@ public class PlayWithAnimals {
             System.out.println(animal.hunger);
         }
 
+        System.out.println("------------------------------------------");
+        Animal cat = new Animal();
+        farm1.addAnimal(cat);
+        cat.play();
+        cat.play();
+        cat.play();
+
+        for (Animal animal:farm1.animals
+        ) {
+            System.out.println(animal.hunger);
+        }
     }
 }
