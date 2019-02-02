@@ -1,5 +1,4 @@
 package sharpie;
-
 public class inkUsage {
     public static void main(String[] args) {
         Sharpie first = new Sharpie("blue", 34);
