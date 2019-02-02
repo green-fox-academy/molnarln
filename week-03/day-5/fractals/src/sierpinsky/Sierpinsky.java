@@ -37,7 +37,7 @@ public class Sierpinsky {
 
             Color c = new Color((int)(255*Math.random()), (int)(255*Math.random()),(int)(255*Math.random()));
 
-            graphics.setColor(Color.BLACK);
+            graphics.setColor(c);
 
             graphics.fillRect(startX, startY, size, size);
             graphics.fillRect(startX-size*2/3, startY - size * 2/3, size/3, size/3);

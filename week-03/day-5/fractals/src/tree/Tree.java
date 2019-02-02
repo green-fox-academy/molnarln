@@ -1,62 +1,49 @@
-/*
 package tree;
 
 import java.awt.*;
 
 public class Tree {
 
-        Graphics graphics;
-        int startX;
-        int startY;
-        int size;
+    Graphics graphics;
+    double startX;
+    double startY;
+    double endX;
+    double endY;
+    double angle;
+    double size;
 
 
-        public Sierpinsky(int startX, int startY, int size){
+    public Tree(double startX, double startY, double size, double angle){
 
-            this.startX = startX;
-            this.startY = startY;
-            this.size = size;
+        this.startX = startX;
+        this.startY = startY;
+        this.angle = angle;
+        this.size = size;
 
-        }
-
-        public void circleParameters(Graphics graphics) {
-            drawSierpinsky(graphics, startX, startY, size);
-        }
-
-        public static void drawSierpinsky(Graphics graphics, int startX, int startY, int size){
-            if (size > 0  ) {
-                drawSierpinsky(graphics, startX-size*2/3, startY-size*2/3, size/3);
-                drawSierpinsky(graphics, startX+size/3, startY-size*2/3, size/3);
-                drawSierpinsky(graphics, startX+size*4/3, startY-size*2/3, size/3);
-
-                drawSierpinsky(graphics, startX-size*2/3, startY+size/3, size/3);
-
-                drawSierpinsky(graphics, startX-size*2/3, startY+size*4/3, size/3);
-                drawSierpinsky(graphics, startX+size/3, startY+size*4/3, size/3);
-                drawSierpinsky(graphics, startX+size*4/3, startY+size*4/3, size/3);
-
-                drawSierpinsky(graphics, startX+size*4/3, startY+size/3, size/3);
-
-                Color c = new Color((int)(255*Math.random()), (int)(255*Math.random()),(int)(255*Math.random()));
-
-                graphics.setColor(Color.BLACK);
-
-                graphics.fillRect(startX, startY, size, size);
-                graphics.fillRect(startX-size*2/3, startY - size * 2/3, size/3, size/3);
-                graphics.fillRect(startX+size/3, startY - size * 2/3, size/3, size/3);
-                graphics.fillRect(startX+size*4/3, startY - size * 2/3, size/3, size/3);graphics.fillRect(startX+size/3, startY - size * 2/3, size/3, size/3);
-
-                graphics.fillRect(startX-size*2/3, startY + size / 3, size/3, size/3);
-                graphics.fillRect(startX-size*2/3, startY + size * 4 / 3, size/3, size/3);
-
-                graphics.fillRect(startX+size/3, startY + size * 4/3, size/3, size/3);
-                graphics.fillRect(startX+size*4/3, startY + size * 4/3, size/3, size/3);
-
-                graphics.fillRect(startX+size*4/3, startY + size /3, size/3, size/3);
-
-            }
-        }
     }
 
+    public void treeParameters(Graphics graphics) {
+        drawTree(graphics, startX, startY, size, angle);
+    }
+
+    public static void drawTree(Graphics graphics, double startX, double startY, double size, double angle){
+        if (size > 0  ) {
+            Color c = new Color((int)(255*Math.random()), (int)(255*Math.random()),(int)(255*Math.random()));
+
+            graphics.setColor(Color.BLACK);
+
+            double endXA   = startX + size * Math.sin(angle);
+            double endYA   = startY + size * Math.cos(angle);
+            graphics.drawLine((int)startX, (int)startY, (int)endXA, (int)endYA);
+
+            double endXB   = startX + size * Math.sin(180-angle);
+            double endYB   = startY + size * Math.cos(180-angle);
+            graphics.drawLine((int)startX, (int)startY, (int)endXB, (int)endYB);
+
+            drawTree(graphics, endXB, endYB, size-1, angle);
+            drawTree(graphics, endXA, endYA, size-1, angle);
+
+        }
+    }
 }
-*/
+

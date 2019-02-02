@@ -1,4 +1,3 @@
-/*
 package tree;
 
 import javax.swing.*;
@@ -20,15 +19,15 @@ public class TreeMain {
         jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
         jFrame.pack();
+
     }
 
     static class ImagePanel extends JPanel {
         @Override
         protected void paintComponent(Graphics graphics) {
             super.paintComponent(graphics);
-            new Sierpinsky(300, 300, 300).circleParameters(graphics);
+            new Tree(400,600, 40, 20).treeParameters(graphics);
 
         }
     }
 }
-*/
