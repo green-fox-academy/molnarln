@@ -34,11 +34,12 @@ public class Ship {
     }
 
     public boolean battle (Ship shipToBattleWith){
-        boolean win = false;
+
         int scoreThis=0;
         int scoreShipToBattle = 0;
         int alivePiratesOnThis = 0;
         int alivePiratesOnToBattleWith = 0;
+        int numberOfWins = 0;
 
         for (Pirate pirate: this.ship
              ) {
@@ -66,6 +67,7 @@ public class Ship {
                     pirate.drinkSomeRum();
                 }
             }
+            numberOfWins ++;
             return true;
 
         }else if(scoreShipToBattle > scoreThis) {
