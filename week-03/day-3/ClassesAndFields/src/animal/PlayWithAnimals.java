@@ -48,11 +48,13 @@ public class PlayWithAnimals {
             System.out.println(animal.hunger);
         }
         System.out.println("------------------------------------------");
+        System.out.println("Free slots before slaughter: " + farm1.freeSlots);
         farm1.slaughter();
         for (Animal animal:farm1.animals
         ) {
             System.out.println(animal.hunger);
         }
+        System.out.println("Free slots after slaughter: " + farm1.freeSlots);
 
         System.out.println("------------------------------------------");
         Animal cat = new Animal();

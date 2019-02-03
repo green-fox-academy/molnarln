@@ -40,18 +40,25 @@ public class Farm {
     }
 
     public void slaughter (){
-        Animal leastHunger = new Animal();
-        leastHunger = this.animals.get(0);
-
-        for (Animal animal:this.animals
+      /*  Animal leastHunger = new Animal();*/
+        int leastHunger = this.animals.get(0).hunger;
+        int indexOfLeastHunger=0;
+/*        for (Animal animal:this.animals
              ) {
             if(animal.hunger < leastHunger.hunger){
                 leastHunger = animal;
             }
+        }*/
+        for (int i = 0; i < this.animals.size() ; i++) {
+            if(animals.get(i).hunger< leastHunger){
+                indexOfLeastHunger = i;
+            }
         }
+        animals.remove(indexOfLeastHunger);
 
 
-        List<Animal> temp = new ArrayList<>();
+
+/*        List<Animal> temp = new ArrayList<>();
         temp = this.animals;
 
         for (int i = 0; i < animals.size(); i++) {
@@ -59,9 +66,10 @@ public class Farm {
             if(leastHunger == animals.get(i)){
                 temp.remove(leastHunger);
             }
-        }
+        }*/
+        /*animals = temp;*/
 
-        animals = temp;
+        freeSlots ++;
     }
 
 }
