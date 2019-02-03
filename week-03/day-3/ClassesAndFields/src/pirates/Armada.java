@@ -10,6 +10,10 @@ public class Armada {
         armada = new ArrayList<>();
     }
 
+    public void addToArmada(Ship shipToAdd){
+        this.armada.add(shipToAdd);
+    }
+
     public void war (Armada anotherArmadaToWarWith){
         for (int i = 0; i < this.armada.size(); i++) {
             for (int j = 0; j <anotherArmadaToWarWith.armada.size(); j++) {
