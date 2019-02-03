@@ -12,7 +12,10 @@ public class PiratesMain {
         jackSparrow.drinkSomeRum();
         jackSparrow.drinkSomeRum();
 
+        /*blackBeard.die();*/
+
         jackSparrow.brawl(blackBeard);
+
 
         System.out.println(jackSparrow.getIsDead());
         System.out.println(blackBeard.getIsDead());

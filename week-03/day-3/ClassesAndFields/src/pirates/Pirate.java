@@ -35,22 +35,17 @@ public class Pirate {
     }
 
     public void brawl(Pirate pirateToBrawlWith){
-        int chance = (int)(0+Math.random()*3);
+        int chance = (int)(Math.random()*3);
 
-        if(chance < 1){
+        if(chance < 1 && !pirateToBrawlWith.isDead){
             this.die();
-            System.out.println(chance);
-            System.out.println(1/3);
-        }else if (chance >= 1 && chance < 2){
+          }else if (chance >= 1 && chance < 2 && !pirateToBrawlWith.isDead){
             pirateToBrawlWith.die();
-            System.out.println(chance);
-            System.out.println(1/3);
-            System.out.println(2/3);
-        }else if (chance >= 2){
+        }else if (chance >= 2 && !pirateToBrawlWith.isDead){
             this.die();
             pirateToBrawlWith.die();
-            System.out.println(chance);
-            System.out.println(2/3);
+        }else{
+            System.out.println("He is dead!");
         }
     }
 }
