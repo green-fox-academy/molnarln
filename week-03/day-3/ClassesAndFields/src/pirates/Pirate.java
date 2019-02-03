@@ -5,11 +5,18 @@ import java.util.Random;
 public class Pirate {
     int levelOfIntoxication;
     boolean isDead;
+    String name;
 
     public Pirate(){
         levelOfIntoxication = 0;
         isDead = false;
     }
+    public Pirate (String name){
+        levelOfIntoxication = 0;
+        isDead = false;
+        this.name = name;
+    }
+
     public void drinkSomeRum(){
         if (!isDead){
             levelOfIntoxication ++;
