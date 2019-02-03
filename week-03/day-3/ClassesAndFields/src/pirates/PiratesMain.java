@@ -3,18 +3,21 @@ package pirates;
 public class PiratesMain {
     public static void main(String[] args) {
         Pirate jackSparrow = new Pirate();
+        Pirate blackBeard = new Pirate();
 
+        blackBeard.drinkSomeRum();
         jackSparrow.drinkSomeRum();
         jackSparrow.drinkSomeRum();
         jackSparrow.drinkSomeRum();
         jackSparrow.drinkSomeRum();
         jackSparrow.drinkSomeRum();
 
-        jackSparrow.howItGoingMate();
+        jackSparrow.brawl(blackBeard);
 
-        jackSparrow.die();
-        jackSparrow.drinkSomeRum();
-        jackSparrow.howItGoingMate();
+        System.out.println(jackSparrow.getIsDead());
+        System.out.println(blackBeard.getIsDead());
+
+
 
 
 
