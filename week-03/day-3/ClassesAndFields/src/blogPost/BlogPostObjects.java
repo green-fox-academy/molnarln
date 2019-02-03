@@ -21,5 +21,29 @@ public class BlogPostObjects {
         blog3.publicationDate = "2017.03.28.";
         blog3.text = "Daniel Hanley, a cybersecurity engineer at IBM, doesn’t want to be the center of attention. When I asked to take his picture outside one of IBM’s New York City offices, he told me that he wasn’t really into the whole organizer profile thing.";
 
+        Blog setOfBlogs = new Blog();
+
+        setOfBlogs.addBlogPosts(blog1);
+        setOfBlogs.addBlogPosts(blog2);
+        setOfBlogs.addBlogPosts(blog3);
+
+        for (BlogPost blogPost:setOfBlogs.blogPosts
+             ) {
+            System.out.println(blogPost.authorName);
+        }
+        System.out.println();
+        setOfBlogs.deleteBlogPost(1);
+
+        for (BlogPost blogPost:setOfBlogs.blogPosts
+        ) {
+            System.out.println(blogPost.authorName);
+        }
+        setOfBlogs.updateBlogPost(1, blog1);
+        System.out.println("\n"+"BlogPosts after update:");
+        for (BlogPost blogPost:setOfBlogs.blogPosts
+        ) {
+            System.out.println(blogPost.authorName);
+        }
+
     }
 }
