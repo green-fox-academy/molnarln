@@ -1,5 +1,6 @@
 package aircraftcarrier;
 
+import javax.sound.midi.Soundbank;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,13 +23,43 @@ public class Carrier {
     }
 
     public void fill () {
-        for (Aircraft aircaft:aircrafts
-             ) {
-            aircaft.refill(storeOfCarrierAmmo);
-            storeOfCarrierAmmo -= aircaft.maxAmmo;
+        int sumOfNeededAmmos = 0;
+        try {
+            if (storeOfCarrierAmmo == 0){
+                throw new Exception();
+            }
+        }catch (Exception ex){
+            System.out.println("The carrier's ammostore is empty!");
         }
+        //Calculate needed ammo:
+        for (Aircraft aircraft:aircrafts
+             ) {
+            if (aircraft.ammoStore < aircraft.maxAmmo){
+                sumOfNeededAmmos += aircraft.maxAmmo;
+            }
+        }
+        if (sumOfNeededAmmos < storeOfCarrierAmmo){
+            for (Aircraft aircraft:aircrafts
+            ) {
+                aircraft.refill(storeOfCarrierAmmo);
+                storeOfCarrierAmmo -= aircraft.maxAmmo;
+            }
 
+        }else if (sumOfNeededAmmos > storeOfCarrierAmmo){
+            for (Aircraft aircraft:aircrafts
+                 ) {
+                if (aircraft.type.equals("F35")){
+                    aircraft.refill(aircraft.maxAmmo);
+                    storeOfCarrierAmmo -= aircraft.maxAmmo;
+                }
+            }
+            for (Aircraft aircraft:aircrafts
+                 ) {
+                if (!aircraft.type.equals("F35")){
+                    aircraft.refill(aircraft.maxAmmo);
+                    storeOfCarrierAmmo -= aircraft.maxAmmo;
+                }
+            }
+        }
     }
-
-
 }
