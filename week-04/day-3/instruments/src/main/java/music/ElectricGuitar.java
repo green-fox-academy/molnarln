@@ -13,7 +13,7 @@ public class ElectricGuitar extends StringedInstrument {
         this.name = "Electric Guitar";
     }
 
-    protected String sound(){
+    public String sound(){
         return "that goes Twang";
     }
 

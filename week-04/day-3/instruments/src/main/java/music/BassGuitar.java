@@ -11,7 +11,7 @@ public class BassGuitar extends StringedInstrument {
         super(numberOfStrings);
         this.name = "Bass Guitar";
     }
-    protected String sound(){
+    public String sound(){
         return "that goes Duum-duum-duum";
     }
 }

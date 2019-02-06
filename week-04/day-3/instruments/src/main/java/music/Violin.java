@@ -10,7 +10,7 @@ public class Violin extends StringedInstrument {
         super(numberOfStrings);
         this.name = "Violin";
     }
-    protected String sound(){
+    public String sound(){
         return "that goes Screech";
     }
 
