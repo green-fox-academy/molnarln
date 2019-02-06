@@ -1,7 +1,7 @@
 package cloneable;
 
 
-public class Student extends Person{
+public class Student extends Person {
     String previousOrganization;
     int skippedDays;
 
@@ -37,6 +37,4 @@ public class Student extends Person{
 
         return cloneStudent;
     }
-
-
 }
