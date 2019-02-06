@@ -17,14 +17,15 @@ public class Thing implements Comparable<Thing> {
     }
 
     public int compareTo(Thing thingToCompare){
+
         if (this.completed == thingToCompare.completed){
             return this.name.compareTo(thingToCompare.name);
         }
-        return this.name.compareTo(thingToCompare.name);
-
+        if (this.completed){
+            return -1;
+        }
+        return 1;
     }
-
-
 
     @Override
     public String toString() {
