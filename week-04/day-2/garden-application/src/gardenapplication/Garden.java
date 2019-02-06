@@ -15,9 +15,7 @@ public class Garden {
         for (Plant plant: plants
              ) {
             if (plant.currentWaterAmount < plant.whenToWater){
-
                 divider ++;
-
             }
         }
         for ( Plant plant:plants
@@ -33,6 +31,5 @@ public class Garden {
              ) {
             plant.getState();
         }
-
     }
 }

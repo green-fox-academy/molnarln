@@ -17,5 +17,4 @@ public class Flower extends Plant {
             System.out.println("The " + color + " Flower doesnt need water.");
         }
     }
-
 }

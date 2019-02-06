@@ -19,7 +19,5 @@ public class Plant {
             System.out.println("The " + color + " Plant doesnt need water.");
         }
     }
-
-
 }
 

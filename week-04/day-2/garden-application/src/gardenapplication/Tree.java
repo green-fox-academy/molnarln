@@ -2,7 +2,6 @@ package gardenapplication;
 
 public class Tree extends Plant {
 
-
     public Tree (String color) {
         super(color);
         whenToWater = 10;
@@ -17,5 +16,4 @@ public class Tree extends Plant {
             System.out.println("The " + color + " Tree doesnt need water.");
         }
     }
-
 }
