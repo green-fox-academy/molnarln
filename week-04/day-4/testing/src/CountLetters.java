@@ -14,25 +14,17 @@ public class CountLetters {
              ) {
             arrayFromString.add(c);
         }
-
         char currentUniqueChar = ' ';
-
         for (char c : arrayFromString) {
             int currentNumOccurence = 1;
 
             for (char z : arrayFromString) {
                 if (z == c){
-                    map.replace(c, currentNumOccurence);
+                    map.put(c, currentNumOccurence);
                     currentNumOccurence++;
-
-                }else{
-                    currentUniqueChar = c;
-                    map.put(currentUniqueChar, 0);
                 }
-
             }
         }
         return (HashMap)map;
-
     }
 }

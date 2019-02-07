@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 import static org.junit.Assert.*;
 
@@ -54,6 +55,55 @@ public class MultipleTests {
 
         assertEquals(true, anagramTest.isAnagram(firstInput, secondInput));
 
+    }
+
+    @Test
+    public void CountLettersTest_Output_OnlyUniqueChars(){
+        HashMap<Character, Integer> testOutputMap = new HashMap<>();
+
+        String inputString = "input";
+
+        testOutputMap.put('i', 1);
+        testOutputMap.put('n', 1);
+        testOutputMap.put('p', 1);
+        testOutputMap.put('u', 1);
+        testOutputMap.put('t', 1);
+
+        CountLetters testMethod = new CountLetters();
+        assertEquals(testOutputMap, testMethod.countLetters(inputString));
+    }
+    @Test
+    public void CountLettersTest_Output_EveryCharDoubles(){
+        HashMap<Character, Integer> testOutputMap = new HashMap<>();
+
+        String inputString = "inputinput";
+
+        testOutputMap.put('i', 2);
+        testOutputMap.put('n', 2);
+        testOutputMap.put('p', 2);
+        testOutputMap.put('u', 2);
+        testOutputMap.put('t', 2);
+
+
+        CountLetters testMethod = new CountLetters();
+        assertEquals(testOutputMap, testMethod.countLetters(inputString));
+    }
+    @Test
+    public void CountLettersTest_Output_EveryCharDoublesWithSpace(){
+        HashMap<Character, Integer> testOutputMap = new HashMap<>();
+
+        String inputString = "input input";
+
+        testOutputMap.put('i', 2);
+        testOutputMap.put('n', 2);
+        testOutputMap.put('p', 2);
+        testOutputMap.put('u', 2);
+        testOutputMap.put('t', 2);
+        testOutputMap.put(' ', 1);
+
+
+        CountLetters testMethod = new CountLetters();
+        assertEquals(testOutputMap, testMethod.countLetters(inputString));
     }
 
 
