@@ -13,13 +13,16 @@ public class Thing implements Comparable<Thing> {
     }
 
     public void complete() {
+
         this.completed = true;
     }
 
+    @Override
     public int compareTo(Thing thingToCompare){
 
         if (this.completed == thingToCompare.completed){
-            return this.name.compareTo(thingToCompare.name);
+            return this.name.compareTo(thingToCompare.name);    // Itt a Thing objektumra vonatkozó compareTo-t írjuk felül, a
+                                                                //  a belső stringeket vizsgáló compareTo változatlan marad
         }
         if (this.completed){
             return -1;
