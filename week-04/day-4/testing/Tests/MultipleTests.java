@@ -106,6 +106,19 @@ public class MultipleTests {
         assertEquals(testOutputMap, testMethod.countLetters(inputString));
     }
 
+    @Test
+    public void FibonacciTest_FibNumber_Index5(){
+        Fibonacci fibTest = new Fibonacci();
+        int index =5;
+        assertEquals((Integer)5, (Integer)fibTest.indexOfFib(index));
+    }
+    @Test
+    public void FibonacciTest_FibNumber_Index0(){
+        Fibonacci fibTest = new Fibonacci();
+        int index =0;
+        assertEquals((Integer)0, (Integer)fibTest.indexOfFib(index));
+    }
+
 
 
 
