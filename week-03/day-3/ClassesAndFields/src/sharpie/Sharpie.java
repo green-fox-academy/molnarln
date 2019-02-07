@@ -15,7 +15,7 @@ public class Sharpie {
         inkAmount -=1;
     }
 
-    public double getInkAmount() {
+    public double getInkAmount() {  //made this, because this way original inkamount is not public, can not accessible out from the package
         return this.inkAmount;
     }
 }
