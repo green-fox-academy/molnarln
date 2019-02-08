@@ -14,7 +14,6 @@ public class MostCommonChar {
         ) {
             arrayFromString.add(c);
         }
-        char currentUniqueChar = ' ';
         for (char c : arrayFromString) {
             int currentNumOccurence = 1;
 
