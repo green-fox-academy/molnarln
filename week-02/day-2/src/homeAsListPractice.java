@@ -6,12 +6,12 @@ import java.util.List;
 public class homeAsListPractice {
     public static void main(String[] args) {
 
-        ArrayList<String> myArrayList = new ArrayList<String>(Arrays.asList("one", "two", "three", "four", "five"));
+        List<String> myArrayList = new ArrayList<String>(Arrays.asList("one", "two", "three", "four", "five"));
         System.out.println(myArrayList.toString()+ " - this is an ArrayList of strings");
 
         String[] stringArray =myArrayList.toArray(new String[myArrayList.size()]);
-        System.out.println(Arrays.toString(stringArray) + "this is an array created form ArrayList");
-        List listedArray = Arrays.asList(stringArray);
+        System.out.println(Arrays.toString(stringArray) + "this is an array created from ArrayList");
+        List<String> listedArray = Arrays.asList(stringArray);
         System.out.println(listedArray.toString()+"this is the unchanged list");
 
         listedArray.set(0, "changed");

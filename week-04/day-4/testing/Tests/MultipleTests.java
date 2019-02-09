@@ -108,15 +108,14 @@ public class MultipleTests {
 
     @Test
     public void FibonacciTest_FibNumber_Index5(){
-        Fibonacci fibTest = new Fibonacci();
         int index =5;
-        assertEquals((Integer)5, (Integer)fibTest.indexOfFib(index));
+        assertEquals((Integer)5, (Integer) Fibonacci.indexOfFib(index)); //itt Static method-ként hivatkoztam az indexOfFib-re
     }
     @Test
     public void FibonacciTest_FibNumber_Index0(){
         Fibonacci fibTest = new Fibonacci();
         int index =0;
-        assertEquals((Integer)0, (Integer)fibTest.indexOfFib(index));
+        assertEquals((Integer)0, (Integer)fibTest.indexOfFib(index)); //itt pedig létrehoztam egy Fibonacci változót, de felesleges, mivel static, és nem kell belőle instance
     }
 
 
