@@ -38,6 +38,7 @@ public class MostCommonChar {
                 mostCommon = c;
             }
         }
+        System.out.println(maxvalue);
         return mostCommon;
     }
 }
