@@ -38,25 +38,10 @@ public class Carrier {
                 sumOfNeededAmmos += aircraft.maxAmmo;
             }
         }
-        if (sumOfNeededAmmos < storeOfCarrierAmmo){
-            for (Aircraft aircraft:aircrafts
-            ) {
-                aircraft.refill(storeOfCarrierAmmo);
-                storeOfCarrierAmmo -= aircraft.maxAmmo;
-            }
-
-        }else if (sumOfNeededAmmos > storeOfCarrierAmmo){
-            for (Aircraft aircraft:aircrafts
-                 ) {
-                if (aircraft.type.equals("F35")){
-                    aircraft.refill(aircraft.maxAmmo);
-                    storeOfCarrierAmmo -= aircraft.maxAmmo;
-                }
-            }
-            for (Aircraft aircraft:aircrafts
-                 ) {
-                if (!aircraft.type.equals("F35")){
-                    aircraft.refill(aircraft.maxAmmo);
+        if (sumOfNeededAmmos > storeOfCarrierAmmo && storeOfCarrierAmmo >= 0){
+            for (Aircraft aircraft:aircrafts) {
+                if (aircraft.isPriority() && storeOfCarrierAmmo >= 0) {
+                    aircraft.refill(aircraft.maxAmmo > storeOfCarrierAmmo? storeOfCarrierAmmo : aircraft.maxAmmo);
                     storeOfCarrierAmmo -= aircraft.maxAmmo;
                 }
             }

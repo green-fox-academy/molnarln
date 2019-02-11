@@ -22,11 +22,10 @@ public class Aircraft {
 
     public int refill (int amountOfRefill) {
         int reaminingAmmo = amountOfRefill-maxAmmo;
-        if(ammoStore<amountOfRefill){
+        if(ammoStore < amountOfRefill){
             ammoStore = maxAmmo;
-        }else if (ammoStore > amountOfRefill){
-            ammoStore = amountOfRefill;
         }
+        ammoStore = amountOfRefill;
         return reaminingAmmo;
     }
 

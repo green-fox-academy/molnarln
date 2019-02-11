@@ -5,7 +5,7 @@ public class F35 extends Aircraft{
         this.type = "F35";
         this.maxAmmo = 8;
         this.baseDamage = 30;
-        this.priority = false;
+        this.priority = true;
 
 
 
