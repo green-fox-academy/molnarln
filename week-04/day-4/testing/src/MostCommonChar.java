@@ -8,22 +8,17 @@ public class MostCommonChar {
 
         Map<Character, Integer> map = new HashMap<>();
 
-        ArrayList<Character> arrayFromString = new ArrayList<>();
-
-        for (char c: inputString.toCharArray()
-        ) {
-            arrayFromString.add(c);
-        }
-        for (char c : arrayFromString) {
+        for (char c : inputString.toCharArray()) {
             int currentNumOccurence = 1;
 
-            for (char z : arrayFromString) {
+            for (char z : inputString.toCharArray()) {
                 if (z == c){
                     map.put(c, currentNumOccurence);
                     currentNumOccurence++;
                 }
             }
         }
+        System.out.println(map);
         int maxvalue = 0;
         char mostCommon = ' ';
         for (int value: map.values()

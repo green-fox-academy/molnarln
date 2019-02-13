@@ -17,6 +17,7 @@ public class Domino implements Comparable<Domino>{
         return right;
     }
 
+    @Override
     public int compareTo (Domino domino) {
         if (this.left < domino.left){
             return -1;
