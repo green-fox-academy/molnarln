@@ -4,6 +4,7 @@ import java.nio.file.Paths;
 import java.nio.file.Files;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CopyFile {
     public static void main(String[] args) {
@@ -20,12 +21,19 @@ public class CopyFile {
     }
 
     public static void filePath(Path filePath) {
-        try{
+        try {
 
             Files.copy(filePath, Paths.get("my-file-copy.txt"));
             System.out.println(true);
 
-        }catch (Exception ex){
+            List<String> allLines = new ArrayList<>();
+            allLines.addAll(Files.readAllLines(filePath));
+
+            Path onlyContent = Paths.get("onlycontentiswritten.txt");
+
+            Files.write(onlyContent, allLines);
+
+        } catch (Exception ex) {
             System.out.println(false);
         }
     }
