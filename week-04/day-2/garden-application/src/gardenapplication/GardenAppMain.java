@@ -1,5 +1,8 @@
 package gardenapplication;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class GardenAppMain {
     public static void main(String[] args) {
 
@@ -13,6 +16,13 @@ public class GardenAppMain {
         garden1.plants.add(flower2);
         garden1.plants.add(tree1);
         garden1.plants.add(tree2);
+
+        List<Plant> listOfPlants = Arrays.asList(flower1, flower2, tree1, tree2);
+
+        listOfPlants.stream()
+                .filter(plant -> plant instanceof Tree)
+                .forEach(plant -> System.out.println(plant.color));
+
 
         garden1.presentMyGarden();
         System.out.println();
