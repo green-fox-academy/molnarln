@@ -92,14 +92,26 @@ public class StreamExercise {
         List<Fox> foxes = Arrays.asList(
                 new Fox("fox1", "green", 10),
                 new Fox("fox2", "blue", 12),
-                new Fox("fox3", "brown", 12),
+                new Fox("fox3", "green", 3),
                 new Fox("fox4", "purple", 20),
                 new Fox("fox5", "yellow", 25));
 
         //Write a Stream Expression to find the foxes with green color!
+        System.out.println("\nThe green fox is: ");
         foxes.stream()
-                .filter(f->f.getColor().equalsIgnoreCase("green"))
+                .filter(f -> f.getColor().equalsIgnoreCase("green"))
                 .forEach(fox -> System.out.println(fox.getName()));
 
+        //Write a Stream Expression to find the foxes with green color, and age less then 5 years!
+        System.out.println("\nThe green foxis with less age than 5 are:");
+        foxes.stream()
+                .filter(fox -> fox.getColor().equalsIgnoreCase("green") && fox.getAge() < 5)
+                .forEach(fox -> System.out.println(fox.getName()));
+
+        //Write a Stream Expression to find the frequency of foxes by color!
+
+        Map<String, Long> mapOfFoxes = foxes.stream()
+                .collect(Collectors.groupingBy(f -> f.getColor(), Collectors.counting()));
+        System.out.println(mapOfFoxes);
     }
 }
