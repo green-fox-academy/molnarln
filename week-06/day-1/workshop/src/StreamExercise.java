@@ -109,9 +109,10 @@ public class StreamExercise {
                 .forEach(fox -> System.out.println(fox.getName()));
 
         //Write a Stream Expression to find the frequency of foxes by color!
-        System.out.println("\nThe frequencies of colors are:");
+        System.out.println("\nThe frequency of colors are:");
         Map<String, Long> mapOfFoxes = foxes.stream()
-                .collect(Collectors.groupingBy(Fox::getColor, Collectors.counting()));
+                .collect(Collectors.groupingBy(Fox::getColor, Collectors.counting())); //or can use that code, because counting is a special reducing:
+            //  .collect(Collectors.groupingBy(Fox::getColor, Collectors.reducing(0L, e -> 1L, (a, b) -> a + b)));
         System.out.println(mapOfFoxes);
     }
 }
