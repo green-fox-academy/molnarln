@@ -97,21 +97,21 @@ public class StreamExercise {
                 new Fox("fox5", "yellow", 25));
 
         //Write a Stream Expression to find the foxes with green color!
-        System.out.println("\nThe green fox is: ");
+        System.out.println("\nExercise10:\nThe list of green foxes:");
         foxes.stream()
                 .filter(f -> f.getColor().equalsIgnoreCase("green"))
                 .forEach(fox -> System.out.println(fox.getName()));
 
         //Write a Stream Expression to find the foxes with green color, and age less then 5 years!
-        System.out.println("\nThe green foxis with less age than 5 are:");
+        System.out.println("\nThe green foxes that younger than 5 are:");
         foxes.stream()
                 .filter(fox -> fox.getColor().equalsIgnoreCase("green") && fox.getAge() < 5)
                 .forEach(fox -> System.out.println(fox.getName()));
 
         //Write a Stream Expression to find the frequency of foxes by color!
-
+        System.out.println("\nThe frequencies of colors are:");
         Map<String, Long> mapOfFoxes = foxes.stream()
-                .collect(Collectors.groupingBy(f -> f.getColor(), Collectors.counting()));
+                .collect(Collectors.groupingBy(Fox::getColor, Collectors.counting()));
         System.out.println(mapOfFoxes);
     }
 }
