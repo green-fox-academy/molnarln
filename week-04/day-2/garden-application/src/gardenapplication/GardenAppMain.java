@@ -1,7 +1,10 @@
 package gardenapplication;
 
 import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
 
 public class GardenAppMain {
     public static void main(String[] args) {
@@ -34,7 +37,5 @@ public class GardenAppMain {
         garden1.waterPlants(70);
         System.out.println();
         garden1.presentMyGarden();
-
-
     }
 }
