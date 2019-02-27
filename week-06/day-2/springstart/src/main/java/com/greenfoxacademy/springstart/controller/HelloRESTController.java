@@ -13,7 +13,7 @@ public class HelloRESTController {
     AtomicLong atomicLong = new AtomicLong(1);
 
     @RequestMapping(value = "/greeting")
-    public Greeting greeting(@RequestParam("name") String name) {
+    public Greeting greeting(@RequestParam String name) {
         String content = "Hello";
         return new Greeting(atomicLong.getAndAdd(1), content + name);
     }
