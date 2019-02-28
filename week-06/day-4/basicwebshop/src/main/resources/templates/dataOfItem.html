@@ -7,7 +7,7 @@
 </head>
 <body>
 <p>
-    <a href = "/webshop">My Shop</a>
+    My Shop
 </p>
 
 <div id = "searchArea">
@@ -27,24 +27,9 @@
     <input type="button" value="Most Expensive Available" onclick="location.href='/webshop/most-expensive'">
 </form>
 
-<table>
-    <thead>
-    <tr>
-        <td>Name</td>
-        <td>Description</td>
-        <td>Price</td>
-        <td>Quantity of stock</td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="shopItem : ${stock}">
-        <td th:text="${shopItem.getName()}"></td>
-        <td th:text="${shopItem.getDescription()}"></td>
-        <td th:text="${shopItem.getPrice()} + ' Kč'">Kč</td>
-        <td th:text="${shopItem.getQuantityOfStock()} + ' pieces'"></td>
-    </tr>
-    </tbody>
-</table>
+<div>
+    <h1 th:text="${typeOfData} + ${dataOfItem}"></h1>
+</div>
 
 </body>
 </html>

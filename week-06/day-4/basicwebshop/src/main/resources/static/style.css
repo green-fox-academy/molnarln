@@ -11,6 +11,37 @@ p {
     color: deepskyblue;
     border-bottom: deepskyblue solid 2px;
 }
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#searchArea {
+    margin: 15px 0 15px 0;
+}
+
+#searchBar {
+    width: 400px;
+    height: 40px;
+    background-color: white;
+    border: orangered solid 3px;
+    border-radius: 5px;
+    color: black;
+    font-size: 25px;
+    padding: 0px;
+
+}
+#searchButton{
+    font-size: 30px;
+    font-weight: bold;
+    height: 40px;
+    width: 100px;
+    padding: 0px;
+}
 
 input {
     margin: auto;
@@ -23,6 +54,7 @@ input {
     font-family: "Calibri Light";
     font-weight: bold;
 }
+
 
 table {
     font-family: "Calibri Light";
