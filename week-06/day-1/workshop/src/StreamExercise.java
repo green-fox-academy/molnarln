@@ -47,7 +47,7 @@ public class StreamExercise {
         List<Integer> numbers5 = Arrays.asList(5, 9, 1, 2, 3, 7, 5, 6, 7, 3, 7, 6, 8, 5, 4, 9, 6, 2);
         System.out.println(numbers5.stream()
                 .filter(e -> e % 2 == 1)
-                .mapToInt(Integer::intValue)
+                .mapToInt(Integer::valueOf)
                 .sum());
 
         //Write a Stream Expression to find the uppercase characters in a string!
@@ -82,7 +82,7 @@ public class StreamExercise {
         //Write a Stream Expression to find the frequency of characters in a given string!
         System.out.println("\nExercise 9:");
         String stringToCheck = "characterstocount";
-        Map<Character, Long> listFromString = inputString.chars() //from here it is a stream (intstream)
+        Map<Character, Long> listFromString = stringToCheck.chars() //from here it is a stream (intstream)
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(k -> k, Collectors.counting()));
 
@@ -112,7 +112,7 @@ public class StreamExercise {
         System.out.println("\nThe frequency of colors are:");
         Map<String, Long> mapOfFoxes = foxes.stream()
                 .collect(Collectors.groupingBy(Fox::getColor, Collectors.counting())); //or can use that code, because counting is a special reducing:
-            //  .collect(Collectors.groupingBy(Fox::getColor, Collectors.reducing(0L, e -> 1L, (a, b) -> a + b)));
+        //      .collect(Collectors.groupingBy(Fox::getColor, Collectors.reducing(0L, e -> 1L, (a, b) -> a + b)));
         System.out.println(mapOfFoxes);
     }
 }

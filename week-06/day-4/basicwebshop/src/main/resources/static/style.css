@@ -1,0 +1,66 @@
+body {
+    width: 600px;
+    margin: auto;
+}
+
+p {
+    font-family: "Calibri Light";
+    font-weight: bold;
+    margin: 20px auto 20px auto;
+    font-size: 60px;
+    color: deepskyblue;
+    border-bottom: deepskyblue solid 2px;
+}
+
+input {
+    margin: auto;
+    background-color: orangered;
+    border: none;
+    border-radius: 5px;
+    width: content-box;
+    height: 30px;
+    color: white;
+    font-family: "Calibri Light";
+    font-weight: bold;
+}
+
+table {
+    font-family: "Calibri Light";
+    color: black;
+    border-collapse: collapse;
+    padding: auto;
+    margin: 30px auto auto auto;
+    width: 600px;
+    border: none;
+
+}
+
+thead td {
+    border: white solid 2px;
+    text-align: center;
+    height: 60px;
+}
+
+table thead tr {
+    font-size: 20px;
+    font-weight: bold;
+    background: deepskyblue;
+
+}
+
+table tbody tr {
+    height: 50px;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+}
+
+table tbody tr td:nth-child(3) {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+table tbody tr td:nth-child(4) {
+    font-weight: bold;
+    font-size: 20px;
+}
