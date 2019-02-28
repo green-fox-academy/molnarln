@@ -1,20 +1,23 @@
 body {
     width: 600px;
     margin: auto;
+
 }
 
 p {
     font-family: "Calibri Light";
     font-weight: bold;
-    margin: 20px auto 20px auto;
+    margin: 5px auto 20px auto;
     font-size: 60px;
     color: deepskyblue;
     border-bottom: deepskyblue solid 2px;
 }
+
 a {
     color: inherit;
     text-decoration: inherit;
 }
+
 h1 {
     font-size: 50px;
     font-weight: bold;
@@ -22,6 +25,7 @@ h1 {
 
 #searchArea {
     margin: 15px 0 15px 0;
+
 }
 
 #searchBar {
@@ -35,7 +39,8 @@ h1 {
     padding: 0px;
 
 }
-#searchButton{
+
+#searchButton {
     font-size: 30px;
     font-weight: bold;
     height: 40px;
@@ -61,7 +66,7 @@ table {
     color: black;
     border-collapse: collapse;
     padding: auto;
-    margin: 30px auto auto auto;
+    margin: 20px auto auto auto;
     width: 600px;
     border: none;
 

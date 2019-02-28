@@ -3,7 +3,7 @@ package com.greenfoxacademy.springstart;
 public class ShopItem {
     private String name;
     private String description;
-    private int price;
+    private double price;
     private int quantityOfStock;
 
     public ShopItem(String name, String description, int price, int quantityOfStock) {
@@ -21,7 +21,7 @@ public class ShopItem {
         return description;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
