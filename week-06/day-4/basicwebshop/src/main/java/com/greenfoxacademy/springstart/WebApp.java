@@ -84,9 +84,10 @@ public class WebApp {
     public String mostExpensive(Model model) {
         List<ShopItem> nameOfMostExpensive;
         nameOfMostExpensive = stock.stream()
-                .sorted((a, b) -> a.getPrice() > b.getPrice() ? -1 : 1)
+                .sorted((a, b) -> a.getPrice() >= b.getPrice() ? -1 : 1)
                 .limit(1)
                 .collect(Collectors.toList());
+
         model.addAttribute("typeOfData", "Most expensive item is: ");
         model.addAttribute("dataOfItem", nameOfMostExpensive.get(0).getName());
         return "dataOfItem";
