@@ -32,7 +32,7 @@ public class WebApp {
     }
 
     @RequestMapping(value = "/webshop")
-    public String listOfShopItems(Model model) {
+    public String listOfShopItems(Model model) {    
         model.addAttribute("stock", stock);
         return "index";
     }

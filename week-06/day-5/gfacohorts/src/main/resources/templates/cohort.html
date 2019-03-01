@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <title>Title</title>
+</head>
+<body>
+
+
+<table>
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td>Started at</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cohort : ${list}">
+        <td th:text="${cohort.getName()}"></td>
+        <td th:text="${cohort.getStartedAt()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
