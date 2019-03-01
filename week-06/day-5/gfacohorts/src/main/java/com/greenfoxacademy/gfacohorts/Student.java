@@ -7,17 +7,25 @@ public class Student {
     private String name;
     private String gender;
     private int age;
-    private List<Exam> examsPassed;
+    private List<Exam> exams;
+    private static int globalID;
+    private int studentID;
 
 
     public Student(String name, String gender, int age, Exam... passedExam) {
         this.name = name;
         this.gender = gender;
         this.age = age;
-        this.examsPassed = new ArrayList<>();
+        this.exams = new ArrayList<>();
         for (Exam exam : passedExam) {
-            this.examsPassed.add(exam);
+            this.exams.add(exam);
         }
+        this.studentID = globalID;
+        this.globalID++;
+    }
+
+    public int getStudentID() {
+        return studentID;
     }
 
     public String getName() {
@@ -33,6 +41,10 @@ public class Student {
     }
 
     public void addExam(Exam examToAdd) {
-        examsPassed.add(examToAdd);
+        exams.add(examToAdd);
+    }
+
+    public List<Exam> getExams() {
+        return exams;
     }
 }

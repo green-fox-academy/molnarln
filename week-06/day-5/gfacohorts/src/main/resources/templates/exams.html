@@ -11,17 +11,14 @@
 <table>
     <thead>
     <tr>
-        <td>Name</td>
-        <td>Gender</td>
-        <td>Age</td>
-
+        <td>Type</td>
+        <td>Score</td>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="student: ${list}">
-        <td th:text="${student.getName()}"></td>
-        <td th:text="${student.getGender()}"></td>
-        <td th:text="${student.getAge()}"></td>
+    <tr th:each="exam : ${list}">
+        <td th:text="${exam.getType()}"></td>
+        <td th:text="${exam.getScore()}"></td>
     </tr>
     </tbody>
 </table>

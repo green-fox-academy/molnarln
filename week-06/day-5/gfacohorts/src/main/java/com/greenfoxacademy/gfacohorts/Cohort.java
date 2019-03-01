@@ -7,11 +7,15 @@ public class Cohort {
     private List<Student> students;
     private String name;
     private String startedAt;
+    private static int globalID = 0;
+    private int cohortID;
 
     public Cohort(String name, String startedAt) {
         this.name = name;
         this.startedAt = startedAt;
         this.students = new ArrayList<>();
+        this.cohortID = globalID;
+        this.globalID++;
     }
 
     public String getName() {
@@ -28,5 +32,9 @@ public class Cohort {
 
     public List<Student> getStudents() {
         return students;
+    }
+
+    public int getId() {
+        return cohortID;
     }
 }
