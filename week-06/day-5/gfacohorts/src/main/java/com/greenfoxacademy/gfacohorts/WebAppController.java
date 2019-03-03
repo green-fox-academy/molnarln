@@ -56,5 +56,4 @@ public class WebAppController {
         model.addAttribute("list", cohorts.get(cohortID).getStudents().get(studentID).getExams());
         return "exams";
     }
-
 }
