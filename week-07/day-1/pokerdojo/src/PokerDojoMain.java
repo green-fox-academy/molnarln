@@ -31,7 +31,15 @@ public class PokerDojoMain {
 
         List<String> hand1MaxValue = Arrays.asList(hand1);
         List<Integer> hand1Sorted = new ArrayList<>();
-        OptionalInt hand1Value = hand1MaxValue.stream()
+        hand1Sorted = hand1MaxValue.stream()
+                .map(e -> e.charAt(0))
+                .map(scores::get)
+                .sorted((a, b) -> a <= b ? 1 : -1)
+                .collect(Collectors.toList());
+
+        List<String> hand2MaxValue = Arrays.asList(hand1);
+        List<Integer> hand2Sorted = new ArrayList<>();
+        OptionalInt hand2Value = hand2MaxValue.stream()
                 .map(e -> e.charAt(0))
                 .map(scores::get)
                 .sorted((a, b) -> a <= b ? 1 : -1)
@@ -42,15 +50,6 @@ public class PokerDojoMain {
                         return 0;
                     }
                 });
-
-
-        List<String> hand2MaxValue = Arrays.asList(hand1);
-        List<Integer> hand2Sorted = new ArrayList<>();
-        hand1Sorted = hand2MaxValue.stream()
-                .map(e -> e.charAt(0))
-                .map(scores::get)
-                .sorted((a, b) -> a <= b ? 1 : -1)
-                .collect(Collectors.toList());
 
 /*        System.out.println(hand2MaxValue.getAsInt());
 
