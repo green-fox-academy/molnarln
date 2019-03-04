@@ -1,0 +1,10 @@
+- About the thymeleaf xmlns:layout: what is it? Why to use it?
+- Why use spring.thymeleaf.cache=false at the application.properties?
+- What are these:
+	action = "#"
+	th:action = "@{/something/something}"
+- In the library homework, if I create a new book, it will not recieve a new ID, so I 
+	can't go into that book's details. Why does it happen?
+- When I create a new object in view and pass it to the controller, where will it create a new instance?
+- WebContext ctx = new WebContext(request, servletContext, request.getLocale()); WHAT THE HACK IS THAT????
+

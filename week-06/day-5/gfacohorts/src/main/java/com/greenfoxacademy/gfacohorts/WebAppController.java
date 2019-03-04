@@ -36,7 +36,7 @@ public class WebAppController {
     @RequestMapping("/test")
     @ResponseBody
     public int test(){
-    return (cohorts.get(1).getId());
+    return (cohorts.get(0).getId());
     }
 
     @GetMapping("/cohorts")
