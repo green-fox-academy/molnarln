@@ -37,6 +37,7 @@ public class PokerDojoMain {
                 .sorted((a, b) -> a <= b ? 1 : -1)
                 .collect(Collectors.toList());
 
+
         List<String> hand2MaxValue = Arrays.asList(hand1);
         List<Integer> hand2Sorted = new ArrayList<>();
         OptionalInt hand2Value = hand2MaxValue.stream()

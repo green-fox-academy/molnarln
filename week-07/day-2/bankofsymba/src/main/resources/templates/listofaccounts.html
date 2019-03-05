@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Books</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+
+<div>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Is he a King?</td>
+                <td>Index</td>
+                <td>Name</td>
+                <td>Balance</td>
+                <td>Type</td>
+                <td>Is a Good guy?</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:switch="${bankaccount.isGoodGuy()}" th:id="${bankaccount.isKing()? 'isKingRow' : ''}" th:each="bankaccount : ${accounts}">
+                <td th:text="${bankaccount.isKing()? 'Yes':'No'}"></td>
+                <td th:text="${bankaccountStat.index}"></td>
+                <td th:text="${bankaccount.getName()}"></td>
+                <td th:text="${bankaccount.getBalance()}"></td>
+                <td th:text="${bankaccount.getAnimalTye()}"></td>
+                <td th:case="true" th:text="'Good guy'"></td>
+                <td th:case="false" th:text="'Bad guy'"></td>
+            </tr>
+<!--            <tr th:if="${(bankaccount.isKing() == false)}" th:each="bankaccount : ${accounts}">
+                <td>No</td>
+                <td th:text="${bankaccountStat.index}"></td>
+                <td th:text="${bankaccount.getName()}"></td>
+                <td th:text="${bankaccount.getBalance()}"></td>
+                <td th:text="${bankaccount.getAnimalTye()}"></td>
+            </tr>-->
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>

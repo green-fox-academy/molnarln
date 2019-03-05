@@ -7,4 +7,8 @@
 	can't go into that book's details. Why does it happen?
 - When I create a new object in view and pass it to the controller, where will it create a new instance?
 - WebContext ctx = new WebContext(request, servletContext, request.getLocale()); WHAT THE HACK IS THAT????
-
+- What is @ControllerAdvice? What is it stand for?
+- RequestMapping headers = "key=val" What the heck is that? :D
+- headers = "Accept = application/json" (???)
+- Produces and consumes mechanisms.
+- 
