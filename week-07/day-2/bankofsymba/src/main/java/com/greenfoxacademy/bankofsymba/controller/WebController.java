@@ -52,9 +52,9 @@ public class WebController {
         return "listofaccounts";
     }
 
-    @ModelAttribute
-    public void addAccount (Model model){
-        model.addAttribute("account", new BankAccount());
+    @ModelAttribute(value = "bankaccount")
+    public BankAccount addAccount (){
+        return new BankAccount();
     }
 
     @RequestMapping(path = "/accounts", method = RequestMethod.POST)

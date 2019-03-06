@@ -1,0 +1,55 @@
+The database is in the html file in the folder.
+Q1
+Find the titles of all movies directed by Steven Spielberg. 
+SELECT title FROM movie
+    WHERE director = 'Steven Spielberg';
+
+Q2
+Find all years that have a movie that received a rating of 4 or 
+5, and sort them in increasing order. 
+SELECT DISTINCT year FROM movie, rating
+    where rating.mid = movie.mid
+    AND (rating.stars = 4 OR rating.stars = 5)
+    ORDER BY movie.year;
+
+
+Q3
+Find the titles of all movies that have no ratings. 
+SELECT title FROM movie
+    LEFT JOIN rating
+    ON movie.mid = rating.mid
+    WHERE rating.mid IS NULL;
+
+Q4
+Some reviewers didn't provide a date with their rating. Find 
+the names of all reviewers who have ratings with a NULL value 
+for the date. 
+SELECT reviewer.name FROM reviewer, rating
+    WHERE reviewer.rid = rating.rid
+    AND rating.ratingdate IS NULL;
+
+Q5
+Write a query to return the ratings data in a more readable 
+format: reviewer name, movie title, stars, and ratingDate. 
+Also, sort the data, first by reviewer name, then by movie 
+title, and lastly by number of stars. 
+SELECT reviewer.name, movie.title, rating.stars, 
+rating.ratingdate
+    FROM reviewer, movie, rating
+    WHERE movie.mid = rating.mid and rating.rid = reviewer.rid
+    ORDER BY reviewer.name, movie.title, rating.stars;
+
+Q1 (another page)
+Find the names of all reviewers who rated Gone with the Wind. 
+SELECT DISTINCT reviewer.name FROM reviewer, movie, rating
+    WHERE movie.mid = rating.mid AND rating.rid = reviewer.rid 
+    AND movie.title = "Gone with the Wind";
+    
+Q2(another page)
+For any rating where the reviewer is the same as the director 
+of the movie, return the reviewer name, movie title, and number 
+of stars. 
+SELECT reviewer.name, movie.title, rating.stars FROM movie, 
+reviewer, rating
+    WHERE movie.mid = rating.mid And rating.rid = reviewer.rid 
+    AND reviewer.name = movie.director;
