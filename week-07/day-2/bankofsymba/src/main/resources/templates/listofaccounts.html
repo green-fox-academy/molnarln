@@ -21,7 +21,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr th:switch="${bankaccount.isGoodGuy()}" th:id="${bankaccount.isKing()? 'isKingRow' : ''}" th:each="bankaccount : ${accounts}">
+
+<!--            <<<<<<<<<<<<<<USING SWITCH CASE>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                <tr th:switch="${bankaccount.isGoodGuy()}" th:id="${bankaccount.isKing()? 'isKingRow' : ''}" th:each="bankaccount : ${accounts}">
                 <td th:text="${bankaccount.isKing()? 'Yes':'No'}"></td>
                 <td th:text="${bankaccountStat.index}"></td>
                 <td th:text="${bankaccount.getName()}"></td>
@@ -29,17 +31,43 @@
                 <td th:text="${bankaccount.getAnimalTye()}"></td>
                 <td th:case="true" th:text="'Good guy'"></td>
                 <td th:case="false" th:text="'Bad guy'"></td>
-            </tr>
-<!--            <tr th:if="${(bankaccount.isKing() == false)}" th:each="bankaccount : ${accounts}">
-                <td>No</td>
+            </tr>-->
+
+            <tr th:id="${bankaccount.isKing()? 'isKingRow' : ''}" th:each="bankaccount : ${accounts}">
+                <td th:text="${bankaccount.isKing()? 'Yes':'No'}"></td>
                 <td th:text="${bankaccountStat.index}"></td>
                 <td th:text="${bankaccount.getName()}"></td>
                 <td th:text="${bankaccount.getBalance()}"></td>
                 <td th:text="${bankaccount.getAnimalTye()}"></td>
-            </tr>-->
-        </tbody>
+                <td th:text="${bankaccount.isGoodGuy() ? 'Good guy' : 'Bad guy'}"></td>
 
+            </tr>
+
+        </tbody>
     </table>
+
+    <form action="#" th:action="@{/accounts}" method="post">
+            <select th:name="index">
+                <option th:each="account : ${accounts}" th:value="${accountStat.index}" th:text="${account.name}"></option>
+            </select>
+            <button type="submit">Raise money!</button>
+    </form>
+
+    <form action="#" th:action="@{/accounts/add}" th:object="${account}" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" th:field="*{name}" required/>
+        <label for="balance">Balance</label>
+        <input type="number" id="balance" th:field="*{balance}" required/>
+        <label for="animaltype">Animaltype</label>
+        <input type="text" id="animaltype" th:field="*{animalTye}" required/>
+<!--        <label for="isKing">Name</label>
+        <input type="text" id="isKing" th:field="*{}" required>
+        <label for="isGoodGuy">Name</label>
+        <input type="text" id="isGoodGuy" th:field="*{isGoodGuy}" required>-->
+
+        <button type="submit">Add account</button>
+    </form>
+
 
 </div>
 

@@ -4,7 +4,10 @@ import com.greenfoxacademy.bankofsymba.Model.BankAccount;
 import org.hibernate.validator.constraints.pl.REGON;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,23 +32,41 @@ public class WebController {
 
     }
 
-    @RequestMapping(value = "/show")
+    @RequestMapping(path = "/show")
     public String showAccount(Model model) {
         model.addAttribute("bankaccount", bankAccount);
         return "account";
     }
 
-    @RequestMapping(value = "/show/htmlception")
-    public String showHTMLception(Model model){
+    @RequestMapping(path = "/show/htmlception")
+    public String showHTMLception(Model model) {
         String stringToAdd = "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>";
         model.addAttribute("bankaccount", bankAccount);
         model.addAttribute("string", stringToAdd);
         return "account";
     }
 
-    @RequestMapping (value = "/accounts")
-    public String showAccounts(Model model){
+    @RequestMapping(path = "/accounts", method = RequestMethod.GET)
+    public String showAccounts(Model model) {
         model.addAttribute("accounts", accountList);
         return "listofaccounts";
+    }
+
+    @ModelAttribute
+    public void addAccount (Model model){
+        model.addAttribute("account", new BankAccount());
+    }
+
+    @RequestMapping(path = "/accounts", method = RequestMethod.POST)
+    public String raiseAccounts(Model model, @RequestParam("index") Integer index) {
+        accountList.get(index).setBalance(100);
+        model.addAttribute("accounts", accountList);
+        return "listofaccounts";
+    }
+
+    @RequestMapping(path = "/accounts/add", method = RequestMethod.POST)
+    public String addAccount(@ModelAttribute BankAccount accountToAdd) {
+        accountList.add(accountToAdd);
+        return "redirect:/accounts";
     }
 }
