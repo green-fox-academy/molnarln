@@ -59,14 +59,14 @@ public class WebController {
 
     @RequestMapping(path = "/accounts", method = RequestMethod.POST)
     public String raiseAccounts(Model model, @RequestParam("index") Integer index) {
-        accountList.get(index).setBalance(100);
+        accountList.get(index).raiseBalance();
         model.addAttribute("accounts", accountList);
         return "listofaccounts";
     }
 
     @RequestMapping(path = "/accounts/add", method = RequestMethod.POST)
-    public String addAccount(@ModelAttribute BankAccount accountToAdd) {
-        accountList.add(accountToAdd);
+    public String addAccount(BankAccount bankAccount) {
+        accountList.add(bankAccount);
         return "redirect:/accounts";
     }
 }

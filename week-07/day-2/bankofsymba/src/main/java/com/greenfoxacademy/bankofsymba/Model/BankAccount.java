@@ -24,12 +24,16 @@ public class BankAccount {
         this.name = name;
     }
 
-    public void setBalance(int numToRaise) {
+    public void raiseBalance() {
         if (this.isKing) {
             this.balance += 100;
         } else {
             this.balance += 10;
         }
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 
     public void setAnimalTye(String animalTye) {
