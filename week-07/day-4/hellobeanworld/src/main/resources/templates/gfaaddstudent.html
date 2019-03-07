@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Books</title>
+    <meta charset="utf-8"/>
+</head>
+
+<body>
+<div>
+    <p><a   href=/gfa>Return to the main page</a></p>
+</div>
+
+    <form action="#" th:action="@{/gfa/save}" th:method="post">
+        <label for="input">Type the student's name!</label>
+        <input name="student" type="text" id="input">
+    </form>
+
+</body>
+</html>

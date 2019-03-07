@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Books</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+
+<div>
+    <ul th:each="color:${utilities.getColorList()}">
+        <li><a th:text="${color}" th:href="@{'/useful/' + ${color}}">color</a></li>
+    </ul>
+
+</div>
+<div>
+    <form th:action="@{/useful/email}" method="post">
+        <label for="email" >Email</label>
+        <input name="email" type="text" id="email"/>
+    </form>
+</div>
+
+
+</body>
+</html>
