@@ -1,0 +1,13 @@
+Q8
+Find the difference between the number of students in the school and the 
+number of different first names. 
+select count(highschooler.name)-
+count(distinct highschooler.name) from  highschooler;
+
+Q1 (Not working yet)
+Find the names of all students who are friends with someone named 
+Gabriel. 
+SELECT distinct highschooler.name FROM highschooler, friend
+    where (highschooler.id = friend.id1 or highschooler.id = friend.id2)
+    and (friend.id1 = 1689 OR friend.id2 = 1689);
+
