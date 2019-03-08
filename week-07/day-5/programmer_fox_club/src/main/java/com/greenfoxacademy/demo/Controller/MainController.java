@@ -24,12 +24,9 @@ public class MainController {
     this.foxListService = foxListService;
     }
 
-
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showMain(@RequestParam(value = "name", required = false, defaultValue = "Mr. Fox") String name, Model model) {
-        model.addAttribute("name", name);
         model.addAttribute("fox", foxListService.getFox(name));
-        System.out.println(foxListService.getFox(name));
         return "index";
     }
 
@@ -40,8 +37,11 @@ public class MainController {
 
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String redirectToIndex(String name) {
-
+    public String redirectToIndex(@RequestParam(value = "name") String name) {
         return "redirect:/?name=" + name;
+    }
+
+    @RequestMapping(value = "/nutritionstore", method = RequestMethod.GET){
+
     }
 }

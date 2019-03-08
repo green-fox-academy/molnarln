@@ -11,11 +11,11 @@ public class FoxListService {
 
     private List<Fox> foxList;
 
-    public FoxListService(){
+    public FoxListService() {
         foxList = new ArrayList<>();
-        Fox fox1 = new Fox("Bela", Arrays.asList("swim", "run", "learn"),"meat", "water");
-        Fox fox2 = new Fox("Karoly", Arrays.asList("read", "flex"),"meat", "water");
-        Fox fox3 = new Fox("Zsigmond", Arrays.asList("jump", "code"),"meat", "water");
+        Fox fox1 = new Fox("Bela", Arrays.asList("jump", "say hello", "travel"), "meat", "water");
+        Fox fox2 = new Fox("Karoly", Arrays.asList("read", "flex"), "meat", "water");
+        Fox fox3 = new Fox("Zsigmond", Arrays.asList("jump", "code"), "meat", "water");
         foxList.add(fox1);
         foxList.add(fox2);
         foxList.add(fox3);
@@ -29,14 +29,19 @@ public class FoxListService {
         this.foxList.add(fox);
     }
 
-    public Fox getFox(String name){
-        for (Fox fox:this.foxList) {
-            if (fox.getName().equalsIgnoreCase(name)){
+    public Fox getFox(String name) {
+        for (Fox fox : this.foxList) {
+            if (fox.getName().equalsIgnoreCase(name)) {
                 return fox;
+            } else {
+                this.foxList.add(new Fox(name, Arrays.asList(), " ", " "));
+                for (Fox foxnew : this.foxList) {
+                    if (foxnew.getName().equalsIgnoreCase(name)){
+                        return foxnew;
+                    }
+                }
             }
         }
         return null;
     }
-
-
 }

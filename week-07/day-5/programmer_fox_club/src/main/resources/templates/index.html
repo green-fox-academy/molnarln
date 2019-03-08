@@ -11,13 +11,18 @@
 </div>
 
 
-<p th:text="|This is ${fox.getName()}  Currently living on ${fox.getFood()} and ${fox.getDrink()} He knows ${fox.getTricks().size()} tricks |"></p>
+<p th:text="'This is ' + ${fox.getName()} +'.' + ' Currently living on ' + ${fox.getFood()}+ ' and ' + ${fox.getDrink()} +'.' + ' He knows ' + ${fox.getTricks().size()} + ' tricks.' "></p>
 
 <h1>Known tricks</h1>
+<div th:if="${fox.getTricks().size()!=0}">
+    <ul th:each="trick : ${fox.getTricks()}">
+        <li th:text="${trick}"></li>
+    </ul>
+</div>
+<div th:if="${fox.getTricks().size()==0}">
+    <p> Fox does not know any tricks yet.</p>
+</div>
 
-<ul th:each="trick : ${fox.getTricks()}">
-    <li th:text="${trick}"></li>
-</ul>
 
 </body>
 </html>
