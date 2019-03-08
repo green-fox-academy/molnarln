@@ -5,19 +5,22 @@ public class BankAccount {
     private String name;
     private int balance;
     private String animalTye;
-    private boolean isKing;
-    private boolean isGoodGuy;
+    private boolean king;
+    private boolean goodGuy;
 
     public BankAccount() {
-
     }
 
-    public BankAccount(String name, Integer balance, String animalTye, boolean isKing, boolean isGoodGuy) {
+    public BankAccount(String name, Integer balance, String animalTye, boolean king, boolean goodGuy) {
         this.name = name;
         this.balance = balance;
         this.animalTye = animalTye;
-        this.isKing = isKing;
-        this.isGoodGuy = isGoodGuy;
+        this.king = king;
+        this.goodGuy = goodGuy;
+    }
+
+    public void setGoodGuy(boolean goodGuy) {
+        this.goodGuy = goodGuy;
     }
 
     public void setName(String name) {
@@ -25,15 +28,11 @@ public class BankAccount {
     }
 
     public void raiseBalance() {
-        if (this.isKing) {
+        if (this.king) {
             this.balance += 100;
         } else {
             this.balance += 10;
         }
-    }
-
-    public void setBalance(int balance) {
-        this.balance = balance;
     }
 
     public void setAnimalTye(String animalTye) {
@@ -41,30 +40,26 @@ public class BankAccount {
     }
 
     public void setKing(boolean king) {
-        isKing = king;
-    }
-
-    public void setGoodGuy(boolean goodGuy) {
-        isGoodGuy = goodGuy;
-    }
-
-    public boolean isGoodGuy() {
-        return isGoodGuy;
-    }
-
-    public boolean isKing() {
-        return isKing;
+        this.king = king;
     }
 
     public String getName() {
         return name;
     }
 
-    public Integer getBalance() {
+    public int getBalance() {
         return balance;
     }
 
     public String getAnimalTye() {
         return animalTye;
+    }
+
+    public boolean isKing() {
+        return king;
+    }
+
+    public boolean isGoodGuy() {
+        return goodGuy;
     }
 }

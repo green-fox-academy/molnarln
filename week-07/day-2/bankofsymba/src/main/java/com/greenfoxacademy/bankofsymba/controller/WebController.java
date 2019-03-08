@@ -53,7 +53,7 @@ public class WebController {
     }
 
     @ModelAttribute(value = "bankaccount")
-    public BankAccount addAccount (){
+    public BankAccount addAccount() {
         return new BankAccount();
     }
 
@@ -67,6 +67,7 @@ public class WebController {
     @RequestMapping(path = "/accounts/add", method = RequestMethod.POST)
     public String addAccount(BankAccount bankAccount) {
         accountList.add(bankAccount);
+        System.out.println(bankAccount.isGoodGuy());
         return "redirect:/accounts";
     }
 }

@@ -60,12 +60,18 @@
         <input type="number" id="balance" th:field="*{balance}" required/>
         <label for="animaltype">Animaltype</label>
         <input type="text" id="animaltype" th:field="*{animalTye}" required/>
-<!--        <label for="isKing">Name</label>
-        <input type="text" id="isKing" th:field="*{}" required>
-        <label for="isGoodGuy">Name</label>
-        <input type="text" id="isGoodGuy" th:field="*{isGoodGuy}" required>-->
+
+<!--        <input type="text" th:field="*{isKing}" required/>
+        <input type="text" th:field="*{isGoodGuy}" required/>-->
+
+        <label for="isKing">Is he a king?</label>
+        <input type="checkbox" id="isKing" th:field="*{king}"/>
+
+        <label for="isGoodGuy">Good guy?</label>
+        <input type="checkbox" id="isGoodGuy" th:field="*{goodGuy}"/>
 
         <button type="submit">Add account</button>
+
     </form>
 
 
