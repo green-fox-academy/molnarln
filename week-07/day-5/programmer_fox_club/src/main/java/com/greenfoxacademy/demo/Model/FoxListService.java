@@ -13,8 +13,8 @@ public class FoxListService {
 
     public FoxListService(){
         foxList = new ArrayList<>();
-        Fox fox1 = new Fox("Béla", Arrays.asList("swim", "run", "learn"),"meat", "water");
-        Fox fox2 = new Fox("Károly", Arrays.asList("read", "flex"),"meat", "water");
+        Fox fox1 = new Fox("Bela", Arrays.asList("swim", "run", "learn"),"meat", "water");
+        Fox fox2 = new Fox("Karoly", Arrays.asList("read", "flex"),"meat", "water");
         Fox fox3 = new Fox("Zsigmond", Arrays.asList("jump", "code"),"meat", "water");
         foxList.add(fox1);
         foxList.add(fox2);

@@ -15,9 +15,8 @@
 
 <h1>Known tricks</h1>
 
-<ul>
-    <li>Write html</li>
-    <li>code in Java</li>
+<ul th:each="trick : ${fox.getTricks()}">
+    <li th:text="${trick}"></li>
 </ul>
 
 </body>
