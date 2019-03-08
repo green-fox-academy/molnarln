@@ -1,11 +1,9 @@
 package com.greenfoxacademy.demo.Model;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public class Fox {
     //name, list of tricks, food and drink
 
@@ -14,7 +12,6 @@ public class Fox {
     private String food;
     private String drink;
 
-    @Autowired
     public Fox(String name, List<String> tricks, String food, String drink) {
         this.name = name;
         this.tricks = tricks;

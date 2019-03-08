@@ -1,6 +1,7 @@
 package com.greenfoxacademy.demo.Controller;
 
 import com.greenfoxacademy.demo.Model.Fox;
+import com.greenfoxacademy.demo.Model.FoxListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,18 +17,18 @@ import java.util.Map;
 @Controller
 public class MainController {
 
-    List<Fox> listOfFoxes;
+    FoxListService foxListService;
 
-
-    public MainController(){
-        this.listOfFoxes = new ArrayList<>();
-
+    @Autowired
+    public MainController(FoxListService foxListService){
+    this.foxListService = foxListService;
     }
 
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showMain(@RequestParam(value = "name", required = false, defaultValue = "Mr. Fox") String name, Model model) {
         model.addAttribute("name", name);
+        model.addAttribute("fox", foxListService.getFox(name));
         return "index";
     }
 

@@ -11,7 +11,7 @@
 </div>
 
 
-<p th:text="|This is ${name}  Currently living on pizza and lemonade He knows 2 tricks |"></p>
+<p th:text="|This is ${fox.getName()}  Currently living on ${fox.getFood()} and ${fox.getDrink()} He knows ${fox.getTricks().size()} tricks |"></p>
 
 <h1>Known tricks</h1>
 
