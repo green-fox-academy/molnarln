@@ -18,11 +18,11 @@ import java.util.Map;
 @Controller
 public class MainController {
 
-    FoxListService foxListService;
+    private FoxListService foxListService;
 
     @Autowired
-    public MainController(FoxListService foxListService){
-    this.foxListService = foxListService;
+    public MainController(FoxListService foxListService) {
+        this.foxListService = foxListService;
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -44,7 +44,7 @@ public class MainController {
     }
 
     @RequestMapping(value = "/nutritionstore", method = RequestMethod.GET)
-    public String showNutriStore(Model model, @RequestParam(value = "name") String name){
+    public String showNutriStore(Model model, @RequestParam(value = "name") String name) {
         model.addAttribute("listOfFoods", foxListService.getAvailableFoods());
         model.addAttribute("listOfDrinks", foxListService.getAvailableDrinks());
         model.addAttribute("name", name);
@@ -52,20 +52,23 @@ public class MainController {
     }
 
     @RequestMapping(value = "/nutritionstore", method = RequestMethod.POST)
-    public String setFoodAndDrink(@RequestParam(value = "name") String name, @RequestParam(value = "food") String food, @RequestParam(value = "drink") String drink) {
-        foxListService.setFoodAndDrink(name, food, drink);
-        return "redirect:/?name=" + name;
+
+    //-----WE CAN USE THAT SYNTAX TOO:
+    //@RequestParam(value = "name") String name, @RequestParam(value = "food") String food, @RequestParam(value = "drink") String drink
+    public String setFoodAndDrink(@RequestParam Map<String, String> map) {
+        foxListService.setFoodAndDrink(map.get("name"), map.get("food"), map.get("drink"));
+        return "redirect:/?name=" + map.get("name");
     }
 
     @RequestMapping(value = "/trickCenter", method = RequestMethod.GET)
-    public String showTrickCenter(Model model, String name){
+    public String showTrickCenter(Model model, String name) {
         model.addAttribute("tricks", foxListService.getListOfLearnableTricks());
         model.addAttribute("name", name);
         return "skillstore";
     }
 
     @RequestMapping(value = "/trickCenter", method = RequestMethod.POST)
-    public String learnSkill(String trick, String name){
+    public String learnSkill(String trick, String name) {
         foxListService.learnTrick(name, trick);
         return "redirect:/?name=" + name;
     }

@@ -88,9 +88,9 @@ public class FoxListService {
         }
     }
 
-    public void learnTrick(String name, String trickToLearn){
+    public void learnTrick(String name, String trickToLearn) {
         Fox f = foxList.stream()
-                .filter(i->i.getName().equalsIgnoreCase(name.toLowerCase()))
+                .filter(i -> i.getName().equalsIgnoreCase(name.toLowerCase()))
                 .findFirst()
                 .orElse(null);
 
@@ -98,7 +98,7 @@ public class FoxListService {
                 .filter(i -> i.equalsIgnoreCase(trickToLearn.toLowerCase()))
                 .count();
 
-        if (s == 0){
+        if (s == 0) {
             f.addTrick(trickToLearn);
         }
     }
