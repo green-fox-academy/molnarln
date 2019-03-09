@@ -5,7 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-<a href="index.html">Information</a>
+<a th:href="@{'/?name=' + ${name}}">Information</a><br>
+<a th:href="@{'/nutritionstore?name=' + ${name}}">Nutrition Store</a>
+
 <div>
     <img src="/greenfox.png">
 </div>

@@ -27,6 +27,7 @@ public class MainController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showMain(@RequestParam(value = "name", required = false, defaultValue = "Mr. Fox") String name, Model model) {
         model.addAttribute("fox", foxListService.getFox(name));
+        model.addAttribute("name", name);
         return "index";
     }
 
@@ -41,7 +42,17 @@ public class MainController {
         return "redirect:/?name=" + name;
     }
 
-    @RequestMapping(value = "/nutritionstore", method = RequestMethod.GET){
+    @RequestMapping(value = "/nutritionstore", method = RequestMethod.GET)
+    public String showNutriStore(Model model, @RequestParam(value = "name") String name){
+        model.addAttribute("listOfFoods", foxListService.getAvailableFoods());
+        model.addAttribute("listOfDrinks", foxListService.getAvailableDrinks());
+        model.addAttribute("name", name);
+        return "nutristore";
+    }
 
+    @RequestMapping(value = "/nutritionstore", method = RequestMethod.POST)
+    public String setFoodAndDrink(@RequestParam(value = "name") String name, @RequestParam(value = "food") String food, @RequestParam(value = "drink") String drink) {
+        foxListService.setFoodAndDrink(name, food, drink);
+        return "redirect:/?name=" + name;
     }
 }

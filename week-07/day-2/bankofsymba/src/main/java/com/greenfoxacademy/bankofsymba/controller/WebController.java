@@ -19,6 +19,10 @@ public class WebController {
 
     public WebController() {
         this.accountList = new ArrayList<>();
+        initialiseList();
+    }
+
+    public void initialiseList(){
         BankAccount bankAccount = new BankAccount("Simba", 2000, "lion", true, true);
         BankAccount bankAccount2 = new BankAccount("Zordon", 6000, "lion", false, false);
         BankAccount bankAccount3 = new BankAccount("Zazu", 4500, "bird", false, true);
@@ -29,7 +33,6 @@ public class WebController {
         accountList.add(bankAccount3);
         accountList.add(bankAccount4);
         accountList.add(bankAccount5);
-
     }
 
     @RequestMapping(path = "/show")

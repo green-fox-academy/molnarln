@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<a href="index.html">Information</a>
-<a href="nutristore.html">Nutrition Store</a>
 
-<form action="#" th:action="/nutritionstore" method="post">
-    <select th:name="name">
+<body>
+
+
+<a th:href="@{'/?name=' + ${name}}">Information</a><br>
+<a th:href="@{'/nutritionstore?name=' + ${name}}">Nutrition Store</a>
+
+<form action="#" th:action="@{/nutritionstore(name=${name})}" method="post">
+
+    <select th:name="food">
+        <option th:each="food : ${listOfFoods}" th:value="${food}" th:text="${food}"></option>
+    </select>
+
+    <select th:name="drink">
+        <option th:each="drink : ${listOfDrinks}" th:value="${drink}" th:text="${drink}"></option>
+    </select>
+
+    <button type="submit">Change properties.</button>
 
 </form>
-
 
 </body>
 </html>
