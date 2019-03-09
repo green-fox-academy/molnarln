@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class FoxListService {
@@ -12,6 +13,7 @@ public class FoxListService {
     private List<Fox> foxList;
     private List<String> listOfAvailableFoods;
     private List<String> listOfAvailableDrinks;
+    private List<String> listOfLearnableTricks;
 
 
     public FoxListService() {
@@ -28,6 +30,11 @@ public class FoxListService {
         this.foxList.add(fox3);
         this.listOfAvailableFoods = new ArrayList<>(Arrays.asList("Meat", "Bone", "Lasagne", "Banana"));
         this.listOfAvailableDrinks = new ArrayList<>(Arrays.asList("Coca Cola", "Pepsi", "Water", "Soda water"));
+        this.listOfLearnableTricks = new ArrayList<>(Arrays.asList("Read", "Ride a horse", "Drive a car", "Swim", "Sing", "Jump"));
+    }
+
+    public List<String> getListOfLearnableTricks() {
+        return listOfLearnableTricks;
     }
 
     public List getAvailableFoods() {
@@ -78,6 +85,21 @@ public class FoxListService {
                 fox.setFood(food);
                 fox.setDrink(drink);
             }
+        }
+    }
+
+    public void learnTrick(String name, String trickToLearn){
+        Fox f = foxList.stream()
+                .filter(i->i.getName().equalsIgnoreCase(name.toLowerCase()))
+                .findFirst()
+                .orElse(null);
+
+        Long s = f.getTricks().stream()
+                .filter(i -> i.equalsIgnoreCase(trickToLearn.toLowerCase()))
+                .count();
+
+        if (s == 0){
+            f.addTrick(trickToLearn);
         }
     }
 }

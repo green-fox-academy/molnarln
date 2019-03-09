@@ -10,6 +10,8 @@
 
 <a th:href="@{'/?name=' + ${name}}">Information</a><br>
 <a th:href="@{'/nutritionstore?name=' + ${name}}">Nutrition Store</a>
+<a th:href="@{'/trickCenter?name=' + ${name}}">Trick Center</a><br>
+
 
 <form action="#" th:action="@{/nutritionstore(name=${name})}" method="post">
 

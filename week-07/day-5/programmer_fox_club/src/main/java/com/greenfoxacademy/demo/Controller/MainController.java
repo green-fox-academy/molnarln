@@ -2,6 +2,7 @@ package com.greenfoxacademy.demo.Controller;
 
 import com.greenfoxacademy.demo.Model.Fox;
 import com.greenfoxacademy.demo.Model.FoxListService;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -53,6 +54,19 @@ public class MainController {
     @RequestMapping(value = "/nutritionstore", method = RequestMethod.POST)
     public String setFoodAndDrink(@RequestParam(value = "name") String name, @RequestParam(value = "food") String food, @RequestParam(value = "drink") String drink) {
         foxListService.setFoodAndDrink(name, food, drink);
+        return "redirect:/?name=" + name;
+    }
+
+    @RequestMapping(value = "/trickCenter", method = RequestMethod.GET)
+    public String showTrickCenter(Model model, String name){
+        model.addAttribute("tricks", foxListService.getListOfLearnableTricks());
+        model.addAttribute("name", name);
+        return "skillstore";
+    }
+
+    @RequestMapping(value = "/trickCenter", method = RequestMethod.POST)
+    public String learnSkill(String trick, String name){
+        foxListService.learnTrick(name, trick);
         return "redirect:/?name=" + name;
     }
 }

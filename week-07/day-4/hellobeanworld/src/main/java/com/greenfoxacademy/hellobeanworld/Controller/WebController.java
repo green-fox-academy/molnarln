@@ -32,7 +32,7 @@ public class WebController {
     }
 
     @RequestMapping(value = "/useful/email", method = RequestMethod.POST)
-    //if we use get method, in the URL the email address will be visible
+    //------------->>if we use get method, in the URL the email address will be visible<<-------------------------------
     public String validateEmail(@RequestParam("email") String email, Model model) {
         utilityService.validateEmail(email);
         model.addAttribute("email", email);
