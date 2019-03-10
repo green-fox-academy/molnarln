@@ -29,6 +29,7 @@ public class MainController {
     public String showMain(@RequestParam(value = "name", required = false, defaultValue = "Mr. Fox") String name, Model model) {
         model.addAttribute("fox", foxListService.getFox(name));
         model.addAttribute("name", name);
+        model.addAttribute("actionlog", foxListService.getFox(name).getActionLog());
         return "index";
     }
 

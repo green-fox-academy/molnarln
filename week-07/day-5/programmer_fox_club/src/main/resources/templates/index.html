@@ -28,6 +28,13 @@
     <p> Fox does not know any tricks yet.</p>
 </div>
 
+<div>
+    <h1>Action log: </h1>
+    <ul th:each="action : ${actionlog}">
+        <h2><li th:text="${action}"></li></h2>
+    </ul>
+</div>
+
 
 </body>
 </html>
