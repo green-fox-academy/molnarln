@@ -56,7 +56,16 @@ public class MainController {
     //-----WE CAN USE THAT SYNTAX TOO:
     //@RequestParam(value = "name") String name, @RequestParam(value = "food") String food, @RequestParam(value = "drink") String drink
     public String setFoodAndDrink(@RequestParam Map<String, String> map) {
+        String foodBeforeChange = foxListService.getFox(map.get("name")).getFood();
+        String drinkBeforeChange = foxListService.getFox(map.get("name")).getDrink();
+
         foxListService.setFoodAndDrink(map.get("name"), map.get("food"), map.get("drink"));
+        if (!foodBeforeChange.equalsIgnoreCase(map.get("food"))) {
+            foxListService.getFox(map.get("name")).addAction(foxListService.getDate() + " Food changed from: " + foodBeforeChange + " to: " + map.get("food"));
+        }
+        if (!drinkBeforeChange.equalsIgnoreCase(map.get("drink"))) {
+            foxListService.getFox(map.get("name")).addAction(foxListService.getDate() + " Drink changed from: " + drinkBeforeChange + " to: " + map.get("drink"));
+        }
         return "redirect:/?name=" + map.get("name");
     }
 
@@ -69,7 +78,18 @@ public class MainController {
 
     @RequestMapping(value = "/trickCenter", method = RequestMethod.POST)
     public String learnSkill(String trick, String name) {
+        if (!foxListService.getFox(name).getTricks().contains(trick)) {
+            foxListService.getFox(name).addAction(foxListService.getDate() + "Learned the following trick: " + trick);
+        }
         foxListService.learnTrick(name, trick);
         return "redirect:/?name=" + name;
+    }
+
+    @RequestMapping(value = "/actionLog", method = RequestMethod.GET)
+    public String showLogs(Model model, String name) {
+        model.addAttribute("name", name);
+        model.addAttribute("actionlog", foxListService.getFox(name).getActionLog());
+
+        return "actionlog";
     }
 }

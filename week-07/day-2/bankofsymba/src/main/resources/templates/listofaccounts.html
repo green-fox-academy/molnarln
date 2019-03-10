@@ -67,8 +67,10 @@
         <label for="isKing">Is he a king?</label>
         <input type="checkbox" id="isKing" th:field="*{king}"/>
 
-        <label for="isGoodGuy">Good guy?</label>
-        <input type="checkbox" id="isGoodGuy" th:field="*{goodGuy}"/>
+        <label for="isGoodGuy">Good guy</label>
+        <input type="radio" id="isGoodGuy" th:field="*{goodGuy}" th:value="true"/>
+        <label for="isBadGuy">Bad guy</label>
+        <input type="radio" id="isBadGuy" th:field="*{goodGuy}" th:value="false"/>
 
         <button type="submit">Add account</button>
 

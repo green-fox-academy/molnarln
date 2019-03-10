@@ -8,9 +8,11 @@
 <a th:href="@{'/?name=' + ${name}}">Information</a><br>
 <a th:href="@{'/nutritionstore?name=' + ${name}}">Nutrition Store</a><br>
 <a th:href="@{'/trickCenter?name=' + ${name}}">Trick Center</a><br>
+<a th:href="@{/actionLog(name=${name})}">Action Log</a>
+
 
 <div>
-    <img src="/greenfox.png">
+    <img src="greenfox.png">
 </div>
 
 

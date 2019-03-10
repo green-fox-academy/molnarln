@@ -12,6 +12,7 @@ public class Fox {
     private List<String> tricks;
     private String food;
     private String drink;
+    private List<String> actionLog;
 
     public Fox(String name, List<String> tricks, String food, String drink) {
         this.name = name;
@@ -19,6 +20,14 @@ public class Fox {
         this.tricks.addAll(tricks);
         this.food = food;
         this.drink = drink;
+        this.actionLog = new ArrayList<>();
+    }
+    public void addAction(String action){
+        this.actionLog.add(action);
+    }
+
+    public List<String> getActionLog() {
+        return actionLog;
     }
 
     public String getName() {

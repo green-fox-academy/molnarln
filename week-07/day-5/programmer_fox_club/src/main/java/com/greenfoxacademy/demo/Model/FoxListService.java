@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,11 +15,17 @@ public class FoxListService {
     private List<String> listOfAvailableFoods;
     private List<String> listOfAvailableDrinks;
     private List<String> listOfLearnableTricks;
+    private Date date;
 
 
     public FoxListService() {
         this.foxList = new ArrayList<>();
         initialiseLists();
+        this.date = new Date();
+    }
+
+    public String getDate(){
+        return this.date.toString();
     }
 
     private void initialiseLists() {

@@ -14,16 +14,9 @@
 <a th:href="@{/actionLog(name=${name})}">Action Log</a>
 
 
-
-<form action="#" th:action="@{/trickCenter(name=${name})}" method="post">
-
-    <select th:name="trick">
-        <option th:each="trick : ${tricks}" th:value="${trick}" th:text="${trick}"></option>
-    </select>
-
-    <button type="submit">Learn trick!!</button>
-
-</form>
+<ul th:each="action : ${actionlog}">
+    <li th:text="${action}"></li>
+</ul>
 
 </body>
 </html>
