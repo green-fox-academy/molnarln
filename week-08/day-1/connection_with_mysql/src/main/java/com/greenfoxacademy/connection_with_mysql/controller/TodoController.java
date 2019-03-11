@@ -65,8 +65,12 @@ public class TodoController {
     }
 
     @RequestMapping(value = "/{id}/update", method = RequestMethod.POST)
-    public String updateTodo(Todo todo){
-        todoRepository.save(todo);
+    public String updateTodo(@PathVariable Long id,Todo todo){
+        Todo todoToUpdate = todoRepository.findById(id).get();
+        todoToUpdate.setTitle(todo.getTitle());
+        todoToUpdate.setDone(todo.isDone());
+        todoToUpdate.setUrgent(todo.isUrgent());
+        todoRepository.save(todoToUpdate);
         return "redirect:/todo/";
     }
 }
