@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@RequestMapping(value = "/todo")
 public class TodoController {
 
     private TodoRepository todoRepository;
@@ -18,8 +19,9 @@ public class TodoController {
         this.todoRepository = todoRepository;
     }
 
-    @RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"", "/", "/list"}, method = RequestMethod.GET)
     public String list(Model model){
+        model.addAttribute("todos", todoRepository.findAll());
         return "todolist";
     }
 

@@ -11,12 +11,24 @@ public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    private String title;
     private boolean urgent;
     private boolean done;
 
-    public Todo(boolean urgent, boolean done) {
-        this.urgent = false;
-        this.done = false;
+    public Todo(){}
+
+    public Todo(String title, boolean urgent, boolean done) {
+        this.title = title;
+        this.urgent = urgent;
+        this.done = done;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public long getId() {
