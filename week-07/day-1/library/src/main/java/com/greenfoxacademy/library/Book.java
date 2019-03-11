@@ -14,7 +14,8 @@ public class Book {
         this.author = author;
         this.releaseYear = releaseYear;
     }
-    public String getTitle(){
+
+    public String getTitle() {
         return this.title;
     }
 
