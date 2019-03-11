@@ -2,14 +2,12 @@ package com.greenfoxacademy.connection_with_mysql.controller;
 
 import com.greenfoxacademy.connection_with_mysql.model.Todo;
 import com.greenfoxacademy.connection_with_mysql.repository.TodoRepository;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -54,16 +52,21 @@ public class TodoController {
         return "redirect:/todo/";
     }
 
-    @RequestMapping(value = "/{id}/delete")
+    @RequestMapping(value = "/{id}/delete", method = RequestMethod.GET)
     public String deleteTodo(@PathVariable("id") Long id){
         todoRepository.deleteById(id);
         return "redirect:/todo/";
     }
 
-    @RequestMapping(value = "/{id}/delete")
+    @RequestMapping(value = "/{id}/update", method = RequestMethod.GET)
     public String showUpdateView(@PathVariable("id") Long id, Model model){
-        model.addAttribute("todo", todoRepository.findById(id));
+        model.addAttribute("todo", todoRepository.findById(id).orElseThrow(NullPointerException::new));
         return "update";
     }
 
+    @RequestMapping(value = "/{id}/update", method = RequestMethod.POST)
+    public String updateTodo(Todo todo){
+        todoRepository.save(todo);
+        return "redirect:/todo/";
+    }
 }

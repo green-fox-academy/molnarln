@@ -23,8 +23,8 @@
         <td th:text="${todo.title}"></td>
         <td th:text="${todo.done}"></td>
         <td th:text="${todo.urgent}"></td>
-        <td><a th:href="@{'/todo/'+${todo.id}+'/delete'}">DELETE</a></td>
-        <td><a th:href="@{'/todo/'+${todo.id}+'/edit'}">EDIT</a></td>
+        <td><a th:href="@{'/todo/'+${todo.id}+'/delete'}" th:method="get">DELETE</a></td>
+        <td><a th:href="@{'/todo/'+${todo.id}+'/update'}">EDIT</a></td>
     </tr>
 
 </table>
