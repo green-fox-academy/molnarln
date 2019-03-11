@@ -11,7 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ConnectionWithMysqlApplication implements CommandLineRunner {
     private TodoRepository todoRepository;
 
-    @Autowired
     public ConnectionWithMysqlApplication(TodoRepository todoRepository) {
         this.todoRepository = todoRepository;
     }
