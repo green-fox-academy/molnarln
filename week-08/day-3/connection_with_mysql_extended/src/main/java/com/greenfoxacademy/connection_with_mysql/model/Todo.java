@@ -6,23 +6,22 @@ import javax.persistence.*;
 public class Todo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String title;
     private boolean urgent;
     private boolean done;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Assignee assignee;
 
+    public Todo() {
+    }
 
-    public Todo(){}
-
-    public Todo(String title, boolean urgent, boolean done, Assignee assignee) {
+    public Todo(String title, boolean urgent, boolean done) {
         this.title = title;
         this.urgent = urgent;
         this.done = done;
-        this.assignee = assignee;
     }
 
 

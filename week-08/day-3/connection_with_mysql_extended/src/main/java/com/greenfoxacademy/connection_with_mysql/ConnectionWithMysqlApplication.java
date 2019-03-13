@@ -2,6 +2,7 @@ package com.greenfoxacademy.connection_with_mysql;
 
 import com.greenfoxacademy.connection_with_mysql.model.Assignee;
 import com.greenfoxacademy.connection_with_mysql.model.Todo;
+import com.greenfoxacademy.connection_with_mysql.repository.AssigneeRepository;
 import com.greenfoxacademy.connection_with_mysql.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -11,9 +12,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ConnectionWithMysqlApplication implements CommandLineRunner {
     private TodoRepository todoRepository;
+    private AssigneeRepository assigneeRepository;
 
-    public ConnectionWithMysqlApplication(TodoRepository todoRepository) {
+    @Autowired
+    public ConnectionWithMysqlApplication(TodoRepository todoRepository, AssigneeRepository assigneeRepository) {
         this.todoRepository = todoRepository;
+        this.assigneeRepository = assigneeRepository;
     }
 
     public static void main(String[] args) {
@@ -23,12 +27,25 @@ public class ConnectionWithMysqlApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         todoRepository.deleteAll();
-        todoRepository.save(new Todo("I have to learn Object Relational Mapping", true, false, new Assignee("Béla", "bela@mail.com")));
-        todoRepository.save(new Todo("I have to understand everything", true, true, new Assignee("Géza", "geza@mail.hu")));
-        todoRepository.save(new Todo("I have to learn CommandLineRunner", true, false, new Assignee("Aladár", "aladar@mrmail.com")));
-        todoRepository.save(new Todo("Repair the car", true, false, new Assignee("Emese", "emese@mesemail.hu")));
-        todoRepository.save(new Todo("I have to learn CommandLineRunner", false, true, new Assignee("mrFurkó", "mrfurko@mail.com")));
+        Assignee a = new Assignee("Béla", "bela@gfd.hu");
+        Assignee b = new Assignee("Gizi", "gizi@gmail.hu");
+        Assignee c = new Assignee("Pista", "pista@freemail.hu");
+        Assignee d = new Assignee("Endre", "endre@gfd.hu");
 
+        assigneeRepository.save(a);
+        assigneeRepository.save(b);
+        assigneeRepository.save(c);
+        assigneeRepository.save(d);
+
+
+        Todo todo1 = new Todo("I have to understand everything", true, true);
+        Todo todo2 = new Todo("I have to learn CommandLineRunner", true, false);
+        Todo todo3 = new Todo("Repair the car", true, false);
+        Todo todo4 = new Todo("I have to learn CommandLineRunner", false, true);
+        todoRepository.save(todo1);
+        todoRepository.save(todo2);
+        todoRepository.save(todo3);
+        todoRepository.save(todo4);
 
 
     }
