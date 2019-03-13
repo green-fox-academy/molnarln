@@ -13,9 +13,9 @@
     <input type="text" th:field="*{title}" required th:placeholder="${todo.title}">
     <input type="submit" th:value="Submit">
     <label for="donebox">Done</label>
-    <input type="checkbox"  th:field="*{done}" id="donebox">
+    <input type="checkbox" th:value="${todo.done}" th:field="*{done}" id="donebox">
     <label for="urgentbox">Urgent</label>
-    <input type="checkbox"  id="urgentbox" th:field="*{urgent}">
+    <input type="checkbox" th:value="${todo.done}" id="urgentbox" th:field="*{urgent}">
 
 </form>
 
