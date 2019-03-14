@@ -27,6 +27,7 @@ public class RedditController {
     public String showMainPage (Model model, @PathVariable("id") int id) {
 
         model.addAttribute("posts", postService.createPagesOfTenPosts(id));
+        model.addAttribute("pages", postService.pages());
         return "index";
 
     }
@@ -59,5 +60,4 @@ public class RedditController {
         postService.savePost(postToDownvote);
         return "redirect:/0";
     }
-
 }

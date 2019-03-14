@@ -25,9 +25,15 @@
         <td><a th:href="@{'/'+${post.getId()}+'/downvote'}">-</a></td>
         <td> <a th:href="@{${post.getUrl()}}" th:text="${post.getTitle()}"></a></td>
         <td th:text="${post.getDateOfPost()}"></td>
-
     </tr>
 
+</table>
+
+<p>Click to other</p>
+<table>
+    <tr>
+        <td th:each="page : ${pages}"><a th:href="@{'/' + ${page}}" th:text="${page}"></a></td>
+    </tr>
 </table>
 
 
