@@ -6,15 +6,13 @@ import java.util.List;
 
 @Entity
 public class Assignee {
-
-    private String name;
-    private String email;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String name;
+    private String email;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "assignee")
+    @OneToMany (cascade = CascadeType.ALL, mappedBy = "assignee")
     private List<Todo> todos;
 
     public Assignee() {
@@ -30,8 +28,8 @@ public class Assignee {
         return todos;
     }
 
-    public void setTodos(List<Todo> todos) {
-        this.todos = todos;
+    public void setTodo(Todo todo) {
+        this.todos.add(todo);
     }
 
     public String getName() {

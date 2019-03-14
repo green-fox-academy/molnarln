@@ -9,6 +9,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.Arrays;
+import java.util.List;
+
 @SpringBootApplication
 public class ConnectionWithMysqlApplication implements CommandLineRunner {
     private TodoRepository todoRepository;
@@ -46,6 +49,15 @@ public class ConnectionWithMysqlApplication implements CommandLineRunner {
         todoRepository.save(todo2);
         todoRepository.save(todo3);
         todoRepository.save(todo4);
+
+        a.setTodo(todo1);
+        a.setTodo(todo2);
+
+        assigneeRepository.save(a);
+
+        List<Todo> astodos = a.getTodos();
+        System.out.println(astodos.get(0).getTitle());
+        System.out.println(astodos.get(1).getTitle());
 
 
     }
