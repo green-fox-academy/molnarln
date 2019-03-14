@@ -40,26 +40,23 @@ public class RedditController {
 
     @RequestMapping(value = {"/submit"}, method = RequestMethod.POST)
     public String addPost(Post post) {
-
-        postService.getPostRepository().save(post);
-
+        postService.savePost(post);
         return "redirect:/";
-
     }
 
     @RequestMapping(value = "/{id}/upvote", method = RequestMethod.GET)
     public String upVotePost(@PathVariable("id") Long id){
-        Post postToUpvote = postService.getPostRepository().findById(id).get();
+        Post postToUpvote = postService.findPostById(id);
         postToUpvote.upVote();
-        postService.getPostRepository().save(postToUpvote);
+        postService.savePost(postToUpvote);
         return "redirect:/";
     }
 
     @RequestMapping(value = "/{id}/downvote", method = RequestMethod.GET)
     public String downVote(@PathVariable("id") Long id){
-        Post postToUpvote = postService.getPostRepository().findById(id).get();
-        postToUpvote.downVote();
-        postService.getPostRepository().save(postToUpvote);
+        Post postToDownvote = postService.findPostById(id);
+        postToDownvote.downVote();
+        postService.savePost(postToDownvote);
         return "redirect:/";
     }
 

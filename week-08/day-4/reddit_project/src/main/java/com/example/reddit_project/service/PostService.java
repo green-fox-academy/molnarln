@@ -50,4 +50,12 @@ public class PostService {
                 .collect(Collectors.toList());
         return sortedByVotes;
     }
+
+    public void savePost(Post postToSave){
+        this.postRepository.save(postToSave);
+    }
+
+    public Post findPostById(Long id){
+        return this.postRepository.findById(id).get();
+    }
 }
