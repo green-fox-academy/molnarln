@@ -1,9 +1,11 @@
 package com.example.reddit_project.service;
 
+import com.example.reddit_project.CustomException;
 import com.example.reddit_project.model.Post;
 import com.example.reddit_project.repository.PostRepository;
-import javafx.geometry.Pos;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -24,7 +26,7 @@ public class PostService {
 
     }
 
-    public void addPost (Post post){
+    public void addPost(Post post) {
         postRepository.save(post);
     }
 
@@ -32,10 +34,10 @@ public class PostService {
         return postRepository;
     }
 
+/*
     public List<Post> sortPostsByVotes(){
         List<Post> sortedByVotes = new ArrayList<>();
         List<Post> allPosts = new ArrayList<>();
-
         this.postRepository.findAll().forEach(allPosts::add);
         sortedByVotes = allPosts.stream()
                 .sorted(new Comparator<Post>() {
@@ -50,12 +52,44 @@ public class PostService {
                 .collect(Collectors.toList());
         return sortedByVotes;
     }
+*/
 
-    public void savePost(Post postToSave){
+    public void savePost(Post postToSave) {
         this.postRepository.save(postToSave);
     }
 
-    public Post findPostById(Long id){
-        return this.postRepository.findById(id).get();
+    public Post findPostById(Long id) throws CustomException {
+        return this.postRepository.findById(id).orElseThrow(()->new CustomException("Post not found!"));
     }
+
+    public List<Post> createPagesOfTenPosts(int pageNumber) {
+        List<Post> sortedByVotes = new ArrayList<>();
+        List<Post> allPosts = new ArrayList<>();
+        this.postRepository.findAll().forEach(allPosts::add);
+        Pageable p = PageRequest.of(0, 10);
+        sortedByVotes = this.postRepository.findAllByOrderByVotesDesc(p);
+        return sortedByVotes;
+    }
+
+
+/*        sortedByVotes = allPosts.stream()
+                .sorted(new Comparator<Post>() {
+                    @Override
+                    public int compare(Post o1, Post o2) {
+                        if (o1.getVotes() >= o2.getVotes()) {
+                            return -1;
+                        }
+                        return 1;
+                    }
+                })
+                .collect(Collectors.toList());
+        List<Post> postToRender = new ArrayList<>();
+
+        for (int i = pageNumber * 10; *//*(pageNumber >= sortedByVotes.size()) ? *//*(i < ((pageNumber * 10) + (10)))*//* : (i < (pageNumber * 10) + 10)*//*; i++) {
+            postToRender.add(sortedByVotes.get(i));
+        }
+        return postToRender;
+    } */
+
+
 }

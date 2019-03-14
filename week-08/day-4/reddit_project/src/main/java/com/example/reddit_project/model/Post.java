@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Post {
@@ -12,16 +13,24 @@ public class Post {
     private Long id;
 
     private String title;
-    private int votes;
+    private Integer votes;
     private String url;
+    private Date dateOfPost;
 
     public Post() {
+        this.votes = 0;
+        this.dateOfPost = new Date();
     }
 
     public Post(String title, String url) {
         this.title = title;
         this.url = url;
         this.votes = 0;
+        this.dateOfPost = new Date();
+    }
+
+    public Date getDateOfPost() {
+        return dateOfPost;
     }
 
     public Long getId() {

@@ -17,12 +17,15 @@
         <th>UPVOTE</th>
         <th>DOWNVOTE</th>
         <th>TITLE</th>
+        <th>DATE</th>
     </tr>
     <tr th:each="post : ${posts}">
         <td th:text="${post.getVotes()}"></td>
         <td><a th:href="@{'/'+${post.getId()}+'/upvote'}">+</a></td>
         <td><a th:href="@{'/'+${post.getId()}+'/downvote'}">-</a></td>
         <td> <a th:href="@{${post.getUrl()}}" th:text="${post.getTitle()}"></a></td>
+        <td th:text="${post.getDateOfPost()}"></td>
+
     </tr>
 
 </table>

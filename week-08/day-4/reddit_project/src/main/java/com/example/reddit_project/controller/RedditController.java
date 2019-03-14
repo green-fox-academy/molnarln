@@ -23,10 +23,10 @@ public class RedditController {
         this.postService = postService;
     }
 
-    @RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
-    public String showMainPage (Model model) {
+    @RequestMapping(value = {"/{id}", "{id}"}, method = RequestMethod.GET)
+    public String showMainPage (Model model, @PathVariable("id") int id) {
 
-        model.addAttribute("posts", postService.sortPostsByVotes());
+        model.addAttribute("posts", postService.createPagesOfTenPosts(id));
         return "index";
 
     }
@@ -41,7 +41,7 @@ public class RedditController {
     @RequestMapping(value = {"/submit"}, method = RequestMethod.POST)
     public String addPost(Post post) {
         postService.savePost(post);
-        return "redirect:/";
+        return "redirect:/0";
     }
 
     @RequestMapping(value = "/{id}/upvote", method = RequestMethod.GET)
@@ -49,7 +49,7 @@ public class RedditController {
         Post postToUpvote = postService.findPostById(id);
         postToUpvote.upVote();
         postService.savePost(postToUpvote);
-        return "redirect:/";
+        return "redirect:/0";
     }
 
     @RequestMapping(value = "/{id}/downvote", method = RequestMethod.GET)
@@ -57,7 +57,7 @@ public class RedditController {
         Post postToDownvote = postService.findPostById(id);
         postToDownvote.downVote();
         postService.savePost(postToDownvote);
-        return "redirect:/";
+        return "redirect:/0";
     }
 
 }
