@@ -11,7 +11,10 @@ public class Todo {
     private boolean urgent;
     private boolean done;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+ /*   @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "assignee_id")
+    private Assignee assignee;*/
+    @ManyToOne
     private Assignee assignee;
 
     public Todo() {
@@ -24,13 +27,13 @@ public class Todo {
     }
 
 
-    public Assignee getAssignee() {
+   /* public Assignee getAssignee() {
         return assignee;
     }
 
     public void setAssignee(Assignee assignee) {
         this.assignee = assignee;
-    }
+    }*/
 
     public String getTitle() {
         return title;

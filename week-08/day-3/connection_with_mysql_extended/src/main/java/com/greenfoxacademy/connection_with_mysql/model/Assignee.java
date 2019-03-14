@@ -12,25 +12,27 @@ public class Assignee {
     private String name;
     private String email;
 
-    @OneToMany (cascade = CascadeType.ALL, mappedBy = "assignee")
+    /*@OneToMany (cascade = CascadeType.ALL, mappedBy = "assignee")*/
+//    private List<Todo> todos;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Todo> todos;
 
     public Assignee() {
     }
 
+    //todo: initialize variables properly
     public Assignee(String name, String email) {
-        this.todos = new ArrayList<>();
         this.name = name;
         this.email = email;
     }
 
-    public List<Todo> getTodos() {
+   /* public List<Todo> getTodos() {
         return todos;
     }
 
     public void setTodo(Todo todo) {
         this.todos.add(todo);
-    }
+    }*/
 
     public String getName() {
         return name;
@@ -44,12 +46,23 @@ public class Assignee {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public Long getId() {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<Todo> getTodos() {
+        return todos;
+    }
+
+    public void setTodos(List<Todo> todos) {
+        this.todos = todos;
+    }
 }
