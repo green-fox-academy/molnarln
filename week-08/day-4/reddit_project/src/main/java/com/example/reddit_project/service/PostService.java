@@ -31,26 +31,6 @@ public class PostService {
         return postRepository;
     }
 
-/*
-    public List<Post> sortPostsByVotes(){
-        List<Post> sortedByVotes = new ArrayList<>();
-        List<Post> allPosts = new ArrayList<>();
-        this.postRepository.findAll().forEach(allPosts::add);
-        sortedByVotes = allPosts.stream()
-                .sorted(new Comparator<Post>() {
-                    @Override
-                    public int compare(Post o1, Post o2) {
-                        if (o1.getVotes()>=o2.getVotes()){
-                            return -1;
-                        }
-                        return 1;
-                    }
-                })
-                .collect(Collectors.toList());
-        return sortedByVotes;
-    }
-*/
-
     public void savePost(Post postToSave) {
         this.postRepository.save(postToSave);
     }

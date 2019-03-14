@@ -23,8 +23,13 @@ public class RedditController {
         this.postService = postService;
     }
 
+    @RequestMapping(value = {"", "/"})
+    public String redirectToIndex(){
+        return "redirect:/0";
+    }
+
     @RequestMapping(value = {"/{id}", "{id}"}, method = RequestMethod.GET)
-    public String showMainPage (Model model, @PathVariable("id") int id) {
+    public String showMainPage (Model model, @PathVariable(value = "id") Integer id) {
 
         model.addAttribute("posts", postService.createPagesOfTenPosts(id));
         model.addAttribute("pages", postService.pages());
