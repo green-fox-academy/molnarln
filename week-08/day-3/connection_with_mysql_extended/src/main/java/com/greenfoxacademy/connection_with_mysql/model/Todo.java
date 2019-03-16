@@ -5,16 +5,15 @@ import javax.persistence.*;
 @Entity
 public class Todo {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String title;
     private boolean urgent;
     private boolean done;
 
- /*   @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "assignee_id")
-    private Assignee assignee;*/
+
     @ManyToOne
+    //@JoinColumn(name = "foreign_id")
     private Assignee assignee;
 
     public Todo() {
@@ -26,14 +25,17 @@ public class Todo {
         this.done = done;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
 
-   /* public Assignee getAssignee() {
+    public Assignee getAssignee() {
         return assignee;
     }
 
     public void setAssignee(Assignee assignee) {
         this.assignee = assignee;
-    }*/
+    }
 
     public String getTitle() {
         return title;

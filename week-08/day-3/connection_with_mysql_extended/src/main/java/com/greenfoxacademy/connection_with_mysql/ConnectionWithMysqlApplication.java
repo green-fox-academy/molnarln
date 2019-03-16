@@ -31,6 +31,16 @@ public class ConnectionWithMysqlApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         todoRepository.deleteAll();
+        Todo todo1 = new Todo("I have to understand everything", true, true);
+        Todo todo2 = new Todo("I have to learn CommandLineRunner", true, false);
+        Todo todo3 = new Todo("Repair the car", true, false);
+        Todo todo4 = new Todo("I have to learn CommandLineRunner", false, true);
+        todoRepository.save(todo1);
+        todoRepository.save(todo2);
+        todoRepository.save(todo3);
+        todoRepository.save(todo4);
+
+
         Assignee a = new Assignee("Béla", "bela@gfd.hu");
         Assignee b = new Assignee("Gizi", "gizi@gmail.hu");
         Assignee c = new Assignee("Pista", "pista@freemail.hu");
@@ -41,20 +51,15 @@ public class ConnectionWithMysqlApplication implements CommandLineRunner {
         assigneeRepository.save(c);
         assigneeRepository.save(d);
 
-
-        Todo todo1 = new Todo("I have to understand everything", true, true);
-        Todo todo2 = new Todo("I have to learn CommandLineRunner", true, false);
-        Todo todo3 = new Todo("Repair the car", true, false);
-        Todo todo4 = new Todo("I have to learn CommandLineRunner", false, true);
-        todoRepository.save(todo1);
-        todoRepository.save(todo2);
-        todoRepository.save(todo3);
-        todoRepository.save(todo4);
         List<Todo> x = new ArrayList<>();
-        x.add(todo1);
-        a.setTodos(x);
-        assigneeRepository.save(a);
+        x.add(todo2);
+        x.add(todo3);
+        todo2.setAssignee(a);
+        todo3.setAssignee(a);
 
+        a.setTodos(x);
+
+        assigneeRepository.save(a);
 
     }
 }

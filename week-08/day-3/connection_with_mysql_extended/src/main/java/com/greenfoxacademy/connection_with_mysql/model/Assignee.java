@@ -7,32 +7,25 @@ import java.util.List;
 @Entity
 public class Assignee {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String email;
 
-    /*@OneToMany (cascade = CascadeType.ALL, mappedBy = "assignee")*/
-//    private List<Todo> todos;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER) //if I use mapped by, the third table will be empty, because the 'todo' table will be doing the matching
     private List<Todo> todos;
 
     public Assignee() {
+        this.todos = new ArrayList<>();
     }
 
     //todo: initialize variables properly
     public Assignee(String name, String email) {
         this.name = name;
         this.email = email;
+        this.todos = new ArrayList<>();
     }
 
-   /* public List<Todo> getTodos() {
-        return todos;
-    }
-
-    public void setTodo(Todo todo) {
-        this.todos.add(todo);
-    }*/
 
     public String getName() {
         return name;
