@@ -58,4 +58,8 @@ public class Assignee {
     public void setTodos(List<Todo> todos) {
         this.todos = todos;
     }
+
+    public void addTodo (Todo todo){
+        this.todos.add(todo);
+    }
 }

@@ -35,6 +35,7 @@ public class Todo {
 
     public void setAssignee(Assignee assignee) {
         this.assignee = assignee;
+        assignee.addTodo(this);
     }
 
     public String getTitle() {

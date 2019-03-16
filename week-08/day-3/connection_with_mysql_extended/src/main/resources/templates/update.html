@@ -16,8 +16,11 @@
     <input type="checkbox" th:value="${todo.done}" th:field="*{done}" id="donebox">
     <label for="urgentbox">Urgent</label>
     <input type="checkbox" th:value="${todo.done}" id="urgentbox" th:field="*{urgent}">
-
+    <select name="assignee" id="assigneeid">
+        <option th:each="assignee : ${assignees}" th:value="${assignee.id}" th:text="${assignee.name}"></option>
+    </select>
 </form>
+
 
 </body>
 </html>

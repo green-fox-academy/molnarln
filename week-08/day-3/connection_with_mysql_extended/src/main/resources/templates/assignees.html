@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css"/>
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/todo/add}">Add Todo</a>
+<a th:href="@{/todo/assignees}">Assignees</a>
+
+
+<h1>Todos for today:</h1>
+
+<form action="#" th:action="@{/todo/assignees/add}" th:method="post" th:object="${newassignee}">
+    <input type="text" th:field="*{name}" placeholder="Type name here!">
+    <input type="text" th:field="*{email}" placeholder="Type e-mail here!">
+    <input type="submit" value="Add new assignee">
+
+</form>
+
+<table>
+
+    <tr>
+        <th>Name</th>
+
+    </tr>
+    <tr th:each="assignee : ${assignees}">
+        <td th:text="${assignee.name}"></td>
+        <td><a th:href="@{'/todo/assignees/' + ${assignee.id} + '/edit'}">edit</a></td>
+        <td><a th:href="@{'/todo/assignees/' + ${assignee.id} + '/delete'}">delete</a></td>
+        </tr>
+
+</table>
+
+
+</body>
+</html>

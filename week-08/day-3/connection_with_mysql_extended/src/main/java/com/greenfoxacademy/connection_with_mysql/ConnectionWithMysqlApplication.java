@@ -57,11 +57,11 @@ public class ConnectionWithMysqlApplication implements CommandLineRunner {
         todo2.setAssignee(a);
         todo3.setAssignee(a);
 
-        a.setTodos(x);
+        //a.setTodos(x); It is not needed, because Todo class has a setAssignee method which add the todo to the assignee also
 
         assigneeRepository.save(a);
 
-        //if I don't use cascade at the parent entity, I have to save todo2 and todo3:
+        //if I don't use cascade at the parent entity, I have to save todo2 and todo3 because it's field had been modified:
         //todoRepository.save(todo2);
         //todoRepository.save(todo3);
 
