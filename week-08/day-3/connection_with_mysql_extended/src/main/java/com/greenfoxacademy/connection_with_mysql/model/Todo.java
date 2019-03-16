@@ -13,7 +13,7 @@ public class Todo {
 
 
     @ManyToOne
-    //@JoinColumn(name = "foreign_id")
+    @JoinColumn(name = "foreign_id")
     private Assignee assignee;
 
     public Todo() {

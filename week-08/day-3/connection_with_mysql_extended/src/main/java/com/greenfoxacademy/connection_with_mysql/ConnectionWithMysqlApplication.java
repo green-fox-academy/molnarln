@@ -61,5 +61,9 @@ public class ConnectionWithMysqlApplication implements CommandLineRunner {
 
         assigneeRepository.save(a);
 
+        //if I don't use cascade at the parent entity, I have to save todo2 and todo3:
+        //todoRepository.save(todo2);
+        //todoRepository.save(todo3);
+
     }
 }

@@ -10,4 +10,5 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 
     List<Post> findAllByOrderByVotesDesc(Pageable pageable);
     Integer countAllBy();
+    List<Post> findByOrderByVotesDesc (Pageable pageable); //it does exactly the same as the first method!
 }

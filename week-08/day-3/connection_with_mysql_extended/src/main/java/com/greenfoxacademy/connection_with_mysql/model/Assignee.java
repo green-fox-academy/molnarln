@@ -12,7 +12,7 @@ public class Assignee {
     private String name;
     private String email;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER) //if I use mapped by, the third table will be empty, because the 'todo' table will be doing the matching
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "assignee")
     private List<Todo> todos;
 
     public Assignee() {
