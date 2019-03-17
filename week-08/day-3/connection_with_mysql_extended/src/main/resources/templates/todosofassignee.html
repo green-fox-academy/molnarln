@@ -16,7 +16,7 @@
 <table class="table table-striped table-hover">
 
     <tr th:each="todo : ${listoftodos}">
-        <td th:text="${todo.title}"></td>
+        <td th:text="${todo.title}"  th:style="${todo.done}? 'text-decoration: line-through'"></td>
         <td th:text="${todo.description}"></td>
     </tr>
 

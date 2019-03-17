@@ -29,7 +29,7 @@
         <tbody>
             <tr th:each="todo : ${todos}">
                 <td th:text="${todo.id}"></td>
-                <td th:text="${todo.title}"></td>
+                <td th:text="${todo.title}" th:style="${todo.done}? 'text-decoration: line-through'"></td>
                 <td th:text="${todo.done}"></td>
                 <td th:text="${todo.urgent}"></td>
                 <td><a th:href="@{'/todo/' + ${todo.getAssigneeName()} + '/todosofassignee'}" th:text="${todo.getAssigneeName()}"></a></td>
