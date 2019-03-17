@@ -20,17 +20,17 @@
 
 </form>
 
-<table>
+<table class="col-lg-3">
 
     <tr>
         <th>Name</th>
 
     </tr>
     <tr th:each="assignee : ${assignees}">
-        <td th:text="${assignee.name}"></td>
-        <td><a th:href="@{'/todo/assignees/' + ${assignee.id} + '/edit'}">edit</a></td>
-        <td><a th:href="@{'/todo/assignees/' + ${assignee.id} + '/delete'}">delete</a></td>
-        <td th:text="${assignee.getId()}"></td>
+        <td th:text="${assignee.name} + ' '"></td>
+        <td><a th:href="@{'/todo/assignees/' + ${assignee.id} + '/edit'}">edit </a></td>
+        <td><a th:href="@{'/todo/assignees/' + ${assignee.id} + '/delete'}">delete </a></td>
+        <td th:text="${assignee.getId()} + ' '"></td>
         </tr>
 
 </table>

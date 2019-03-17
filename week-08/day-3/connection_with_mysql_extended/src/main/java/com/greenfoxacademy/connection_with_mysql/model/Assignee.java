@@ -12,7 +12,7 @@ public class Assignee {
     private String name;
     private String email;
 
-    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.REMOVE}, fetch = FetchType.LAZY, mappedBy = "assignee")
+    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.DETACH}, fetch = FetchType.EAGER, mappedBy = "assignee")
     private List<Todo> todos;
 
     public Assignee() {
