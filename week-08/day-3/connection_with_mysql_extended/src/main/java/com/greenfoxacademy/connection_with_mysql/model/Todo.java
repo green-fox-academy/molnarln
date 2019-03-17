@@ -1,6 +1,8 @@
 package com.greenfoxacademy.connection_with_mysql.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 public class Todo {
@@ -10,20 +12,29 @@ public class Todo {
     private String title;
     private boolean urgent;
     private boolean done;
-
+    private String description;
+    @Temporal(TemporalType.DATE)
+    private Date date;
 
     @ManyToOne
-    @JoinColumn(name = "foreign_id")
+    //@JoinColumn(name = "foreign_id")
     private Assignee assignee;
 
     public Todo() {
+        this.date = new Date();
     }
 
     public Todo(String title, boolean urgent, boolean done) {
         this.title = title;
         this.urgent = urgent;
         this.done = done;
+        this.date = new Date();
     }
+
+    public Date getDate() {
+        return date;
+    }
+
 
     public void setId(long id) {
         this.id = id;
@@ -36,6 +47,21 @@ public class Todo {
     public void setAssignee(Assignee assignee) {
         this.assignee = assignee;
         assignee.addTodo(this);
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getAssigneeName() {
+        if (this.getAssignee() == null) {
+            return "No assignee yet!";
+        }
+        return this.getAssignee().getName();
     }
 
     public String getTitle() {

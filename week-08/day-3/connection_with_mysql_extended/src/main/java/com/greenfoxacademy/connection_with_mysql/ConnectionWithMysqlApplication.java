@@ -30,7 +30,7 @@ public class ConnectionWithMysqlApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        todoRepository.deleteAll();
+      /*  todoRepository.deleteAll();
         Todo todo1 = new Todo("I have to understand everything", true, true);
         Todo todo2 = new Todo("I have to learn CommandLineRunner", true, false);
         Todo todo3 = new Todo("Repair the car", true, false);
@@ -63,7 +63,7 @@ public class ConnectionWithMysqlApplication implements CommandLineRunner {
 
         //if I don't use cascade at the parent entity, I have to save todo2 and todo3 because it's field had been modified:
         //todoRepository.save(todo2);
-        //todoRepository.save(todo3);
+        //todoRepository.save(todo3);*/
 
     }
 }

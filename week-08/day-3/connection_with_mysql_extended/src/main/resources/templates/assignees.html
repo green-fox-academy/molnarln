@@ -2,11 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/style.css"/>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
     <title>Title</title>
 </head>
 <body>
-<a th:href="@{/todo/add}">Add Todo</a>
+<a th:href="@{/todo}">Main page</a><br>
+<a th:href="@{/todo/add}">Add Todo</a><br>
 <a th:href="@{/todo/assignees}">Assignees</a>
 
 
@@ -29,6 +30,7 @@
         <td th:text="${assignee.name}"></td>
         <td><a th:href="@{'/todo/assignees/' + ${assignee.id} + '/edit'}">edit</a></td>
         <td><a th:href="@{'/todo/assignees/' + ${assignee.id} + '/delete'}">delete</a></td>
+        <td th:text="${assignee.getId()}"></td>
         </tr>
 
 </table>

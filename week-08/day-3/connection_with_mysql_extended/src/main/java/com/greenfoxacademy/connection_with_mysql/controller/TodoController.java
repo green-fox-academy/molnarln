@@ -72,13 +72,17 @@ public class TodoController {
     }
 
     @RequestMapping(value = "/{id}/update", method = RequestMethod.POST)
-    public String updateTodo(@PathVariable Long id, Todo todo, Long assigneeid) {
+    public String updateTodo(@PathVariable Long id, Todo todo, Long assignee) {
+        Assignee assigneeToAdd = assigneeRepository.findById(assignee).get();
         Todo todoToUpdate = todoRepository.findById(id).get();
+
         todoToUpdate.setTitle(todo.getTitle());
         todoToUpdate.setDone(todo.isDone());
         todoToUpdate.setUrgent(todo.isUrgent());
-        todoRepository.save(todoToUpdate);
+        todoToUpdate.setDescription(todo.getDescription());
+        todoToUpdate.setAssignee(assigneeToAdd);
 
+        todoRepository.save(todoToUpdate);
         return "redirect:/todo/";
     }
 
@@ -109,9 +113,18 @@ public class TodoController {
         assigneeRepository.deleteById(id);
         return "redirect:/todo/assignees";
     }
+
     @RequestMapping(value = "/assignees/add", method = RequestMethod.POST)
     public String addAssignee(Assignee assignee) {
         assigneeRepository.save(assignee);
         return "redirect:/todo/assignees";
+    }
+
+    @RequestMapping(value = "/{name}/todosofassignee", method = RequestMethod.GET)
+    public String listTodosOfAssignee(@PathVariable("name") String name, Model model) {
+        List<Todo> todosOfAssignee = assigneeRepository.findByName(name).getTodos();
+        model.addAttribute("listoftodos", todosOfAssignee);
+        model.addAttribute("name", assigneeRepository.findByName(name).getName());
+        return "todosofassignee";
     }
 }

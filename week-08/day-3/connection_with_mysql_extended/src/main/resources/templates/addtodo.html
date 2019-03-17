@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/style.css"/>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
     <title>Title</title>
 </head>
 <body>
@@ -10,7 +10,8 @@
 <h1>Add new todo:</h1>
 
 <form action="#" th:action="@{/todo/add}" th:object="${todo}" th:method="post">
-    <input type="text" th:field="*{title}" required>
+    <input type="text" th:field="*{title}" required placeholder="Title">
+    <input type="text" th:field="*{description}" required placeholder="Description">
     <input type="submit" th:value="Submit">
 
 </form>

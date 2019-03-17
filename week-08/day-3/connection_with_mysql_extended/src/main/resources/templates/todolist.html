@@ -2,35 +2,42 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/style.css"/>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
     <title>Title</title>
 </head>
 <body>
+<a th:href="@{/todo}">Main page</a><br>
 <a th:href="@{/todo/add}">Add Todo</a><br>
 <a th:href="@{/todo/assignees}">Assignees</a>
 
 
 <h1>Todos for today:</h1>
 
-<table>
-
-    <tr>
-        <th>ID</th>
-        <th>TITLE</th>
-        <th>DONE</th>
-        <th>URGENT</th>
-        <th>ASSIGNEE</th>
-    </tr>
-    <tr th:each="todo : ${todos}">
-        <td th:text="${todo.id}"></td>
-        <td th:text="${todo.title}"></td>
-        <td th:text="${todo.done}"></td>
-        <td th:text="${todo.urgent}"></td>
-        <td th:text="${todo.getAssigneeName()}"></td>
-        <td><a th:href="@{'/todo/'+${todo.id}+'/delete'}" th:method="get">DELETE</a></td>
-        <td><a th:href="@{'/todo/'+${todo.id}+'/update'}">EDIT</a></td>
-    </tr>
-
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>DONE</th>
+            <th>URGENT</th>
+            <th>ASSIGNEE</th>
+            <th>DELETE TODO</th>
+            <th>EDIT TODO</th>
+            <th>DATE OF CREATION</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr th:each="todo : ${todos}">
+                <td th:text="${todo.id}"></td>
+                <td th:text="${todo.title}"></td>
+                <td th:text="${todo.done}"></td>
+                <td th:text="${todo.urgent}"></td>
+                <td><a th:href="@{'/todo/' + ${todo.getAssigneeName()} + '/todosofassignee'}" th:text="${todo.getAssigneeName()}"></a></td>
+                <td><a th:href="@{'/todo/'+${todo.id}+'/delete'}" th:method="get">DELETE</a></td>
+                <td><a th:href="@{'/todo/'+${todo.id}+'/update'}">EDIT</a></td>
+                <td th:text="${todo.date}"></td>
+            </tr>
+        </tbody>
 </table>
 
 

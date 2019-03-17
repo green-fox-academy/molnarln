@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/style.css"/>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
     <title>Title</title>
 </head>
 <body>
@@ -11,7 +11,7 @@
 
 <form action="#" th:action="@{'/todo/' + ${todo.getId()} + '/update'}" th:object="${todo}" th:method="post">
     <input type="text" th:field="*{title}" required th:placeholder="${todo.title}">
-    <input type="submit" th:value="Submit">
+    <input type="text" th:field="*{description}" placeholder="Add a description for the todo">
     <label for="donebox">Done</label>
     <input type="checkbox" th:value="${todo.done}" th:field="*{done}" id="donebox">
     <label for="urgentbox">Urgent</label>
@@ -19,6 +19,8 @@
     <select name="assignee" id="assigneeid">
         <option th:each="assignee : ${assignees}" th:value="${assignee.id}" th:text="${assignee.name}"></option>
     </select>
+
+    <input type="submit" th:value="Submit">
 </form>
 
 

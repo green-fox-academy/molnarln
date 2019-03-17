@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/todo}">Main page</a><br>
+<a th:href="@{/todo/add}">Add Todo</a><br>
+<a th:href="@{/todo/assignees}">Assignees</a>
+
+
+<h1 th:text="|The todos of ${name} are :|"></h1> <br>
+
+<table class="table table-striped table-hover">
+
+    <tr th:each="todo : ${listoftodos}">
+        <td th:text="${todo.title}"></td>
+        <td th:text="${todo.description}"></td>
+    </tr>
+
+</table>
+
+
+</body>
+</html>
