@@ -72,9 +72,18 @@ public class MainController {
 
     @ResponseBody
     @RequestMapping(value = "/arrays", method = RequestMethod.POST)
-    public Object handleInputArray(@RequestBody ArrayRequest arrayRequest){
+    public Object handleInputArray(@RequestBody(required = false) ArrayRequest arrayRequest) {
         ArrayHandler arrayHandler = new ArrayHandler();
-        arrayHandler.setResult(arrayRequest.getWhat(), arrayRequest.getNumbers());
-        return arrayHandler;
+        Error errorMessage = new Error();
+        if (arrayRequest.getWhat()==null) {
+            errorMessage.setError("Please provide what to do with the numbers!");
+            return errorMessage;
+        } else if (arrayRequest.getNumbers() == null) {
+            errorMessage.setError("Please provide numbers!");
+            return errorMessage;
+        } else {
+            arrayHandler.setResult(arrayRequest.getWhat(), arrayRequest.getNumbers());
+            return arrayHandler;
+        }
     }
 }
