@@ -6,7 +6,6 @@ import com.greenfoxacademy.rest_exercises.model.Error;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
 
 @Controller
 public class MainController {
@@ -59,15 +58,23 @@ public class MainController {
 
     @ResponseBody
     @RequestMapping(value = "/dountil/{action}", method = RequestMethod.POST)
-    public Object returnDoUntil(@PathVariable("action") String action, @RequestBody(required = false) Map<String, Integer> until) {
+    public Object returnDoUntil(@PathVariable("action") String action, @RequestBody(required = false) Until until) {
         DoUntil doUntil = new DoUntil();
         if (until == null) {
             Error errorMessage = new Error();
             errorMessage.setError("Please provide a number!");
             return errorMessage;
         } else {
-            doUntil.setResult(action, until.get("until"));
+            doUntil.setResult(action, until.getUntil());
             return doUntil;
         }
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/arrays", method = RequestMethod.POST)
+    public Object handleInputArray(@RequestBody ArrayRequest arrayRequest){
+        ArrayHandler arrayHandler = new ArrayHandler();
+        arrayHandler.setResult(arrayRequest.getWhat(), arrayRequest.getNumbers());
+        return arrayHandler;
     }
 }
