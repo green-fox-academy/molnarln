@@ -14,4 +14,11 @@ public class Appendable {
     public void setAppended(String stringToAppend) {
         this.appended = stringToAppend.concat("a");
     }
+
+    @Override
+    public String toString() {
+        return "Appendable{" +
+                "appended='" + appended + '\'' +
+                '}';
+    }
 }

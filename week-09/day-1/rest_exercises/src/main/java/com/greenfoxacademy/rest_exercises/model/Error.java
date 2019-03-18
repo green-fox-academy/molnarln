@@ -14,4 +14,11 @@ public class Error {
         this.errorMessage = errorMessage;
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "Error{" +
+                "errorMessage='" + errorMessage + '\'' +
+                '}';
+    }
 }

@@ -28,6 +28,13 @@ public class Doubling {
 
         this.result = this.received * 2;
         return this;
+    }
 
+    @Override
+    public String toString() {
+        return "Doubling{" +
+                "result=" + result +
+                ", received=" + received +
+                '}';
     }
 }

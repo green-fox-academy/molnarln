@@ -29,8 +29,13 @@ public class ArrayHandler {
                 tempArray[i] = array[i] * 2;
                 this.result = tempArray;
             }
-
         }
+    }
 
+    @Override
+    public String toString() {
+        return "ArrayHandler{" +
+                "result=" + result +
+                '}';
     }
 }

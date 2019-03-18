@@ -14,4 +14,11 @@ public class Greeter {
     public void setWelcome_message(String name, String title) {
         this.welcome_message = "Oh, hi there " + name + ", my dear " + title + "!";
     }
+
+    @Override
+    public String toString() {
+        return "Greeter{" +
+                "welcome_message='" + welcome_message + '\'' +
+                '}';
+    }
 }

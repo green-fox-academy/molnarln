@@ -25,4 +25,11 @@ public class DoUntil {
             this.result = temp2;
         }
     }
+
+    @Override
+    public String toString() {
+        return "DoUntil{" +
+                "result=" + result +
+                '}';
+    }
 }
