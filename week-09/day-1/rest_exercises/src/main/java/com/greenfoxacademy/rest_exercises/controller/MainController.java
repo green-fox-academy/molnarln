@@ -121,4 +121,13 @@ public class MainController {
             return arrayHandler;
         }
     }
+    @ResponseBody
+    @RequestMapping(value = "/log", method = RequestMethod.GET)
+    public Object showLogEntries(){
+        LogEntries logEntries = new LogEntries();
+        logService.setLogList(logEntries);
+        logService.setLogCount(logEntries);
+        return logEntries;
+
+    }
 }
