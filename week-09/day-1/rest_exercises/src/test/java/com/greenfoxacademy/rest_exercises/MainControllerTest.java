@@ -7,11 +7,10 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.unbescape.html.HtmlEscape;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
@@ -108,5 +107,58 @@ public class MainControllerTest {
                 get("/doubling"))
                 .andExpect(MockMvcResultMatchers.jsonPath("error")
                         .value("Please provide an input!"));
+    }
+
+    @Test
+    public void greetWithInput_ReturnNameAndTitle_IsOK() throws Exception {
+
+        mockMvc.perform(
+                get("/greeter?name=bela&title=student"))
+                .andExpect(MockMvcResultMatchers.jsonPath("welcome_message")
+                        .value("Oh, hi there bela, my dear student!"));
+    }
+
+    @Test
+    public void greetWithInput_ReturnMissingNameError_IsOK() throws Exception {
+
+        mockMvc.perform(
+                get("/greeter?title=student"))
+                .andExpect(MockMvcResultMatchers.jsonPath("error")
+                        .value("Please provide a name!"));
+    }
+
+    @Test
+    public void greetWithInput_ReturnMissingTitleError_IsOK() throws Exception {
+
+        mockMvc.perform(
+                get("/greeter?name=bela"))
+                .andExpect(MockMvcResultMatchers.jsonPath("error")
+                        .value("Please provide a title!"));
+    }
+
+    @Test
+    public void greetWithInput_ReturnMissingQueryParametersError_IsOK() throws Exception {
+
+        mockMvc.perform(
+                get("/greeter"))
+                .andExpect(MockMvcResultMatchers.jsonPath("error")
+                        .value("Please provide a name and a title!"));
+    }
+
+    @Test
+    public void appendLetter_ReturnAppendedWord_IsOK() throws Exception {
+
+        mockMvc.perform(
+                get("/appenda/kuty"))
+                .andExpect(MockMvcResultMatchers.jsonPath("appended")
+                        .value("kutya"));
+    }
+
+    @Test
+    public void appendLetter_ReturnErrorIfPathvariableIsMissing_IsOK() throws Exception {
+
+        mockMvc.perform(
+                get("/appenda/"))
+                .andExpect(status().isNotFound());
     }
 }

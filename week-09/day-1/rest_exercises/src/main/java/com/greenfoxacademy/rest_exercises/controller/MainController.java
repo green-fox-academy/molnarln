@@ -4,7 +4,10 @@ import com.greenfoxacademy.rest_exercises.model.*;
 import com.greenfoxacademy.rest_exercises.model.Appendable;
 import com.greenfoxacademy.rest_exercises.model.Error;
 import com.greenfoxacademy.rest_exercises.service.LogService;
+import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -78,6 +81,7 @@ public class MainController {
         appendable.setAppended(stringToAppend);
         Log log = new Log("/appenda/"+stringToAppend, appendable.toString());
         logService.saveLog(log);
+
         return appendable;
     }
 
@@ -90,7 +94,8 @@ public class MainController {
             errorMessage.setError("Please provide a number!");
             Log log = new Log("/dountil/"+action, errorMessage.toString());
             logService.saveLog(log);
-            return errorMessage;
+            ResponseEntity responseEntity = new ResponseEntity("Not found", HttpStatus.NOT_FOUND);
+            return responseEntity;
         } else {
             doUntil.setResult(action, until.getUntil());
             Log log = new Log("/dountil/"+action, doUntil.toString());
