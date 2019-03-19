@@ -1,5 +1,6 @@
 package com.greenfoxacademy.rest_exercises.model;
 
+
 public class ArrayHandler {
     private Object result;
 
@@ -35,7 +36,7 @@ public class ArrayHandler {
     @Override
     public String toString() {
         return "ArrayHandler{" +
-                "result=" + result +
+                "result=" + result.toString() +
                 '}';
     }
 }
