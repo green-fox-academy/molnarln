@@ -81,7 +81,6 @@ public class MainController {
         appendable.setAppended(stringToAppend);
         Log log = new Log("/appenda/"+stringToAppend, appendable.toString());
         logService.saveLog(log);
-
         return appendable;
     }
 
@@ -94,8 +93,7 @@ public class MainController {
             errorMessage.setError("Please provide a number!");
             Log log = new Log("/dountil/"+action, errorMessage.toString());
             logService.saveLog(log);
-            ResponseEntity responseEntity = new ResponseEntity("Not found", HttpStatus.NOT_FOUND);
-            return responseEntity;
+            return errorMessage;
         } else {
             doUntil.setResult(action, until.getUntil());
             Log log = new Log("/dountil/"+action, doUntil.toString());

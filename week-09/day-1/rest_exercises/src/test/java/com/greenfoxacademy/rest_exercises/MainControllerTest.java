@@ -7,9 +7,12 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -161,4 +164,59 @@ public class MainControllerTest {
                 get("/appenda/"))
                 .andExpect(status().isNotFound());
     }
+
+    @Test
+    public void returnDoUntil_ReturnSumIsOK() throws Exception {
+
+        mockMvc.perform(
+                post("/dountil/sum")
+                        .contentType(MediaType.APPLICATION_JSON_UTF8)
+                        .content("{\"until\":5}"))
+                .andExpect(MockMvcResultMatchers.jsonPath("result")
+                .value(15));
+    }
+
+    @Test
+    public void returnDoUntil_NoNumberProvided_IsOK() throws Exception {
+
+        mockMvc.perform(
+                post("/dountil/sum"))
+                .andExpect(MockMvcResultMatchers.jsonPath("error")
+                        .value("Please provide a number!"));
+    }
+
+    @Test
+    public void handleInputArray_ReturnSumIfWhatIsSum_IsOK() throws Exception {
+
+        mockMvc.perform(
+                post("/arrays")
+                        .contentType(MediaType.APPLICATION_JSON_UTF8)
+                        .content("{\"what\":\"sum\", \"numbers\":[1,2,3]}"))
+                .andExpect(MockMvcResultMatchers.jsonPath("result")
+                        .value(6));
+    }
+
+    @Test
+    public void handleInputArray_ReturnErrorIfWhatIsMissing_IsOK() throws Exception {
+
+        mockMvc.perform(
+                post("/arrays")
+                        .contentType(MediaType.APPLICATION_JSON_UTF8)
+                        .content("{\"numbers\":[1,2,3]}"))
+                .andExpect(MockMvcResultMatchers.jsonPath("error")
+                        .value("Please provide what to do with the numbers!"));
+    }
+
+    @Test
+    public void handleInputArray_ReturnErrorIfNumbersAreMissing_IsOK() throws Exception {
+
+        mockMvc.perform(
+                post("/arrays")
+                        .contentType(MediaType.APPLICATION_JSON_UTF8)
+                        .content("{\"what\":\"sum\"}"))
+                .andExpect(MockMvcResultMatchers.jsonPath("error")
+                        .value("Please provide numbers!"));
+    }
+
+
 }
