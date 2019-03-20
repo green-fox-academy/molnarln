@@ -110,6 +110,9 @@ public class TodoController {
 
     @RequestMapping(value = "/assignees/{id}/delete", method = RequestMethod.GET)
     public String deleteAssignee(@PathVariable("id") Long id) {
+        Assignee assigneeToDelete = assigneeRepository.findById(id).get();
+        assigneeToDelete.getTodos().forEach(Todo::nullAssignee);
+        todoRepository.saveAll(assigneeToDelete.getTodos());
         assigneeRepository.deleteById(id);
         return "redirect:/todo/assignees";
     }

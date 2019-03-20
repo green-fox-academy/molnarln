@@ -1,6 +1,7 @@
 package com.example.reddit_project.controller;
 
 import com.example.reddit_project.model.Post;
+import com.example.reddit_project.repository.PostRepository;
 import com.example.reddit_project.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class RedditController {
 
     PostService postService;
+
 
     @Autowired
     public RedditController(PostService postService) {

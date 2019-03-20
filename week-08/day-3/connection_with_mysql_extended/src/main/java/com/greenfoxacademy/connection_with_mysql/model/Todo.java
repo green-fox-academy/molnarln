@@ -48,6 +48,9 @@ public class Todo {
         this.assignee = assignee;
         assignee.addTodo(this);
     }
+    public void nullAssignee(){
+        this.assignee = null;
+    }
 
     public String getDescription() {
         return description;

@@ -1,9 +1,13 @@
 package com.greenfoxacademy.rest_exercises;
 
 import com.greenfoxacademy.rest_exercises.controller.MainController;
+import com.greenfoxacademy.rest_exercises.model.Log;
+import com.greenfoxacademy.rest_exercises.model.LogEntries;
 import com.greenfoxacademy.rest_exercises.service.LogService;
+import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.stubbing.Answer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -11,6 +15,12 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import static org.mockito.Mockito.when;
+
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -218,5 +228,21 @@ public class MainControllerTest {
                         .value("Please provide numbers!"));
     }
 
+/* // TODO: 2019. 03. 19. need fixes!! 
+    @Test
+    public void showLogEntries_ReturnCountOfLogs_IsOK() throws Exception {
+        LogEntries mockLogEntries = new LogEntries();
+        when(logService.getLogs())
+                .thenReturn(new ArrayList<>(Arrays.asList(
+                        new Log("/doubling", "Error{errorMessage='Please provide an input!'}"),
+                        new Log("/doubling", "Doubling{result=10, received=5}")
+                )));
+
+        mockMvc.perform(
+                post("/log"))
+                .andExpect(MockMvcResultMatchers.jsonPath("entry_count")
+                        .value(2));
+    }
+*/
 
 }
