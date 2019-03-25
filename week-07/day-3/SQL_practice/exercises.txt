@@ -20,6 +20,9 @@ SELECT title FROM movie
     ON movie.mid = rating.mid
     WHERE rating.mid IS NULL;
 
+Other solution:
+SELECT title FROM movie NATURAL LEFT JOIN rating WHERE stars is NULL;
+
 Q4
 Some reviewers didn't provide a date with their rating. Find 
 the names of all reviewers who have ratings with a NULL value 

@@ -59,6 +59,10 @@ public class BankAccount {
         return king;
     }
 
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
     public boolean isGoodGuy() {
         return goodGuy;
     }
