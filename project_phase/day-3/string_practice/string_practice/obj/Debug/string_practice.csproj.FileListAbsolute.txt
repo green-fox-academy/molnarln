@@ -1,0 +1,7 @@
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-3\string_practice\string_practice\obj\Debug\string_practice.csprojAssemblyReference.cache
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-3\string_practice\string_practice\obj\Debug\string_practice.csproj.CoreCompileInputs.cache
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-3\string_practice\string_practice\bin\Debug\string_practice.exe.config
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-3\string_practice\string_practice\bin\Debug\string_practice.exe
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-3\string_practice\string_practice\bin\Debug\string_practice.pdb
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-3\string_practice\string_practice\obj\Debug\string_practice.exe
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-3\string_practice\string_practice\obj\Debug\string_practice.pdb
