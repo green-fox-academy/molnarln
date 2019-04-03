@@ -28,6 +28,8 @@ namespace MyProgram
             Console.WriteLine(cat1.Thirst);
 
             Cat cat2 = new Cat(20);
+            //Create an empty name, to see if the Name getter works well:
+            cat2.Name = string.Empty;
             Console.WriteLine(cat2.Thirst);
             Console.WriteLine(cat2.Name);
 

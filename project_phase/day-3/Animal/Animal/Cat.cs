@@ -9,7 +9,17 @@ namespace Valami
     class Cat : Animal
     {
         private string name;
-        public string Name { get { return this.name; } }
+        public string Name
+        {
+            get
+            {
+                return this.name == string.Empty ? "N/A" : this.name;
+            }
+            set
+            {
+                this.name = value;
+            }
+        }
 
         public Cat() : base()
         {
