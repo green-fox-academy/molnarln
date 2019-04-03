@@ -31,8 +31,19 @@ namespace MyProgram
             //Create an empty name, to see if the Name getter works well:
             cat2.Name = string.Empty;
             Console.WriteLine(cat2.Thirst);
-            Console.WriteLine(cat2.Name);
+            Console.WriteLine($"The name of the cat: {cat2.Name}");
+            Cat cat3 = new Cat();
+            Console.WriteLine($"The number of animals: {cat2.NumberOfAnimals}");
 
+            Cat cat10 = new Cat(1);
+            Cat cat20 = new Cat(4);
+            Cat cat30 = new Cat(7);
+            Cat cat40 = new Cat(9);
+            Cat cat50 = new Cat(34);
+            Cat cat60 = new Cat(4543);
+            List<Cat> catList = new List<Cat> {cat10, cat20, cat30, cat40, cat50, cat60};
+
+            catList.Sort();
 
             Console.Read();
         }

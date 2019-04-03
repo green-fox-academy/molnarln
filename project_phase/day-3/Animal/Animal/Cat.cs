@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Valami
 {
-    class Cat : Animal
+    class Cat : Animal, IComparable
     {
         private string name;
         public string Name
@@ -30,6 +30,19 @@ namespace Valami
         {
             base.Thirst = initialThirst;
             this.name = "macska";
+        }
+
+        public int CompareTo(object obj)
+        {
+            Cat otherCat = obj as Cat;
+            if (this.Thirst >= otherCat.Thirst)
+            {
+                return -1;
+            }
+            else
+            {
+                return 1;
+            };
         }
 
     }

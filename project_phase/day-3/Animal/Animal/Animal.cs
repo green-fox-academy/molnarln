@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace Valami
 {
-    class Animal
+    class Animal 
     {
+        private static int numberOfAnimals;
+        public int NumberOfAnimals
+        {
+            get
+            {
+                return numberOfAnimals;
+            }
+        }
+
         private int hunger;
         private int thirst;
 
@@ -27,6 +36,7 @@ namespace Valami
         {
             this.hunger = 50;
             this.thirst = 50;
+            numberOfAnimals++;
         }
 
         public void Eat()
@@ -44,6 +54,7 @@ namespace Valami
             this.hunger++;
             this.thirst++;
         }
+
 
     }
 }
