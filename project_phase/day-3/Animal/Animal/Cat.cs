@@ -8,13 +8,18 @@ namespace Valami
 {
     class Cat : Animal
     {
+        private string name;
+        public string Name { get { return this.name; } }
+
         public Cat() : base()
         {
+            this.name = "macska";
         }
 
         public Cat(int initialThirst)
         {
-            base.thirst = initialThirst;
+            base.Thirst = initialThirst;
+            this.name = "macska";
         }
 
     }

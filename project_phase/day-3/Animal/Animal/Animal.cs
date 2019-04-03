@@ -8,8 +8,8 @@ namespace Valami
 {
     class Animal
     {
-        protected int hunger;
-        protected int thirst;
+        private int hunger;
+        private int thirst;
 
         public int Hunger
         {
@@ -19,6 +19,7 @@ namespace Valami
         public int Thirst
         {
             get { return this.thirst; }
+            set { this.thirst = value; }
         }
 
 

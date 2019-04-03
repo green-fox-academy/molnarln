@@ -27,8 +27,9 @@ namespace MyProgram
             Console.WriteLine(cat1.Hunger);
             Console.WriteLine(cat1.Thirst);
 
-            Animal cat2 = new Cat(20);
+            Cat cat2 = new Cat(20);
             Console.WriteLine(cat2.Thirst);
+            Console.WriteLine(cat2.Name);
 
 
             Console.Read();
