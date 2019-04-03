@@ -4,13 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Animal
+namespace Valami
 {
     class Animal
     {
-        public int hunger { get; set; }
-        private int thirst;
-        
+        protected int hunger;
+        protected int thirst;
+
+        public int Hunger
+        {
+            get { return this.hunger; }
+        }
+
+        public int Thirst
+        {
+            get { return this.thirst; }
+        }
+
+
         public Animal()
         {
             this.hunger = 50;
@@ -31,16 +42,6 @@ namespace Animal
         {
             this.hunger++;
             this.thirst++;
-        }
-
-        public int GetThirst()
-        {
-            return this.thirst;
-        }
-
-        public void SetThirst(int thirst)
-        {
-            this.thirst = thirst;
         }
 
     }
