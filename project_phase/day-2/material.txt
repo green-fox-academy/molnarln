@@ -1,0 +1,12 @@
+Foundation: 
+https://github.com/green-fox-academy/teaching-materials/tree/master/syllabus/foundation
+Egyes napoknál `cs.md` a material és minden feladat könyvtárában is van C# template 
+(edited) 
+
+Orientation: 
+https://github.com/green-fox-academy/teaching-materials/blob/master/syllabus/orientation/cs-asp.net.md
+Orientation: ASP.Net Core Basics, Data persistence, LINQ!!!!!, EF Core, DI
++ async
+Material után gyakorló feladat: 
+https://github.com/green-fox-academy/teaching-materials/tree/master/project-phase/0th-week-projects/asp.net 
+(edited) 

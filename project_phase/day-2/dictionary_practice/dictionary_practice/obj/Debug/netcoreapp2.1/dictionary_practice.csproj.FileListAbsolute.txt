@@ -1,0 +1,11 @@
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\dictionary_practice\dictionary_practice\obj\Debug\netcoreapp2.1\dictionary_practice.csprojAssemblyReference.cache
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\dictionary_practice\dictionary_practice\obj\Debug\netcoreapp2.1\dictionary_practice.csproj.CoreCompileInputs.cache
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\dictionary_practice\dictionary_practice\obj\Debug\netcoreapp2.1\dictionary_practice.AssemblyInfoInputs.cache
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\dictionary_practice\dictionary_practice\obj\Debug\netcoreapp2.1\dictionary_practice.AssemblyInfo.cs
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\dictionary_practice\dictionary_practice\bin\Debug\netcoreapp2.1\dictionary_practice.deps.json
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\dictionary_practice\dictionary_practice\bin\Debug\netcoreapp2.1\dictionary_practice.runtimeconfig.json
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\dictionary_practice\dictionary_practice\bin\Debug\netcoreapp2.1\dictionary_practice.runtimeconfig.dev.json
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\dictionary_practice\dictionary_practice\bin\Debug\netcoreapp2.1\dictionary_practice.dll
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\dictionary_practice\dictionary_practice\bin\Debug\netcoreapp2.1\dictionary_practice.pdb
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\dictionary_practice\dictionary_practice\obj\Debug\netcoreapp2.1\dictionary_practice.dll
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\dictionary_practice\dictionary_practice\obj\Debug\netcoreapp2.1\dictionary_practice.pdb

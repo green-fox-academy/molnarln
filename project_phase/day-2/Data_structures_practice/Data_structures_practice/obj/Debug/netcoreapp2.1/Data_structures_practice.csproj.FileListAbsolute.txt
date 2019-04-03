@@ -1,0 +1,11 @@
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\Data_structures_practice\Data_structures_practice\obj\Debug\netcoreapp2.1\Data_structures_practice.csprojAssemblyReference.cache
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\Data_structures_practice\Data_structures_practice\obj\Debug\netcoreapp2.1\Data_structures_practice.csproj.CoreCompileInputs.cache
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\Data_structures_practice\Data_structures_practice\obj\Debug\netcoreapp2.1\Data_structures_practice.AssemblyInfoInputs.cache
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\Data_structures_practice\Data_structures_practice\obj\Debug\netcoreapp2.1\Data_structures_practice.AssemblyInfo.cs
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\Data_structures_practice\Data_structures_practice\bin\Debug\netcoreapp2.1\Data_structures_practice.deps.json
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\Data_structures_practice\Data_structures_practice\bin\Debug\netcoreapp2.1\Data_structures_practice.runtimeconfig.json
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\Data_structures_practice\Data_structures_practice\bin\Debug\netcoreapp2.1\Data_structures_practice.runtimeconfig.dev.json
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\Data_structures_practice\Data_structures_practice\bin\Debug\netcoreapp2.1\Data_structures_practice.dll
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\Data_structures_practice\Data_structures_practice\bin\Debug\netcoreapp2.1\Data_structures_practice.pdb
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\Data_structures_practice\Data_structures_practice\obj\Debug\netcoreapp2.1\Data_structures_practice.dll
+C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-2\Data_structures_practice\Data_structures_practice\obj\Debug\netcoreapp2.1\Data_structures_practice.pdb
