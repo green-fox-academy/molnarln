@@ -49,7 +49,6 @@ namespace Pirates
                return x + ", " + b;
            }
             );
-
         }
     }
 }
