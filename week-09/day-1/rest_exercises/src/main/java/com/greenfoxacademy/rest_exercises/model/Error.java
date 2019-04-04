@@ -2,17 +2,16 @@ package com.greenfoxacademy.rest_exercises.model;
 
 public class Error {
     private String errorMessage;
+    private String valami;
 
     public Error() {
     }
-
     public String getError() {
         return errorMessage;
     }
 
-    public Error setError(String errorMessage) {
+    public void setError(String errorMessage) {
         this.errorMessage = errorMessage;
-        return this;
     }
 
     @Override
