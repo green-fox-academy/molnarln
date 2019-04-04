@@ -16,6 +16,7 @@ namespace Valami
                 return numberOfAnimals;
             }
         }
+ 
 
         private int hunger;
         private int thirst;

@@ -114,5 +114,7 @@ public class StreamExercise {
                 .collect(Collectors.groupingBy(Fox::getColor, Collectors.counting())); //or can use that code, because counting is a special reducing:
         //      .collect(Collectors.groupingBy(Fox::getColor, Collectors.reducing(0L, e -> 1L, (a, b) -> a + b)));
         System.out.println(mapOfFoxes);
+
+
     }
 }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1027A6EA-426C-4696-AE67-AA2B95F1F9D0}</ProjectGuid>
+    <ProjectGuid>{789AF83B-6462-4414-9BD4-CC703879D5EA}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Animal</RootNamespace>
-    <AssemblyName>Animal</AssemblyName>
+    <RootNamespace>AnotherProject</RootNamespace>
+    <AssemblyName>AnotherProject</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,9 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Project\Animal.cs" />
-    <Compile Include="Project\Cat.cs" />
-    <Compile Include="Project\Program.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
