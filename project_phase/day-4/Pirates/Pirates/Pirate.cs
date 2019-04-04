@@ -20,20 +20,25 @@ namespace Pirates
         private bool isDead;
         public bool IsDead { get => isDead; set => isDead = value; }
 
+        private bool isCaptain;
+        public bool IsCaptain { get => isCaptain; set => isCaptain = value; }
+
 
         public Pirate()
         {
+            this.isCaptain = false;
             this.isSleeping = false;
             this.isDead = false;
             this.LevelOfIntoxication = 0;
         }
 
-        public Pirate(string name)
+        public Pirate(string name, bool isCaptain)
         {
             this.isSleeping = false;
             this.isDead = false;
             this.LevelOfIntoxication = 0;
             this.name = name;
+            this.isCaptain = isCaptain;
         }
 
         public void DrinkSomeRum()

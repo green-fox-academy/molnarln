@@ -13,10 +13,15 @@ namespace Pirates
 
             Pirate pirate1 = new Pirate();
             Pirate pirate2 = new Pirate();
+            Pirate pirate3 = new Pirate("vilmos", true);
 
-            pirate1.Brawl(pirate2);
+            Ship ship = new Ship();
+            ship.FillShip(pirate1);
+            ship.FillShip(pirate2);
+            ship.FillShip(pirate3);
 
-            Console.WriteLine(pirate2.IsDead);
+            Console.WriteLine(ship.ToString());
+
 
             Console.ReadKey();
 
