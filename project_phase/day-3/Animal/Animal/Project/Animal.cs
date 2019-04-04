@@ -55,7 +55,7 @@ namespace Valami
             this.thirst++;
         }
 
-        public abstract void SayHello()
+        public void SayHello()
         {
             Console.WriteLine("hello");
         }

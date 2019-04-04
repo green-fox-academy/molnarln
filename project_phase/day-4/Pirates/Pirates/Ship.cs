@@ -42,7 +42,17 @@ namespace Pirates
         {
             List<string> listOfStrings = new List<string>();
             pirates.ForEach(i => listOfStrings.Add(i.IsCaptain.ToString()));
-            return listOfStrings.Aggregate((a, b) => a + ", " + b);
+            
+            //---------------using delegate instead of lambda expression:---------------------------//
+
+
+            // return listOfStrings.Aggregate((a, b) => a + ", " + b);
+            return listOfStrings.Aggregate(delegate (string x, string b)
+           {
+               return x + ", " + b;
+           }
+            );
+
         }
     }
 }

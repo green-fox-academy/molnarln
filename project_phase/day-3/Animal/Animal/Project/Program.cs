@@ -41,8 +41,8 @@ namespace MyProgram
             Cat cat40 = new Cat(9);
             Cat cat50 = new Cat(34);
             Cat cat60 = new Cat(4543);
-            List<Cat> catList = new List<Cat> {cat10, cat20, cat30, cat40, cat50, cat60};
-            List<Cat> catList2 = new List<Cat>(catList) {cat10, cat20, cat30, cat40, cat50, cat60};
+            List<Cat> catList = new List<Cat> { cat10, cat20, cat30, cat40, cat50, cat60 };
+            List<Cat> catList2 = new List<Cat>(catList) { cat10, cat20, cat30, cat40, cat50, cat60 };
             catList.Sort();
 
             List<Cat> catList3 = new List<Cat>() {
@@ -51,6 +51,11 @@ namespace MyProgram
             };
 
             catList2.ForEach(i => Console.WriteLine(i.Hunger));
+
+            Random rnd = new Random();
+            int random1 = rnd.Next(0, 1000);
+            int random2 = rnd.Next(0, 1000);
+            Console.WriteLine(random1 + ", " + random2);
 
             Console.Read();
         }
