@@ -16,7 +16,6 @@ namespace Valami
                 return numberOfAnimals;
             }
         }
- 
 
         private int hunger;
         private int thirst;
@@ -56,6 +55,10 @@ namespace Valami
             this.thirst++;
         }
 
+        public abstract void SayHello()
+        {
+            Console.WriteLine("hello");
+        }
 
     }
 }

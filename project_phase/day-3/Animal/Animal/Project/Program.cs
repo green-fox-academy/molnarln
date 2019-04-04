@@ -43,6 +43,7 @@ namespace MyProgram
             Cat cat60 = new Cat(4543);
             List<Cat> catList = new List<Cat> {cat10, cat20, cat30, cat40, cat50, cat60};
             List<Cat> catList2 = new List<Cat>(catList) {cat10, cat20, cat30, cat40, cat50, cat60};
+            catList.Sort();
 
             List<Cat> catList3 = new List<Cat>() {
                 new Cat(4),
@@ -50,8 +51,6 @@ namespace MyProgram
             };
 
             catList2.ForEach(i => Console.WriteLine(i.Hunger));
-
-            catList.Sort();
 
             Console.Read();
         }

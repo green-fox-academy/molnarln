@@ -44,6 +44,5 @@ namespace Valami
                 return 1;
             };
         }
-
     }
 }
