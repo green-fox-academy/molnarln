@@ -22,7 +22,6 @@ namespace Pirates
 
             Console.WriteLine(ship.ToString());
 
-
             Console.ReadKey();
 
         }

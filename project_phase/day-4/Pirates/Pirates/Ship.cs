@@ -8,40 +8,37 @@ namespace Pirates
 {
     class Ship
     {
-        private List<Pirate> pirates;
-        public List<Pirate> Pirates { get => pirates; private set => pirates = value; }
-
-        private bool hasCaptain;
-        public bool HasCaptain { get => hasCaptain; set => hasCaptain = value; }
+        public List<Pirate> Pirates { get; private set; }
+        public bool HasCaptain { get; set; }
 
         public Ship()
         {
-            this.pirates = new List<Pirate>();
-            this.hasCaptain = false;
+            this.Pirates = new List<Pirate>();
+            this.HasCaptain = false;
         }
 
 
         public void FillShip(Pirate pirate)
         {
-            if (this.hasCaptain && pirate.IsCaptain)
+            if (this.HasCaptain && pirate.IsCaptain)
             {
                 Console.WriteLine("The ship has already a captain!");
             }
-            if (pirate.IsCaptain && !this.hasCaptain)
+            if (pirate.IsCaptain && !this.HasCaptain)
             {
-                this.hasCaptain = true;
-                this.pirates.Add(pirate);
+                this.HasCaptain = true;
+                this.Pirates.Add(pirate);
             }
             else
             {
-                this.pirates.Add(pirate);
+                this.Pirates.Add(pirate);
             }
         }
 
         public override string ToString()
         {
             List<string> listOfStrings = new List<string>();
-            pirates.ForEach(i => listOfStrings.Add(i.IsCaptain.ToString()));
+            Pirates.ForEach(i => listOfStrings.Add(i.IsCaptain.ToString()));
             
             //---------------using delegate instead of lambda expression:---------------------------//
 

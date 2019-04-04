@@ -8,42 +8,32 @@ namespace Pirates
 {
     class Pirate
     {
-        private string name;
-        public string Name { get => name; set => name = value; }
-
-        private int levelOfIntoxication;
-        public int LevelOfIntoxication { get => levelOfIntoxication; set => levelOfIntoxication = value; }
-
-        private bool isSleeping;
-        public bool IsSleeping { get => isSleeping; set => isSleeping = value; }
-
-        private bool isDead;
-        public bool IsDead { get => isDead; set => isDead = value; }
-
-        private bool isCaptain;
-        public bool IsCaptain { get => isCaptain; set => isCaptain = value; }
-
+        public string Name { get; set; }
+        public int LevelOfIntoxication { get; set; }
+        public bool IsSleeping { get; set; }
+        public bool IsDead { get; set; }
+        public bool IsCaptain { get; set; }
 
         public Pirate()
         {
-            this.isCaptain = false;
-            this.isSleeping = false;
-            this.isDead = false;
+            this.IsCaptain = false;
+            this.IsSleeping = false;
+            this.IsDead = false;
             this.LevelOfIntoxication = 0;
         }
 
         public Pirate(string name, bool isCaptain)
         {
-            this.isSleeping = false;
-            this.isDead = false;
+            this.IsSleeping = false;
+            this.IsDead = false;
             this.LevelOfIntoxication = 0;
-            this.name = name;
-            this.isCaptain = isCaptain;
+            this.Name = name;
+            this.IsCaptain = isCaptain;
         }
 
         public void DrinkSomeRum()
         {
-            if (isDead)
+            if (IsDead)
             {
                 Console.WriteLine("he is dead");
             }
@@ -55,13 +45,13 @@ namespace Pirates
 
         public void HowItIsGoingMate()
         {
-            if (isDead)
+            if (IsDead)
             {
                 Console.WriteLine("he is dead");
             }
             else
             {
-                if (this.levelOfIntoxication <= 4)
+                if (this.LevelOfIntoxication <= 4)
                 {
                     Console.WriteLine("Pour me anudder!");
                 }
@@ -74,33 +64,33 @@ namespace Pirates
 
         public void Die()
         {
-            this.isDead = true;
+            this.IsDead = true;
         }
 
         public void Brawl(Pirate pirate)
         {
-            if (this.isDead)
+            if (this.IsDead)
             {
                 Console.WriteLine("he is dead");
             }
             else
             {
-                if (!pirate.isDead)
+                if (!pirate.IsDead)
                 {
                     Random rnd = new Random();
                     int random = rnd.Next(1, 3);
                     if (random == 1)
                     {
-                        this.isDead = true;
+                        this.IsDead = true;
                     }
                     if (random == 2)
                     {
-                        pirate.isDead = true;
+                        pirate.IsDead = true;
                     }
                     if (random == 3)
                     {
-                        this.isSleeping = true;
-                        pirate.isSleeping = true;
+                        this.IsSleeping = true;
+                        pirate.IsSleeping = true;
                     }
                 }
             }
