@@ -64,8 +64,11 @@ public class WebController {
         return "listofaccounts";
     }
 
+    // If we use @ModelAttribute as method attribute, we can get a form data in the request's body
+    // If we use @RequestBody as a method attribute, we van get a JSON format data int the body,
+    // and everything works fine
     @RequestMapping(path = "/accounts/add", method = RequestMethod.POST)
-    public String addAccount(BankAccount bankAccount) {
+    public String addAccount(@ModelAttribute("bankAccount") BankAccount bankAccount) {
         accountList.add(bankAccount);
         System.out.println(bankAccount.isGoodGuy());
         return "redirect:/accounts";
