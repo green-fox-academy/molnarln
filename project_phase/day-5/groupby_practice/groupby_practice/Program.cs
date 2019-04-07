@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace groupby_practice
 {
     class Program
@@ -35,7 +36,7 @@ namespace groupby_practice
             persons2.Add(new Person { PersonID = 1, car = "BMW" });
             persons2.Add(new Person { PersonID = 2, car = "Audi" });
 
-            var result2 = persons2.GroupBy(i => i.PersonID, i=>i.car, (key, cars) => new {PresonId = key, CarAmount = cars.Count() });
+            var result2 = persons2.GroupBy(i => i.PersonID, i => i.car, (key, cars) => new { PresonId = key, CarAmount = cars.Count() });
 
             foreach (var item in result2)
             {
@@ -43,12 +44,12 @@ namespace groupby_practice
             }
 
 
-            var result3 = persons2.GroupBy(i=>i.PersonID, i=>i.car).Select(i=> new {PersonId = i.Key, cars = i.ToList() });
+            var result3 = persons2.GroupBy(i => i.PersonID, i => i.car).Select(i => new { PersonId = i.Key, cars = i.ToList() });
             foreach (var item in result3)
             {
-                Console.WriteLine(item.PersonId+"'s cars are: " + string.Join(", ", item.cars));
+                Console.WriteLine(item.PersonId + "'s cars are: " + string.Join(", ", item.cars));
             }
-      
+
 
             // Write a LINQ Expression to find the frequency of numbers in the following array:
 
@@ -68,11 +69,28 @@ namespace groupby_practice
                 Console.WriteLine($"A {item.number}-s szám gyakorisága : {item.frequency}");
             }
 
+            List<string> words = new List<string>() { "an", "apple", "a", "day" };
 
+            var firstChar = words.Select(i => i.Substring(0, 1));
+
+            foreach (var item in firstChar)
+            {
+                Console.WriteLine(item);
+            }
+
+            List<string> firstChar2 = new List<string>();
+
+            words.ForEach(i => firstChar2.Add(i.Substring(0, 1)));
+            firstChar2.ForEach(i => Console.WriteLine(i));
+
+            string testString = "masodik teszt négy szó";
+            Console.WriteLine("Word count: " + MyExtensions.WordCount("elso teszt"));
+            Console.WriteLine("Word count: " + testString.WordCount());
 
 
 
             Console.Read();
+
         }
     }
 }
