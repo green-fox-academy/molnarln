@@ -39,16 +39,26 @@ namespace Pirates
         {
             List<string> listOfStrings = new List<string>();
             Pirates.ForEach(i => listOfStrings.Add(i.IsCaptain.ToString()));
-            
+
             //---------------using delegate instead of lambda expression:---------------------------//
 
 
-            // return listOfStrings.Aggregate((a, b) => a + ", " + b);
-            return listOfStrings.Aggregate(delegate (string x, string b)
-           {
-               return x + ", " + b;
-           }
-            );
+            //return listOfStrings.Aggregate((a, b) => a + ", " + b);
+
+            // return listOfStrings.Aggregate(delegate (string x, string b)
+            //{
+            //    return x + ", " + b;
+            //}
+            // );
+
+            Func<string, string, string> a = delegate (string x, string y)
+            {
+                return x + ", " + y;
+            };
+
+            return listOfStrings.Aggregate(a);
+
+
         }
     }
 }

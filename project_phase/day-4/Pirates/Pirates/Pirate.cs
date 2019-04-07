@@ -22,6 +22,11 @@ namespace Pirates
             this.LevelOfIntoxication = 0;
         }
 
+        public T DoSomething<T>(dynamic input, dynamic input2)
+        {
+            return input + input2;
+        }
+
         public Pirate(string name, bool isCaptain)
         {
             this.IsSleeping = false;
