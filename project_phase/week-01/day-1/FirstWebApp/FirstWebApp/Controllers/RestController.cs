@@ -16,7 +16,7 @@ namespace FirstWebApp.Controllers
         [Route("greeting")]
         [HttpGet]
         // can replace with [HttpGet("greeting")
-        public Greeting greet(string name)
+        public Greeting greet([FromQuery]string name)
         {
             PageCounter++;
             Greeting greeting = new Greeting(1, $"number of reloads: {PageCounter}, your name: {name}");

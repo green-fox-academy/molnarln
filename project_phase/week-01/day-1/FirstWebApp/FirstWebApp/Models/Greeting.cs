@@ -12,6 +12,11 @@ namespace FirstWebApp.Models
         public long Id{ get; set; }
         public string Content { get; set; }
 
+        public Greeting()
+        {
+
+        }
+
         public Greeting(long id, string content)
         {
             Id = id;
