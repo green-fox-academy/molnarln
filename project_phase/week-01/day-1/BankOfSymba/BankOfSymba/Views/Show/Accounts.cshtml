@@ -1,0 +1,20 @@
+﻿@model BankOfSymba.Models.AccountsShowViewModel
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bank Of Symba </title>
+</head>
+<body>
+    <table>
+        @foreach (var item in Model.BankAccounts)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.BalanceString</td>
+                <td>@item.AnimalType</td>
+            </tr>
+        }
+    </table>
+
+</body>
+</html>

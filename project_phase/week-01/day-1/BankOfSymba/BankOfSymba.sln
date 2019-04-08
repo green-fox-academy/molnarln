@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.539
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankOfSymba", "BankOfSymba\BankOfSymba.csproj", "{C6327075-1A8E-40A0-933D-ECE9D283A8E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6327075-1A8E-40A0-933D-ECE9D283A8E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6327075-1A8E-40A0-933D-ECE9D283A8E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6327075-1A8E-40A0-933D-ECE9D283A8E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6327075-1A8E-40A0-933D-ECE9D283A8E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {22CC64A3-3EA8-4614-856A-95FD47A9FC50}
+	EndGlobalSection
+EndGlobal

@@ -14,6 +14,7 @@ namespace FirstWebApp.Controllers
         public IActionResult Hello()
         {
             Hellos hellos = new Hellos();
+
             //default view name is the method name, but it is possible to add other name to is
             // eg. valami (the view must have the same name)
             return View("valami", hellos);
