@@ -1,7 +1,0 @@
-C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-3\dictionary\dictionary\bin\Debug\dictionary.exe.config
-C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-3\dictionary\dictionary\bin\Debug\dictionary.exe
-C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-3\dictionary\dictionary\bin\Debug\dictionary.pdb
-C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-3\dictionary\dictionary\obj\Debug\dictionary.csprojAssemblyReference.cache
-C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-3\dictionary\dictionary\obj\Debug\dictionary.csproj.CoreCompileInputs.cache
-C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-3\dictionary\dictionary\obj\Debug\dictionary.exe
-C:\Users\laszl\Documents\Programozás\greenfox\projectphase\week-0\day-3\dictionary\dictionary\obj\Debug\dictionary.pdb

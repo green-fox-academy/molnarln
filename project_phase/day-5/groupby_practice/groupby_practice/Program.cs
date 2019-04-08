@@ -89,8 +89,26 @@ namespace groupby_practice
 
 
 
+            MyDelegate del = valami;
+            valami();
+
+            OneParameterDelegate del2 = WriteSomething;
+            del2("hahahaaaaaaa");
+
+            
+
             Console.Read();
 
         }
+        static void valami()
+        {
+            Console.WriteLine("yeahhhh");
+        }
+        static void WriteSomething(string writesomething)
+        {
+            Console.WriteLine(writesomething);
+        }
     }
+    delegate void MyDelegate ();
+    delegate void OneParameterDelegate(string parameter);
 }
