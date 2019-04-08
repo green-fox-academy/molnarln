@@ -1,0 +1,17 @@
+﻿html {
+    color: red;
+}
+table {
+    border-collapse: collapse;
+    border: black 2px solid;
+}
+
+thead {
+    background: dimgrey;
+    color: white;
+}
+
+td {
+    border: black 1px solid;
+}
+

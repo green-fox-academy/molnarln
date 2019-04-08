@@ -3,18 +3,37 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Bank Of Symba </title>
+    <link href="~/Styles.css" rel="stylesheet" />
 </head>
 <body>
     <table>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Balance</td>
+            <td>Animal type</td>
+        </tr>
         @foreach (var item in Model.BankAccounts)
         {
-            <tr>
-                <td>@item.Name</td>
-                <td>@item.BalanceString</td>
-                <td>@item.AnimalType</td>
-            </tr>
+            @if (item.IsKing == true)
+            {
+                <tr style=" color: goldenrod">
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.BalanceString</td>
+                    <td>@item.AnimalType</td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.BalanceString</td>
+                    <td>@item.AnimalType</td>
+                </tr>
+            }
         }
     </table>
-
 </body>
 </html>
