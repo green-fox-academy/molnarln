@@ -11,6 +11,9 @@ namespace BankOfSymba.Controllers
     [Route("")]
     public class ShowController : Controller
     {
+        AccountsShowViewModel accountsShowView = new AccountsShowViewModel();
+
+
         [HttpGet("show")]
         public IActionResult Account()
         {
@@ -29,9 +32,14 @@ namespace BankOfSymba.Controllers
         [HttpGet("accounts")]
         public IActionResult Accounts()
         {
-            AccountsShowViewModel accounts = new AccountsShowViewModel();
+            return View(accountsShowView);
+        }
 
-            return View(accounts);
+        [HttpPost("accounts")]
+        public IActionResult AddAccount( BankAccount bankAccount)
+        {
+            accountsShowView.AddAccount(bankAccount);
+            return (Redirect("accounts"));
         }
     }
 }

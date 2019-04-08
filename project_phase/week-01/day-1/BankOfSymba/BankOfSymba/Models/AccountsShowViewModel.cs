@@ -8,16 +8,22 @@ namespace BankOfSymba.Models
     public class AccountsShowViewModel
     {
         public List<BankAccount> BankAccounts { get; set; }
+        public BankAccount BankAccount { get; set; }
 
         public AccountsShowViewModel()
         {
+            this.BankAccount = new BankAccount();
+
             this.BankAccounts = new List<BankAccount>()
             {   new BankAccount("Symba", 12000, "Lion"){IsKing = true},
                 new BankAccount("Pumba", 2000, "pig"),
                 new BankAccount("Nala", 34000, "Lion")
             };
+        }
 
-
+        public void AddAccount(BankAccount bankAccountToAdd)
+        {
+            this.BankAccounts.Add(bankAccountToAdd);
         }
     }
 }

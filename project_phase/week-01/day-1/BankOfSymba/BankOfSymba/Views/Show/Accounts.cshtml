@@ -1,4 +1,5 @@
 ﻿@model BankOfSymba.Models.AccountsShowViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -35,5 +36,16 @@
             }
         }
     </table>
+    <form asp-action="Accounts" asp-controller="Show" method="post">
+        <label asp-for="BankAccount.Name"></label>
+        <input type="text" asp-for="BankAccount.Name" />
+        <label asp-for="BankAccount.BalanceInt"></label>
+        <input type="text" asp-for="BankAccount.BalanceInt" />
+        <label asp-for="BankAccount.AnimalType"></label>
+        <input type="text" asp-for="BankAccount.AnimalType" />
+
+        <input type="submit" value="Submit" />
+    </form>
+
 </body>
 </html>

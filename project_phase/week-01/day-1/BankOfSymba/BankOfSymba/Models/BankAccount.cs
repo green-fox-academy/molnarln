@@ -24,5 +24,10 @@ namespace BankOfSymba.Models
             this.BalanceString = BalanceInt.ToString("F");
             this.Id = GlobalId;
         }
+        public BankAccount()
+        {
+
+        }
+  
     }
 }
