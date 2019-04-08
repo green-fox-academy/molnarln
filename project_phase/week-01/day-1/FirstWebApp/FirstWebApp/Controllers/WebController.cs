@@ -13,6 +13,8 @@ namespace FirstWebApp.Controllers
     public class WebController : Controller
     {
         private static int PageCounter;
+
+
         [HttpGet("greeting")]
         
         public IActionResult Greeting([FromQuery] string name)
@@ -23,6 +25,7 @@ namespace FirstWebApp.Controllers
                 Id = PageCounter,
                 Content = name
             };
+
 
             return View(greeting);
         }
