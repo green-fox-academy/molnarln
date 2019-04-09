@@ -26,7 +26,7 @@ namespace BankOfSymba
                 app.UseDeveloperExceptionPage();
             }
             app.UseMvc();
-
+            app.UseStaticFiles();
         }
     }
 }

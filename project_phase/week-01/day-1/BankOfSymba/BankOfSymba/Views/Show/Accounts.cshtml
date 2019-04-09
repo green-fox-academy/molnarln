@@ -1,5 +1,6 @@
 ﻿@model BankOfSymba.Models.AccountsShowViewModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -21,7 +22,7 @@
                 <tr style=" color: goldenrod">
                     <td>@item.Id</td>
                     <td>@item.Name</td>
-                    <td>@item.BalanceString</td>
+                    <td>@item.BalanceInt.ToString()</td>
                     <td>@item.AnimalType</td>
                 </tr>
             }
@@ -30,22 +31,38 @@
                 <tr>
                     <td>@item.Id</td>
                     <td>@item.Name</td>
-                    <td>@item.BalanceString</td>
+                    <td>@item.BalanceInt.ToString()</td>
                     <td>@item.AnimalType</td>
                 </tr>
             }
         }
     </table>
-    <form asp-action="Accounts" asp-controller="Show" method="post">
-        <label asp-for="BankAccount.Name"></label>
-        <input type="text" asp-for="BankAccount.Name" />
-        <label asp-for="BankAccount.BalanceInt"></label>
-        <input type="text" asp-for="BankAccount.BalanceInt" />
-        <label asp-for="BankAccount.AnimalType"></label>
-        <input type="text" asp-for="BankAccount.AnimalType" />
 
+    <ul>
+        @foreach (var item in ViewData["stringList"] as List<string>)
+        {
+            <li>@item</li>
+        }
+    </ul>
+
+    <form asp-action="Accounts" asp-controller="Show" method="post">
+            <label asp-for="BankAccount.Name"></label>
+            <input type="text" asp-for="BankAccount.Name" />
+            <label asp-for="BankAccount.BalanceInt"></label>
+            <input type="text" asp-for="BankAccount.BalanceInt" />
+            <label asp-for="BankAccount.AnimalType"></label>
+            <input type="text" asp-for="BankAccount.AnimalType" />
+
+            <input type="submit" value="Submit" />
+        </form>
+
+    @*<form action="/accounts" method="post">
+        <input type="text" name="Name" value="" />
+        <input type="text" name="BalanceInt" value="" />
+        <input type="text" name="AnimalType" value="" />
+        
         <input type="submit" value="Submit" />
-    </form>
+    </form>*@
 
 </body>
 </html>
