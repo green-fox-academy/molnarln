@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace BankOfSymba.Models
 {
+    ///<summary>
+    ///Poco class for the Accounts view. It contains all the objects needed for the view.
+    ///</summary>
     public class AccountsShowViewModel
     {
         public List<BankAccount> BankAccounts { get; set; }
