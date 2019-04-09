@@ -20,7 +20,6 @@ namespace BankOfSymba.Models
             Name = name;
             BalanceInt = balance;
             AnimalType = animalType;
-
             this.Id = GlobalId;
             GlobalId++;
         }

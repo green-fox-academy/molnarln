@@ -11,7 +11,12 @@ namespace BankOfSymba.Controllers
     [Route("")]
     public class ShowController : Controller
     {
-        static AccountsShowViewModel accountsShowView = new AccountsShowViewModel();
+        AccountsShowViewModel repo; //= new AccountsShowViewModel();
+
+        public ShowController(AccountsShowViewModel accountsShowView)
+        {
+            this.repo = accountsShowView;
+        }
 
         [HttpGet("show")]
         public IActionResult Account()
@@ -35,7 +40,7 @@ namespace BankOfSymba.Controllers
             ViewData.Add("stringList", listOfData);
             //can be use: ViewData["stringList"] = listOfData;
 
-            return View(accountsShowView);
+            return View(repo);
         }
 
         [HttpPost("accounts")]
@@ -45,7 +50,7 @@ namespace BankOfSymba.Controllers
             Console.WriteLine(bankAccount.Name);
             Console.WriteLine(bankAccount.BalanceInt);
 
-            accountsShowView.AddAccount(bankAccount);
+            repo.AddAccount(bankAccount);
             return (Redirect("accounts"));
         }
     }
