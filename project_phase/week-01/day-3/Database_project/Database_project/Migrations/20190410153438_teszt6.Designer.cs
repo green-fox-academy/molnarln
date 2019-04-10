@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Database_project.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20190410075734_InitialVersion")]
-    partial class InitialVersion
+    [Migration("20190410153438_teszt6")]
+    partial class teszt6
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,6 +25,8 @@ namespace Database_project.Migrations
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description");
 
                     b.Property<bool>("IsDone");
 

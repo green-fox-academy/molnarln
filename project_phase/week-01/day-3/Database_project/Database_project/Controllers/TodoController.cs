@@ -20,7 +20,7 @@ namespace Database_project.Controllers
         [HttpGet]
         [Route("")]
         [Route("list")]
-        public IActionResult List([FromQuery] string isActive="")
+        public IActionResult List([FromQuery] string isActive = "")
         {
 
             bool active;
@@ -38,15 +38,31 @@ namespace Database_project.Controllers
                 return View(todos.Where(i => i.IsDone).ToList());
             };
 
-            Todo todoToAdd = new Todo() { Title = "Added todo", IsDone = false, IsUrgent = true };
-            applicationContext.Add(todoToAdd);
+            //Todo todoToAdd = new Todo() { Title = "Added todo", IsDone = false, IsUrgent = true };
+            //applicationContext.Add(todoToAdd);
 
-            Todo todoToChange = applicationContext.Todos.FirstOrDefault(i => i.Title == "harmadik");
-            todoToChange.Title = "harmadik updated";
-            applicationContext.Update(todoToChange);
+            ////Todo todoToChange = applicationContext.Todos.FirstOrDefault(i => i.Title == "negyedik");
+            ////todoToChange.Title = "harmadik updated";
+            ////applicationContext.Update(todoToChange);
 
-            applicationContext.SaveChanges();
+            //applicationContext.SaveChanges();
             return View(todos);
         }
-    }
+
+        [HttpPost("create")]
+        public IActionResult Create(Todo todoToAdd)
+        {
+            applicationContext.Todos.Add(todoToAdd);
+            applicationContext.SaveChanges();
+            return Created("the todo has been created", todoToAdd);
+        }
+
+        [HttpGet("{id}/edit")]
+        public IActionResult Edit(int id)
+        {
+            Todo todoToUpdate = applicationContext.Todos.FirstOrDefault(i => i.Id == id);
+
+            return Accepted("the todo to update from Edit action", todoToUpdate);
+        }
+    }  
 }

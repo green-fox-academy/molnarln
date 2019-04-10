@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Database_project.Migrations
 {
-    public partial class InitialVersion : Migration
+    public partial class Initial4 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,6 +14,8 @@ namespace Database_project.Migrations
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Title = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    Teszt = table.Column<string>(nullable: true),
                     IsUrgent = table.Column<bool>(nullable: false),
                     IsDone = table.Column<bool>(nullable: false)
                 },
