@@ -38,6 +38,14 @@ namespace Database_project.Controllers
                 return View(todos.Where(i => i.IsDone).ToList());
             };
 
+            Todo todoToAdd = new Todo() { Title = "Added todo", IsDone = false, IsUrgent = true };
+            applicationContext.Add(todoToAdd);
+
+            Todo todoToChange = applicationContext.Todos.FirstOrDefault(i => i.Title == "harmadik");
+            todoToChange.Title = "harmadik updated";
+            applicationContext.Update(todoToChange);
+
+            applicationContext.SaveChanges();
             return View(todos);
         }
     }
