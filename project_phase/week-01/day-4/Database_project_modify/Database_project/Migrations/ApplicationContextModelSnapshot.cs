@@ -40,6 +40,8 @@ namespace Database_project.Migrations
 
                     b.Property<int?>("AssigneeFK");
 
+                    b.Property<int?>("AssigneeeAssigneeId");
+
                     b.Property<string>("Description");
 
                     b.Property<bool>("IsDone");
@@ -50,7 +52,7 @@ namespace Database_project.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AssigneeFK");
+                    b.HasIndex("AssigneeeAssigneeId");
 
                     b.ToTable("Todos");
                 });
@@ -59,7 +61,7 @@ namespace Database_project.Migrations
                 {
                     b.HasOne("Database_project.Models.Assignee", "Assigneee")
                         .WithMany("Todos")
-                        .HasForeignKey("AssigneeFK");
+                        .HasForeignKey("AssigneeeAssigneeId");
                 });
 #pragma warning restore 612, 618
         }

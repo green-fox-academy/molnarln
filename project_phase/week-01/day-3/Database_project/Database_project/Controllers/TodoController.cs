@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Database_project.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Database_project.Controllers
 {
@@ -58,11 +60,52 @@ namespace Database_project.Controllers
         }
 
         [HttpGet("{id}/edit")]
-        public IActionResult Edit(int id)
+        public IActionResult Edit([FromRoute]int id)
         {
             Todo todoToUpdate = applicationContext.Todos.FirstOrDefault(i => i.Id == id);
 
             return Accepted("the todo to update from Edit action", todoToUpdate);
         }
-    }  
+
+        [HttpPut("{id}/edit")]
+
+        public IActionResult UpdateTodo([FromRoute] int id, [FromForm] int assigneeId)
+        {
+            if (applicationContext.Todos.FirstOrDefault(i => i.Id == id) == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+
+                Todo todoToUpdate = applicationContext.Todos.FirstOrDefault(i => i.Id == id);
+                Assignee assigneeToAdd = applicationContext.Assignees.FirstOrDefault(i => i.AssigneeId == assigneeId);
+
+                applicationContext.Todos.Update(todoToUpdate);
+                applicationContext.SaveChanges();
+
+                return Accepted("The entity has been updated!", todoToUpdate);
+            }
+        }
+
+        [HttpPost("addassignee")]
+        public IActionResult AddAssignee([FromBody] Assignee assignee)
+        {
+            applicationContext.Assignees.Add(assignee);
+
+            applicationContext.SaveChanges();
+            return Accepted(assignee);
+        }
+
+        [HttpGet("{id}/gettodos")]
+
+        public IActionResult GetTodos([FromRoute] int id)
+        {
+            List<Todo> todos = applicationContext.Assignees.Include(a => a.Todos).FirstOrDefault(a => a.AssigneeId == id).Todos.ToList();
+            Assignee assignee = applicationContext.Assignees.Include(a => a.Todos).FirstOrDefault(a => a.AssigneeId == id);
+
+            return Accepted(assignee);
+        }
+
+    }
 }

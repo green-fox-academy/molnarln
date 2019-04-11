@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Database_project.Models;
-using Newtonsoft.Json;
 
 namespace Database_project
 {
@@ -15,11 +14,10 @@ namespace Database_project
         public string Description { get; set; }
         public bool IsUrgent { get; set; }
         public bool IsDone { get; set; }
-        [JsonIgnore]
+
+        
         public Assignee Assigneee { get; set; }
         public int? AssigneeFK { get; set; }
-
-
 
     }
 }

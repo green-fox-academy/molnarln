@@ -4,14 +4,16 @@ using Database_project;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Database_project.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20190411130559_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,6 +42,8 @@ namespace Database_project.Migrations
 
                     b.Property<int?>("AssigneeFK");
 
+                    b.Property<int?>("AssigneeeAssigneeId");
+
                     b.Property<string>("Description");
 
                     b.Property<bool>("IsDone");
@@ -50,7 +54,7 @@ namespace Database_project.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AssigneeFK");
+                    b.HasIndex("AssigneeeAssigneeId");
 
                     b.ToTable("Todos");
                 });
@@ -59,7 +63,7 @@ namespace Database_project.Migrations
                 {
                     b.HasOne("Database_project.Models.Assignee", "Assigneee")
                         .WithMany("Todos")
-                        .HasForeignKey("AssigneeFK");
+                        .HasForeignKey("AssigneeeAssigneeId");
                 });
 #pragma warning restore 612, 618
         }

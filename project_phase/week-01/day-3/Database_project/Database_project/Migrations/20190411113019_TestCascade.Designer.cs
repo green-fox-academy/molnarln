@@ -4,14 +4,16 @@ using Database_project;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Database_project.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20190411113019_TestCascade")]
+    partial class TestCascade
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,7 +40,8 @@ namespace Database_project.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AssigneeFK");
+                    b.Property<int?>("AssigneeFK")
+                        .IsRequired();
 
                     b.Property<string>("Description");
 
@@ -59,7 +62,8 @@ namespace Database_project.Migrations
                 {
                     b.HasOne("Database_project.Models.Assignee", "Assigneee")
                         .WithMany("Todos")
-                        .HasForeignKey("AssigneeFK");
+                        .HasForeignKey("AssigneeFK")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
