@@ -1,9 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Database_project.Models;
+﻿using Database_project.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Database_project
 {
@@ -20,6 +16,7 @@ namespace Database_project
             modelBuilder.Entity<Assignee>().HasMany(i => i.Todos).WithOne(i => i.Assigneee).HasForeignKey(i=>i.AssigneeFK);
 
             modelBuilder.Entity<Todo>().Property(i => i.AssigneeFK).HasColumnName("Idegenkulcs");
+            
 
      
         }
