@@ -16,9 +16,6 @@ namespace Database_project
             modelBuilder.Entity<Assignee>().HasMany(i => i.Todos).WithOne(i => i.Assigneee).HasForeignKey(i=>i.AssigneeFK);
 
             modelBuilder.Entity<Todo>().Property(i => i.AssigneeFK).HasColumnName("Idegenkulcs");
-            
-
-     
         }
     }
 }
