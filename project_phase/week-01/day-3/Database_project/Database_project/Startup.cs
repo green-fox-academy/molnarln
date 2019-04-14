@@ -9,11 +9,11 @@ namespace Database_project
 {
     public class Startup
     {
-        private readonly IConfiguration configuration;
+        private readonly IConfiguration Configuration;
 
         public Startup(IConfiguration configuration)
         {
-            this.configuration = configuration;
+            this.Configuration = configuration;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -21,9 +21,10 @@ namespace Database_project
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationContext>(builder =>
-                    builder.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+                    builder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc();
         }
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
