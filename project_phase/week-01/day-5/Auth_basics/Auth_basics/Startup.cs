@@ -27,9 +27,14 @@ namespace Auth_basics
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
-
+            
             var appSettings = appSettingsSection.Get<AppSettings>();
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+            //AddAuthentication can be set one-by-one:
+
+            //services.AddAuthentication(x => x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme);
+            //Or with lambda iteration:
+
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -38,18 +43,21 @@ namespace Auth_basics
             .AddJwtBearer(x =>
             {
                 x.RequireHttpsMetadata = false;
-                x.SaveToken = true;
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = false,
-                    ValidateAudience = false
+                    ValidateAudience = false,
+                    ValidateLifetime = true
+                    
+                    
+                    
                 };
             });
 
             // configure DI for application services
-            services.AddScoped<UserService>();
+            services.AddScoped<IUserService,UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
