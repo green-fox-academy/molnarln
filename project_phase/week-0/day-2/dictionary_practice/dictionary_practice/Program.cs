@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace dictionary_practice
 {
@@ -9,11 +10,12 @@ namespace dictionary_practice
         {
             Dictionary<int, string> map = new Dictionary<int, string>
             {
-                [0] = "a"
+                [0] = "a",
+                [324]= "b"
             };
 
-            Console.WriteLine(map[0]);
-
+            List<int> keyList = map.Keys.ToList();
+            keyList.ForEach(i => Console.Write($"Number: {i} ", i));
 
             string name = "Mo        lnár            Lász        ló";
 
