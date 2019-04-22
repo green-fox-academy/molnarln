@@ -2,10 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-<<<<<<< HEAD
     <UserSecretsId>f4964c35-1d31-4a59-a737-c4d9dd4604bf</UserSecretsId>
-=======
->>>>>>> b9d6485e7a11b1e69fa639c9ba52b22263b4e8f1
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,8 +10,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Google.Apis" Version="1.38.2" />
+    <PackageReference Include="Google.Apis.Gmail.v1" Version="1.38.2.1543" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
 
 </Project>

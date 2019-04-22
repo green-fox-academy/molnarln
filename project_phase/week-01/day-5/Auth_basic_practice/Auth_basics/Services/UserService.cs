@@ -6,10 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
-<<<<<<< HEAD
 using System.Net.Http;
-=======
->>>>>>> b9d6485e7a11b1e69fa639c9ba52b22263b4e8f1
 using System.Security.Claims;
 using System.Text;
 
@@ -52,16 +49,10 @@ namespace Auth_basics.Services
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-<<<<<<< HEAD
                     new Claim(ClaimTypes.Name, user.Id.ToString()),
                 }),
                 Expires = DateTime.UtcNow.AddDays(1),
 
-=======
-                    new Claim(ClaimTypes.Name, user.Id.ToString())
-                }),
-                Expires = DateTime.UtcNow.AddSeconds(10),
->>>>>>> b9d6485e7a11b1e69fa639c9ba52b22263b4e8f1
 
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
