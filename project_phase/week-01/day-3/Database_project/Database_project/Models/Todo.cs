@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using Database_project.Models;
+﻿using Database_project.Models;
 using Newtonsoft.Json;
 
 namespace Database_project

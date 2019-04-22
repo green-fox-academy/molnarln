@@ -1,4 +1,5 @@
 ﻿using Database_project.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -101,9 +102,14 @@ namespace Database_project.Controllers
         {
             List<Todo> todos = applicationContext.Assignees.Include(a => a.Todos).FirstOrDefault(a => a.AssigneeId == id).Todos.ToList();
             Assignee assignee = applicationContext.Assignees.Include(a => a.Todos).FirstOrDefault(a => a.AssigneeId == id);
-
+            
             return Accepted(assignee);
         }
 
+        [HttpGet("geterror")]
+        public IActionResult GetError()
+        {
+            return NotFound(new ErrorMessage("Page not found!"));
+        }
     }
 }
