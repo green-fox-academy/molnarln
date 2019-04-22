@@ -9,9 +9,9 @@ namespace Database_project
 {
     public class ApplicationContext : DbContext
     {
-        public ApplicationContext(){}
+        public ApplicationContext() { }
 
-        public DbSet<Todo>Todos { get; set; }
+        public DbSet<Todo> Todos { get; set; }
         public DbSet<Assignee> Assignees { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
