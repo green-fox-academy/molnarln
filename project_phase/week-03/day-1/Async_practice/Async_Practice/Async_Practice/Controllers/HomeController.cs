@@ -26,18 +26,24 @@ namespace Async_Practice.Controllers
         }
         [Route("async")]
         [HttpGet]
-        public async Task<ActionResult> IndexAsync()
+        public async Task<ActionResult> IndexAsync() 
         {
             Stopwatch watch = new Stopwatch();
             watch.Start();
             ContentManagement service = new ContentManagement();
-            var contentTask = service.GetContentAsync();
+            var contentTask = Task.Run(() =>service.GetContent()); //This row is the same as the row under:
+            //var contentTask = service.GetContentAsync();
             var countTask = service.GetCountAsync();
             var nameTask = service.GetNameAsync();
 
-            var content = await contentTask;
-            var count = await countTask;
-            var name = await nameTask;
+            //var content = await contentTask;
+            //var count = await countTask;
+            //var name = await nameTask;
+
+            await contentTask;
+            await countTask;
+            await nameTask;
+
             watch.Stop();
             ViewBag.WatchMilliseconds = watch.ElapsedMilliseconds;
             return StatusCode(200, new { TimeElapsed = $"{watch.ElapsedMilliseconds}" }); 
