@@ -2,7 +2,7 @@
 
 namespace Database_project.Migrations
 {
-    public partial class ProductionEnvironmentDB : Migration
+    public partial class ProductionTest16 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -1,6 +1,7 @@
 ﻿using Database_project.Models;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace Database_project
 {
     public class ApplicationContext : DbContext

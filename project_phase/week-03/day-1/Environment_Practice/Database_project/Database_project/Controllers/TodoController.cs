@@ -51,8 +51,9 @@ namespace Database_project.Controllers
         }
 
         [HttpPost("create")]
-        public IActionResult Create(Todo todoToAdd)
+        public IActionResult Create([FromBody]Todo todoToAdd)
         {
+            Todo todo = new Todo() { Title = todoToAdd.Title, Description = todoToAdd.Description, IsDone = todoToAdd.IsDone, IsUrgent = todoToAdd.IsUrgent };
             applicationContext.Todos.Add(todoToAdd);
             applicationContext.SaveChanges();
             return Created("the todo has been created", todoToAdd);
