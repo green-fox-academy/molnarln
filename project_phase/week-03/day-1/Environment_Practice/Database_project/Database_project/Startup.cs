@@ -23,9 +23,13 @@ namespace Database_project
         public void ConfigureServices(IServiceCollection services)
         {
             if (env.IsDevelopment())
+            //{
+            //    services.AddDbContext<ApplicationContext>(builder =>
+            //            builder.UseSqlServer(Configuration.GetConnectionString("DevelopmentConnection")));
+            //}
             {
                 services.AddDbContext<ApplicationContext>(builder =>
-                        builder.UseSqlServer(Configuration.GetConnectionString("DevelopmentConnection")));
+                        builder.UseInMemoryDatabase("InMemoryDatabase"));
             }
             if (env.IsProduction())
             {
