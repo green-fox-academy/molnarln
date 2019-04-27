@@ -1,0 +1,29 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:52308",
+      "sslPort": 44371
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    },
+    "Database_project": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "Key": "Value",
+        "TestConnectionString": "Server=(localdb)\\\\MSSQLLocalDB;Database=ProductionDb8;Trusted_Connection=True;MultipleActiveResultSets=true",
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      },
+      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+    }
+  }
+}

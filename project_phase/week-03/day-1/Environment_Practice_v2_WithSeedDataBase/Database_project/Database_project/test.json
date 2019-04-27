@@ -1,0 +1,5 @@
+﻿{
+  "TestString": {
+    "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=TestDatabaseForJsonTest;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
+}
