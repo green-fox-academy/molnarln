@@ -19,6 +19,7 @@ namespace dictionary
                 ["Bread"] = 50,
                 ["Chicken"] = 125
             };
+            products.Add("Something", 600);
             string productToSearch = "Fish";
             List<string> keys;
             keys = products.Keys.ToList();

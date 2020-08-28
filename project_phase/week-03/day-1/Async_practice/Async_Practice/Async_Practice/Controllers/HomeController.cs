@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Async_Practice.Controllers
 {
-    public class HomeController:Controller
+    public class HomeController : Controller
     {
-        [Route ("sync")]
+        [Route("sync")]
         [HttpGet]
         public ActionResult Index()
         {
@@ -22,16 +22,16 @@ namespace Async_Practice.Controllers
 
             watch.Stop();
             ViewBag.WatchMilliseconds = watch.ElapsedMilliseconds;
-            return StatusCode(200, new {TimeElapsed = $"{watch.ElapsedMilliseconds}" });
+            return StatusCode(200, new { TimeElapsed = $"{watch.ElapsedMilliseconds}" });
         }
         [Route("async")]
         [HttpGet]
-        public async Task<ActionResult> IndexAsync() 
+        public async Task<ActionResult> IndexAsync()
         {
             Stopwatch watch = new Stopwatch();
             watch.Start();
             ContentManagement service = new ContentManagement();
-            var contentTask = Task.Run(() =>service.GetContent()); //This row is the same as the row under:
+            var contentTask = Task.Run(() => service.GetContent()); //This row is the same as the row under:
             //var contentTask = service.GetContentAsync();
             var countTask = service.GetCountAsync();
             var nameTask = service.GetNameAsync();
@@ -46,7 +46,7 @@ namespace Async_Practice.Controllers
 
             watch.Stop();
             ViewBag.WatchMilliseconds = watch.ElapsedMilliseconds;
-            return StatusCode(200, new { TimeElapsed = $"{watch.ElapsedMilliseconds}" }); 
+            return StatusCode(200, new { TimeElapsed = $"{watch.ElapsedMilliseconds}" });
         }
     }
 }
